@@ -17,11 +17,23 @@ module.exports = {
             loader: 'awesome-typescript-loader'
           },
         ]
+      },
+      {
+        test: /\.css/,
+        loaders: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              url: false
+            }
+          }
+        ]
       }
     ]
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ]
+    extensions: [ '.tsx', '.ts', '.js', '.json' ]
   },
   output: {
     filename: 'bundle-[hash].js',
