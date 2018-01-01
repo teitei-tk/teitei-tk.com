@@ -24,6 +24,10 @@ export const Accounts = () => {
         <li>
           <a href="http://teitei-tk.hatenablog.com">HatenaBlog(Japanese writing)</a>
         </li>
+        <li>
+          <a href="https://www.amazon.co.jp/gp/registry/wishlist/1KY1Q9M8EAIA5/ref=nav_wishlist_lists_1">Amazon WishList</a>
+        </li>
+
       </ol>
     </div>
   )
