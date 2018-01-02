@@ -37,7 +37,9 @@
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
+    "apollo-link": "^1.0.7",
     "firebase": "^4.8.1",
+    "firebase-tools": "^3.16.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   }
