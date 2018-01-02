@@ -8,52 +8,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const admin = require("firebase-admin");
 const functions = require("firebase-functions");
-const graphql_tag_1 = require("graphql-tag");
-const github_1 = require("./github");
+const github_1 = require("./clients/github");
+admin.initializeApp(functions.config().firebase, 'functions');
 exports.github = functions.https.onRequest((request, response) => {
+    const client = new github_1.default();
+    client.initialize();
     const queryResult = () => __awaiter(this, void 0, void 0, function* () {
-        const a = yield github_1.default.query({ query: graphql_tag_1.default `
-      query {
-        user(login: "teitei-tk") {
-          name,
-          url,
-          email,
-          company,
-          bio,
-          websiteUrl
-        }
-      }
-    ` }).then((r) => {
-            return r;
-        });
-        return JSON.stringify(a.data.user);
+        const ret = yield client.fetchProfile();
+        return JSON.stringify(ret);
     });
-    //const queryResult = async () => {
-    //// const accessToken = "92082adeafbf5448a6f84d88033531ccfc03a65f";
-    //// const r = await axios({
-    ////   url: 'https://api.github.com/graphql',
-    ////   headers: {
-    ////     Authorization: `bearer ${accessToken}`,
-    ////     Accept: 'application/vnd.github.v4.idl'
-    ////   },
-    ////   method: 'POST',
-    ////   data: {
-    ////     query: `query {
-    ////        repository(owner: "vuejs", name: "vue") {
-    ////         name,
-    ////         description,
-    ////         license
-    ////       }
-    ////     }`
-    ////   }
-    ////   })
-    //// .then(res => res.data)
-    ////
-    //// return r;
-    //};
-    const b = queryResult();
-    console.log(b);
-    response.send(b);
+    queryResult().then((el) => {
+        response.send(el);
+    }).catch((r) => {
+        console.log(r);
+        response.send({});
+    });
 });
 //# sourceMappingURL=index.js.map
