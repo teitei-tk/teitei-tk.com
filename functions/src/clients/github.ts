@@ -1,5 +1,3 @@
-import * as functions from 'firebase-functions'
-
 import ApolloClient from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
 import { setContext } from 'apollo-link-context';
@@ -9,6 +7,11 @@ import gql from 'graphql-tag';
 
 class githubClient {
   client: any;
+  token: string;
+
+  constructor(token: string) {
+    this.token = token;
+  }
 
   public initialize() {
     const httpLink = createHttpLink({
@@ -17,12 +20,10 @@ class githubClient {
     });
 
     const authLink = setContext((_, { headers }) => {
-      const token = functions.config().github.token;
-
       return {
         headers: {
           ...headers,
-          authorization: token ? `Bearer ${token}` : null,
+          Authorization: `Bearer ${this.token}`
         }
       }
     });
@@ -31,6 +32,8 @@ class githubClient {
       link: authLink.concat(httpLink),
       cache: new InMemoryCache()
     });
+
+    this;
   }
 
   async fetchProfile(): Promise<{
@@ -44,12 +47,11 @@ class githubClient {
     const ret = await this.client.query({query: gql`
       query {
         user(login: "teitei-tk") {
-          name,
-          url,
-          email,
-          company,
-          bio,
-          websiteUrl
+          name
+          email
+          company
+          bio
+          avatarUrl
         }
       }
     `}).then((r) => {
