@@ -7,25 +7,25 @@ export const Accounts = () => {
       <h2>Social Media Accounts</h2>
       <ol>
         <li>
-          <a href="https://twitter.com/teitei_tk">Twitter</a>
+          <a className="h4" href="https://twitter.com/teitei_tk">Twitter</a>
         </li>
         <li>
-          <a href="https://github.com/teitei-tk">Github</a>
+          <a className="h4" href="https://github.com/teitei-tk">Github</a>
         </li>
         <li>
-          <a href="https://qiita.com/teitei_tk">Qiita</a>
+          <a className="h4" href="https://qiita.com/teitei_tk">Qiita</a>
         </li>
         <li>
-          <a href="https://speakerdeck.com/teitei">SpeakerDeck</a>
+          <a className="h4" href="https://speakerdeck.com/teitei">SpeakerDeck</a>
         </li>
         <li>
-          <a href="https://medium.com/@teitei_tk">Medium(Japanese writing)</a>
+          <a className="h4" href="https://medium.com/@teitei_tk">Medium(Japanese writing)</a>
         </li>
         <li>
-          <a href="http://teitei-tk.hatenablog.com">HatenaBlog(Japanese writing)</a>
+          <a className="h4" href="http://teitei-tk.hatenablog.com">HatenaBlog(Japanese writing)</a>
         </li>
         <li>
-          <a href="https://www.amazon.co.jp/gp/registry/wishlist/1KY1Q9M8EAIA5/ref=nav_wishlist_lists_1">Amazon WishList</a>
+          <a className="h4" href="https://www.amazon.co.jp/gp/registry/wishlist/1KY1Q9M8EAIA5/ref=nav_wishlist_lists_1">Amazon WishList</a>
         </li>
 
       </ol>

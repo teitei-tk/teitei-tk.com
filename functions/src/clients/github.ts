@@ -5,6 +5,30 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 import fetch from 'node-fetch';
 import gql from 'graphql-tag';
 
+interface Repository {
+  name: string
+  url: string
+  description: string
+  languages: {
+    edges: Array<{
+      node: {
+        name: string
+      }
+    }>
+  }
+}
+
+interface User {
+  name: string
+  email: string
+  bio: string
+  avatarUrl: string
+
+  pinnedRepositories: {
+    edges: Array<{ node: Repository }>
+  }
+}
+
 class githubClient {
   client: any;
   token: string;
@@ -37,24 +61,37 @@ class githubClient {
   }
 
   async fetchProfile(): Promise<{
-    name: string,
-    url: string,
-    email: string,
-    company: string,
-    bio: string,
-    websiteUrl: string
+    data: {
+      user: User
+    }
   }> {
     const ret = await this.client.query({query: gql`
-      query {
+      {
         user(login: "teitei-tk") {
           name
           email
           company
           bio
           avatarUrl
+          pinnedRepositories(first: 6) {
+            edges {
+              node {
+                name
+                url
+                description
+                languages(first: 5) {
+                  edges {
+                    node {
+                      name
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
-    `}).then((r) => {
+  `}).then((r) => {
       return r;
     });
 

@@ -4,6 +4,7 @@ import * as ReactDOM from 'react-dom';
 import 'furtive/css/furtive.min.css'
 
 import { Summary } from './components/summary'
+import { Profile } from './components/profile'
 import { Accounts } from './components/accounts'
 import { Contants } from './components/contants'
 
@@ -12,6 +13,7 @@ class App extends React.Component<any, any> {
     return (
       <div>
         <Summary />
+        <Profile />
         <Accounts />
         <Contants />
       </div>
