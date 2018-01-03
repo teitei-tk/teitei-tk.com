@@ -3,11 +3,11 @@
     "public": "build",
     "rewrites": [
       {
-        "source": "github",
+        "source": "/github",
         "function": "github"
       },
       {
-        "source": "/",
+        "source": "**",
         "destination": "/index.html"
       }
     ]
