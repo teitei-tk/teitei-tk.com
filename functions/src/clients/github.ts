@@ -35,6 +35,7 @@ class githubClient {
 
   constructor(token: string) {
     this.token = token;
+    this.initialize();
   }
 
   public initialize() {
