@@ -2,7 +2,7 @@ import * as React from 'react';
 
 export const Contants = () => {
   return (
-    <div className="measure px2">
+    <div className="measure p2">
       <h3>Contant for</h3>
       <ul>
         <li>

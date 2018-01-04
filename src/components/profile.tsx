@@ -48,21 +48,21 @@ export class Profile extends React.Component {
   render() {
     return (
       <div>
-        <div className="grd measure px2">
+        <div className="grd measure p2">
           <div className="grd-row">
-            <div className="grd-row-col-2-6 py1 txt--center">
+            <div className="grd-row-col-2-8 py1 txt--center">
               <h5>Avatar</h5>
               <p className="h4">
                 <img src={this.state.avatarUrl} />
               </p>
             </div>
-            <div className="grd-row-col-2-6 p1 txt--center">
+            <div className="grd-row-col-2-8 p1 txt--center">
               <h5>name</h5>
               <p className="h4 py2">
                 {this.state.name}
               </p>
             </div>
-            <div className="grd-row-col-2-6 p1 txt--center">
+            <div className="grd-row-col-2-8 p1 txt--center">
               <h5>Biography</h5>
               <p className="h4 py2">
                 {this.state.bio}

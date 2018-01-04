@@ -267,6 +267,10 @@
   version "3.0.32"
   resolved "https://registry.yarnpkg.com/@types/long/-/long-3.0.32.tgz#f4e5af31e9e9b196d8e5fca8a5e2e20aa3d60b69"
 
+"@types/luxon@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@types/luxon/-/luxon-0.2.2.tgz#ca83c1026980b111254ef78587ee027483e57df4"
+
 "@types/mime@*":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.0.tgz#5a7306e367c539b9f6543499de8dd519fac37a8b"
@@ -2374,6 +2378,10 @@ lru-cache@^4.0.1:
   dependencies:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
+
+luxon@^0.2.11:
+  version "0.2.11"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-0.2.11.tgz#ac3a3d39e2d169ec1e894b73c595264cbfb45671"
 
 make-dir@^1.0.0:
   version "1.1.0"
