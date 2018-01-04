@@ -4,7 +4,7 @@ import * as ReactDOM from 'react-dom';
 export const Accounts = () => {
   return (
     <div className="measure p2">
-      <h2>Social Media Accounts</h2>
+      <h2 className="txt--center">Social Media Accounts</h2>
       <ol>
         <li>
           <a className="h4" href="https://twitter.com/teitei_tk">Twitter</a>
