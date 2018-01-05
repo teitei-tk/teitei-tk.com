@@ -7,7 +7,8 @@
   "license": "Apache 2.0",
   "private": true,
   "scripts": {
-    "build": "yarn run tslint -p tslint.json && yarn run webpack",
+    "correct": "yarn run prettier --write ./src/**/*",
+    "build": "yarn correct && yarn run tslint -p tslint.json && yarn run webpack",
     "watch": "yarn run build && yarn run firebase serve",
     "deploy": "yarn run build && yarn run firebase deploy"
   },
@@ -31,9 +32,11 @@
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^2.30.1",
+    "prettier": "^1.9.2",
     "style-loader": "^0.19.1",
     "ts-loader": "^3.2.0",
     "tslint": "^5.8.0",
+    "tslint-plugin-prettier": "^1.3.0",
     "typescript": "^2.6.2",
     "webpack": "^3.10.0",
     "webpack-node-externals": "^1.6.0"

@@ -1,50 +1,54 @@
-import axios from 'axios'
-import * as React from 'react';
+import axios from "axios";
+import * as React from "react";
 
-declare interface Repository {
-  name: string
-  url: string
-  description: string
-  languages: {
+interface ProfileState {
+  name: string;
+  avatarUrl: string;
+  bio: string;
+  email: string;
+  pinnedRepositories: {
     edges: Array<{
       node: {
-        name: string
-      }
-    }>
-  }
+        name: string;
+        url: string;
+        description: string;
+        languages: {
+          edges: Array<{
+            node: {
+              name: string;
+            };
+          }>;
+        };
+      };
+    }>;
+  };
 }
 
 export class Profile extends React.Component {
-  state: {
-    name: string,
-    avatarUrl: string,
-    bio: string,
-    email: string,
-    pinnedRepositories: {
-      edges: Array<{ node: Repository }>
-    }
-  }
+  state: ProfileState;
 
   constructor(props) {
     super(props);
 
     this.state = {
-      name: '',
-      avatarUrl: '',
-      bio: '',
-      email: '',
+      name: "",
+      avatarUrl: "",
+      bio: "",
+      email: "",
       pinnedRepositories: {
         edges: []
       }
-    }
+    };
   }
 
   componentDidMount() {
-    axios('/github').then((r) => {
-      this.setState(r.data);
-    }).catch(() => {
-      this.setState(this.state)
-    })
+    axios("/github")
+      .then(r => {
+        this.setState(r.data);
+      })
+      .catch(() => {
+        this.setState(this.state);
+      });
   }
 
   render() {
@@ -63,25 +67,27 @@ export class Profile extends React.Component {
           <div className="grd-row">
             <div className="grd-row-col-2-6 p1 txt--center">
               <h5>name</h5>
-              <p className="h4 py2">
-                {this.state.name}
-              </p>
+              <p className="h4 py2">{this.state.name}</p>
             </div>
             <div className="grd-row-col-2-6 p1 txt--center">
               <h5>Biography</h5>
-              <p className="h4 py2">
-                {this.state.bio}
-              </p>
+              <p className="h4 py2">{this.state.bio}</p>
             </div>
             <div className="grd-row-col-2-6 p1 txt--center">
-              <h5>Contant</h5>
+              <h5>Contact</h5>
               <p className="h4 py2">
-                <a className="h4 py2" href="https://twitter.com/teitei_tk">{this.state.email}</a>
+                <a
+                  className="h4 py2"
+                  target="_blank"
+                  href="https://twitter.com/teitei_tk"
+                >
+                  {this.state.email}
+                </a>
               </p>
             </div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
