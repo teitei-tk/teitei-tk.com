@@ -42,6 +42,8 @@ export class Profile extends React.Component {
   componentDidMount() {
     axios('/github').then((r) => {
       this.setState(r.data);
+    }).catch(() => {
+      this.setState(this.state)
     })
   }
 

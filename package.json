@@ -7,8 +7,9 @@
   "license": "Apache 2.0",
   "private": true,
   "scripts": {
-    "watch": "yarn run webpack -w && yarn run firebase serve",
-    "deploy": "yarn run webpack && yarn run firebase deploy"
+    "build": "yarn run tslint -p tslint.json && yarn run webpack",
+    "watch": "yarn run build && yarn run firebase serve",
+    "deploy": "yarn run build && yarn run firebase deploy"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.36",
@@ -19,7 +20,6 @@
     "@types/react": "^16.0.31",
     "@types/react-dom": "^16.0.3",
     "awesome-typescript-loader": "^3.4.1",
-    "axios": "^0.17.1",
     "babel-cli": "^7.0.0-beta.3",
     "babel-core": "^7.0.0-beta.3",
     "babel-loader": "^7.1.2",
@@ -30,18 +30,20 @@
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
-    "furtive": "^2.4.0",
     "html-webpack-plugin": "^2.30.1",
     "style-loader": "^0.19.1",
     "ts-loader": "^3.2.0",
+    "tslint": "^5.8.0",
     "typescript": "^2.6.2",
     "webpack": "^3.10.0",
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
     "apollo-link": "^1.0.7",
+    "axios": "^0.17.1",
     "firebase": "^4.8.1",
     "firebase-tools": "^3.16.0",
+    "furtive": "^2.4.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   }
