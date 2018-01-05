@@ -1,13 +1,13 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 
-import 'furtive/css/furtive.min.css'
+import "furtive/css/furtive.min.css";
 
-import { Summary } from './components/summary'
-import { Profile } from './components/profile'
-import { Accounts } from './components/accounts'
+import { Summary } from "./components/summary";
+import { Profile } from "./components/profile";
+import { Accounts } from "./components/accounts";
 
-class App extends React.Component<any, any> {
+class App extends React.Component {
   render() {
     return (
       <div>
@@ -15,11 +15,8 @@ class App extends React.Component<any, any> {
         <Profile />
         <Accounts />
       </div>
-    )
+    );
   }
 }
 
-ReactDOM.render(
-  <App />,
-  document.querySelector('#root') as HTMLElement
-);
+ReactDOM.render(<App />, document.querySelector("#root"));
