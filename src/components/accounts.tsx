@@ -19,7 +19,7 @@ export const Accounts = () => {
           <a className="h4" href="https://speakerdeck.com/teitei">SpeakerDeck</a>
         </li>
         <li>
-          <a className="h4" href="https://www.linkedin.com/in/yoshikatsu-higa-2707a5146/">Linkedin</a>
+          <a className="h4" href="https://www.linkedin.com/in/teitei-tk/">Linkedin</a>
         </li>
         <li>
           <a className="h4" href="https://medium.com/@teitei_tk">Medium(Japanese writing)</a>
