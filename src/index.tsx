@@ -6,6 +6,7 @@ import "furtive/css/furtive.min.css";
 import { Summary } from "./components/summary";
 import { Profile } from "./components/profile";
 import { Accounts } from "./components/accounts";
+import { Footer } from "./components/footer";
 
 class App extends React.Component {
   render() {
@@ -14,6 +15,7 @@ class App extends React.Component {
         <Summary />
         <Profile />
         <Accounts />
+        <Footer />
       </div>
     );
   }
