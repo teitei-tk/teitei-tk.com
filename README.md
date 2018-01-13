@@ -1,5 +1,7 @@
 # teitei-tk.com
 
+https://teitei-tk.com
+
 ## Architecture
 * Typescript + React.js on firebase Hosting and Cloud-functions with GraphQL
 
