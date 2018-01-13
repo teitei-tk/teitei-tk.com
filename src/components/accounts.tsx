@@ -60,15 +60,6 @@ export const Accounts = () => {
             HatenaBlog(Japanese writing)
           </a>
         </li>
-        <li>
-          <a
-            className="h4"
-            target="_blank"
-            href="https://www.amazon.co.jp/gp/registry/wishlist/1KY1Q9M8EAIA5/ref=nav_wishlist_lists_1"
-          >
-            Amazon WishList
-          </a>
-        </li>
       </ol>
     </div>
   );
