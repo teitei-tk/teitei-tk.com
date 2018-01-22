@@ -1,9 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -43,6 +45,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'teitei-tk.com',
       template: './public/index.html'
+    }),
+    new UglifyJSPlugin({
+      sourceMap: true
     }),
     new CleanWebpackPlugin(['build']),
   ]
