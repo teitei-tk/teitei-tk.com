@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": ["es6", "dom"],
+    "lib": ["es6", "dom", "esnext"],
     "module": "commonjs",
     "noImplicitReturns": true,
     "outDir": "lib",
@@ -8,6 +8,9 @@
     "target": "es6"
   },
   "compileOnSave": true,
+  "exclude": [
+    "**node_modules**"
+  ],
   "include": [
     "src"
   ]
