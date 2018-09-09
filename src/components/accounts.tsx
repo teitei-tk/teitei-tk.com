@@ -42,13 +42,21 @@ export const Accounts = () => {
             Linkedin
           </a>
         </li>
+      </ol>
+      <h2 className="txt--center">Blogs</h2>
+      <ul>
         <li>
           <a
             className="h4"
             target="_blank"
             href="https://medium.com/@teitei_tk"
           >
-            Medium(Japanese writing)
+            Medium
+          </a>
+        </li>
+        <li>
+          <a className="h4" target="_blank" href="https://note.mu/teitei_tk">
+            note
           </a>
         </li>
         <li>
@@ -57,10 +65,10 @@ export const Accounts = () => {
             target="_blank"
             href="http://teitei-tk.hatenablog.com"
           >
-            HatenaBlog(Japanese writing)
+            HatenaBlog
           </a>
         </li>
-      </ol>
+      </ul>
     </div>
   );
 };
