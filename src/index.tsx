@@ -5,11 +5,7 @@ import * as ReactGA from "react-ga";
 
 import "furtive/css/furtive.min.css";
 
-import { Summary } from "./components/summary";
-import { Profile } from "./components/profile";
-import { Accounts } from "./components/accounts";
-import { Donate } from "./components/donate";
-import { Footer } from "./components/footer";
+import { Components } from "./components";
 
 class App extends React.Component {
   constructor(props) {
@@ -20,15 +16,7 @@ class App extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <Summary />
-        <Profile />
-        <Accounts />
-        <Donate />
-        <Footer />
-      </div>
-    );
+    return <Components />;
   }
 }
 
