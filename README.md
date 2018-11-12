@@ -14,7 +14,7 @@ https://teitei-tk.com
 * Webpack 4.6 or later
 * React 16.3 or later
 * Babel 7.0-beta or later
-* firebase 4.8 or later
+* firebase 5.5 or later
 * Apollo-GraphQL 2.0 or later
 
 ## DirectoryStructure
