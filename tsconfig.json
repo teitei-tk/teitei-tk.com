@@ -5,16 +5,9 @@
     "jsx": "react",
     "module": "commonjs",
     "allowSyntheticDefaultImports": true,
-    "pretty": true,
+    "pretty": true
   },
-  "include": [
-    "./src/**/*.ts",
-    "./src/**/*.tsx"
-  ],
-  "exclude": [
-    "**node_modules**"
-  ],
-  "lib": [
-    "dom"
-  ]
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "./functions/src/**/*.ts"],
+  "exclude": ["**node_modules**"],
+  "lib": ["dom"]
 }

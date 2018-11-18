@@ -9,6 +9,7 @@
   "scripts": {
     "correct": "yarn run prettier --write ./src/**/*",
     "lint": "yarn tslint -p tslint.json",
+    "test": "yarn lint",
     "build": "yarn correct && yarn lint && yarn webpack",
     "watch": "yarn run build -w",
     "serve": "yarn run firebase serve",
