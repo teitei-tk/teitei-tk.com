@@ -8,7 +8,9 @@
   "private": true,
   "scripts": {
     "correct": "yarn run prettier --write ./src/**/*",
-    "build": "yarn correct && yarn run tslint -p tslint.json && yarn run webpack",
+    "lint": "yarn tslint -p tslint.json",
+    "test": "yarn lint",
+    "build": "yarn correct && yarn lint && yarn webpack",
     "watch": "yarn run build -w",
     "serve": "yarn run firebase serve",
     "deploy": "yarn run build && yarn run firebase deploy"
