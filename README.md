@@ -1,5 +1,7 @@
 # teitei-tk.com
 
+[![CircleCI](https://circleci.com/gh/teitei-tk/teitei-tk.com.svg?style=svg)](https://circleci.com/gh/teitei-tk/teitei-tk.com)
+
 my portfolio site
 
 https://teitei-tk.com
