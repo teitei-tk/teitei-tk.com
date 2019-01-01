@@ -28,6 +28,8 @@
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
+    "gatsby-cli": "^2.4.8",
+    "gatsby-plugin-typescript": "^2.0.3",
     "html-webpack-plugin": "^3.2.0",
     "prettier": "^1.9.2",
     "style-loader": "^0.21.0",
@@ -46,8 +48,10 @@
     "firebase": "^5.5.8",
     "firebase-tools": "^6.0.1",
     "furtive": "^2.4.0",
+    "gatsby": "^2.0.79",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-ga": "^2.4.1"
+    "react-ga": "^2.4.1",
+    "uikit": "^3.0.0-rc.25"
   }
 }
