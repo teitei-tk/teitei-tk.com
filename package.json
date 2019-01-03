@@ -10,7 +10,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "develop": "gatsby develop",
-    "deploy": "yarn build && yarn run firebase deploy"
+    "deploy": "yarn build && yarn run firebase deploy",
+    "test": "echo 0"
   },
   "devDependencies": {
     "gatsby-cli": "^2.4.8",
