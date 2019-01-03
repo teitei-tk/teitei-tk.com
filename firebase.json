@@ -1,18 +1,11 @@
 {
   "hosting": {
-    "public": "build",
+    "public": "public",
     "rewrites": [
-      {
-        "source": "/github",
-        "function": "github"
-      },
       {
         "source": "**",
         "destination": "/index.html"
       }
     ]
-  },
-  "functions": {
-    "predeploy": "npm --prefix functions run build"
   }
 }
