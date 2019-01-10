@@ -135,7 +135,7 @@ export const SocialMediaAccounts = (props: {
         </li>
         <li>
           <a href={props.github} target="_blank">
-            Github
+            GitHub
           </a>
         </li>
         <li>
