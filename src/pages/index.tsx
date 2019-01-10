@@ -1,5 +1,6 @@
 import * as React from "react";
 import { graphql } from "gatsby";
+import Img, { FixedObject } from "gatsby-image";
 
 import "uikit/dist/css/uikit.css";
 
@@ -32,6 +33,11 @@ interface IPageProps {
         };
       };
     };
+    file: {
+      childImageSharp: {
+        fixed: object;
+      };
+    };
   };
 }
 
@@ -61,6 +67,13 @@ export const query = graphql`
           amazonWishList
           bitcoin
           ethereum
+        }
+      }
+    }
+    file(relativePath: { eq: "kyash-qr.jpg" }) {
+      childImageSharp {
+        fixed(width: 140, height: 140) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
@@ -181,10 +194,15 @@ export const Donate = (props: {
   bitcoin: string;
   ethereum: string;
   amazonWishList: string;
+  kyashQRCode: FixedObject;
 }) => {
   return (
     <div className="uk-text-center">
       <h2>Donate</h2>
+      <div>
+        <p>Kyash: </p>
+        <Img fixed={props.kyashQRCode} />
+      </div>
       <p>
         Bitcoin: <code>{props.bitcoin}</code>
       </p>
@@ -209,9 +227,16 @@ const Page: React.SFC<IPageProps> = props => {
     donate
   } = props.data.site.siteMetadata;
 
+  const base64Image = props.data.file.childImageSharp.fixed;
+
   const avatar = {
     ...user,
     ...{ twitter: accounts.twitter }
+  };
+
+  const donates = {
+    ...donate,
+    ...{ kyashQRCode: props.data.file.childImageSharp.fixed }
   };
 
   return (
@@ -225,7 +250,7 @@ const Page: React.SFC<IPageProps> = props => {
 
       <Avatar {...avatar} />
       <SocialMediaAccounts {...accounts} />
-      <Donate {...donate} />
+      <Donate {...donates} />
 
       <p className="uk-text-center uk-padding-large">
         Source code:{" "}
