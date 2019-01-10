@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   siteMetadata: {
     name: "teitei-tk.com",
@@ -26,5 +28,16 @@ module.exports = {
       ethereum: "0x1BE2b1A385DD21025BCD9A4d6264b3d9093C78FE"
     }
   },
-  plugins: ["gatsby-plugin-typescript"]
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`)
+      }
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    "gatsby-plugin-typescript"
+  ]
 };
