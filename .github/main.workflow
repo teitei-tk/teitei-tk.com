@@ -24,5 +24,8 @@ action "w9jds/firebase-action" {
   uses = "w9jds/firebase-action@master"
   needs = ["build assets"]
   secrets = ["FIREBASE_TOKEN"]
+  env = {
+    PROJECT_ID = "teitei-tk-com"
+  }
   args = "deploy"
 }
