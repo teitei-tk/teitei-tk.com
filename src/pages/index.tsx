@@ -240,7 +240,7 @@ const Page: React.SFC<IPageProps> = props => {
   };
 
   return (
-    <div>
+    <>
       <div
         className="uk-padding uk-child-width-expand@s uk-text-center"
         uk-grid
@@ -258,7 +258,7 @@ const Page: React.SFC<IPageProps> = props => {
           Github
         </a>
       </p>
-    </div>
+    </>
   );
 };
 
