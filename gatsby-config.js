@@ -1,5 +1,3 @@
-const path = require("path");
-
 module.exports = {
   siteMetadata: {
     name: "teitei-tk.com",
@@ -30,14 +28,13 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-plugin-react-svg",
       options: {
-        name: `images`,
-        path: path.join(__dirname, `src`, `images`)
+        rule: {
+          include: /images/
+        }
       }
     },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     "gatsby-plugin-typescript"
   ]
 };
