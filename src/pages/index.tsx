@@ -5,7 +5,7 @@ import KyashQRCode from "./../images/kyash-qr.svg";
 
 import "uikit/dist/css/uikit.css";
 
-interface IPageProps {
+interface IndexPageProps {
   data: {
     site: {
       siteMetadata: {
@@ -105,7 +105,7 @@ export const Avatar = (props: {
           <div>
             <h5>Contact</h5>
             <p>
-              <a href={props.twitter} target="_blank">
+              <a href={props.twitter} target="_blank" rel="noreferrer noopener">
                 {props.email}
               </a>
             </p>
@@ -131,27 +131,27 @@ export const SocialMediaAccounts = (props: {
       <h2>Social Media Accounts</h2>
       <ul className="uk-list uk-list-bulle">
         <li>
-          <a href={props.twitter} target="_blank">
+          <a href={props.twitter} target="_blank" rel="noreferrer noopener">
             Twitter
           </a>
         </li>
         <li>
-          <a href={props.github} target="_blank">
+          <a href={props.github} target="_blank" rel="noreferrer noopener">
             GitHub
           </a>
         </li>
         <li>
-          <a href={props.qiita} target="_blank">
+          <a href={props.qiita} target="_blank" rel="noreferrer noopener">
             Qiita
           </a>
         </li>
         <li>
-          <a href={props.speakerDeck} target="_blank">
+          <a href={props.speakerDeck} target="_blank" rel="noreferrer noopener">
             SpeakerDeck
           </a>
         </li>
         <li>
-          <a href={props.linkedin} target="_blank">
+          <a href={props.linkedin} target="_blank" rel="noreferrer noopener">
             Linkedin
           </a>
         </li>
@@ -160,17 +160,17 @@ export const SocialMediaAccounts = (props: {
       <h2>Blogs</h2>
       <ul className="uk-list uk-list-bulle">
         <li>
-          <a href={props.note} target="_blank">
+          <a href={props.note} target="_blank" rel="noreferrer noopener">
             note
           </a>
         </li>
         <li>
-          <a href={props.medium} target="_blank">
+          <a href={props.medium} target="_blank" rel="noreferrer noopener">
             Medium
           </a>
         </li>
         <li>
-          <a href={props.hatenaBlog} target="_blank">
+          <a href={props.hatenaBlog} target="_blank" rel="noreferrer noopener">
             HatenaBlog
           </a>
         </li>
@@ -198,7 +198,11 @@ export const Donate = (props: {
         Ethereum: <code>{props.ethereum}</code>
       </p>
       <p>
-        <a href={props.amazonWishList} target="_blank">
+        <a
+          href={props.amazonWishList}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
           AmazonWishList
         </a>
       </p>
@@ -206,7 +210,7 @@ export const Donate = (props: {
   );
 };
 
-const Page: React.SFC<IPageProps> = props => {
+const Page: React.SFC<IndexPageProps> = props => {
   const {
     name,
     repositoryURL,
@@ -235,7 +239,7 @@ const Page: React.SFC<IPageProps> = props => {
 
       <p className="uk-text-center uk-padding-large">
         Source code:{" "}
-        <a href={repositoryURL} target="_blank">
+        <a href={repositoryURL} target="_blank" rel="noreferrer noopener">
           Github
         </a>
       </p>
