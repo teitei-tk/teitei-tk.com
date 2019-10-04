@@ -27,12 +27,12 @@
     "typescript": "^3.2.2"
   },
   "dependencies": {
-    "@types/react": "^16.3.12",
+    "@types/react": "^16.9.4",
     "@types/react-dom": "^16.9.1",
     "firebase": "^5.5.8",
     "firebase-tools": "^6.0.1",
     "gatsby": "^2.0.79",
-    "react": "^16.5.1",
+    "react": "^16.10.1",
     "react-dom": "^16.5.1",
     "uikit": "^3.0.0-rc.25"
   }
