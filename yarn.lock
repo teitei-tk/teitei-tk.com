@@ -11093,10 +11093,10 @@ ua-parser-js@^0.7.18:
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.20.tgz#7527178b82f6a62a0f243d1f94fd30e3e3c21098"
   integrity sha512-8OaIKfzL5cpx8eCMAhhvTlft8GYF8b2eQr6JkCyVdrgjcytyOmPCXrqXFcUnhonRpLlh5yxEZVohm6mzaowUOw==
 
-uikit@^3.0.0-rc.25:
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.1.6.tgz#6e4126e8f30fbba424d4b6788e49dda9ff9be088"
-  integrity sha512-S4+1kPUbBXcAc8kO8OhZRgawcp6gmMK9BSx865vsun4ul/rXwgQ95i/3hF2axchQ5Gb6ncH1VfUpfKiOfFecsA==
+uikit@^3.2.3:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.2.3.tgz#1ee5a9d19706769b32e5f171ccd3feec3aed4f1d"
+  integrity sha512-XDkFIlJQNA2sovxnMJAMyryqXwBFbOjL2VT7uDUDbxyl39hiKG0U60z6T+v8zBfI5AmANjDBoCSsK8CDkZJgAQ==
 
 unc-path-regex@^0.1.2:
   version "0.1.2"
