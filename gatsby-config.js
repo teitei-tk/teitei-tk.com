@@ -35,6 +35,13 @@ module.exports = {
         }
       }
     },
-    "gatsby-plugin-typescript"
+    "gatsby-plugin-typescript",
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-30698887-6",
+        head: true,
+      },
+    }
   ]
 };
