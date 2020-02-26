@@ -34,7 +34,7 @@
     "firebase-tools": "^7.6.1",
     "gatsby": "^2.18.11",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0",
+    "react-dom": "^16.13.0",
     "uikit": "^3.0.0-rc.25"
   }
 }
