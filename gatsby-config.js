@@ -16,7 +16,7 @@ module.exports = {
       speakerDeck: "https://speakerdeck.com/teitei",
       linkedin: "https://www.linkedin.com/in/teitei-tk/",
       medium: "https://medium.com/@teitei_tk",
-      note: "https://note.mu/teitei_tk",
+      note: "https://note.com/teitei_tk",
       hatenaBlog: "http://teitei-tk.hatenablog.com/"
     },
     donate: {
@@ -40,8 +40,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-30698887-6",
-        head: true,
-      },
+        head: true
+      }
     }
   ]
 };
