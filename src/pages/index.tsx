@@ -210,18 +210,18 @@ export const Donate = (props: {
   );
 };
 
-const Page: React.SFC<IndexPageProps> = props => {
+const Page: React.SFC<IndexPageProps> = (props) => {
   const {
     name,
     repositoryURL,
     user,
     accounts,
-    donate
+    donate,
   } = props.data.site.siteMetadata;
 
   const avatar = {
     ...user,
-    ...{ twitter: accounts.twitter }
+    ...{ twitter: accounts.twitter },
   };
 
   return (
