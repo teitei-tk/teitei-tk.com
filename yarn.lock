@@ -8885,7 +8885,7 @@ node-object-hash@^2.0.0:
   resolved "https://registry.yarnpkg.com/node-object-hash/-/node-object-hash-2.0.0.tgz#9971fcdb7d254f05016bd9ccf508352bee11116b"
   integrity sha512-VZR0zroAusy1ETZMZiGeLkdu50LGjG5U1KHZqTruqtTyQ2wfWhHG2Ow4nsUbfTFGlaREgNHcCWoM/OzEm6p+NQ==
 
-node-pre-gyp@*, node-pre-gyp@^0.14.0:
+node-pre-gyp@^0.14.0:
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.14.0.tgz#9a0596533b877289bcad4e143982ca3d904ddc83"
   integrity sha512-+CvDC7ZttU/sSt9rFjix/P05iS43qHCOOGzcr3Ry99bXG7VX953+vFyEuph/tfqoYu8dttBkE86JSKBO2OzcxA==
@@ -12302,10 +12302,10 @@ typescript@^3.8.3:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.8.3.tgz#409eb8544ea0335711205869ec458ab109ee1061"
   integrity sha512-MYlEfn5VrLNsgudQTVJeNaQFUAI7DkhnOjdpAp4T+ku1TfQClewlbSuTVHiA+8skNBgaf02TL/kLOvig4y3G8w==
 
-uikit@^3.3.7:
-  version "3.3.7"
-  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.3.7.tgz#0f7fd0be9f4583c55c0bf8d1ac0f715bc42cb573"
-  integrity sha512-vY7chSjBpu3hgFHFbl/Cr2cUodoEew69uPPQl2E0WcK6UkG2DYhgV0XNDMNLpeGGfrw6C+H9cW89I7Gq7N8Ylw==
+uikit@^3.4.4:
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.4.4.tgz#0b2e1b17264ec62219df2485693a04704df2dbb6"
+  integrity sha512-VTDqtTUTH2XiGw0MudWki4oPl+Bxt3JEm5S/CE1B9zUmt9/FqKRYxv/7s5GSeNMnRMSQa2evQTkLSGsdBmKXdA==
 
 unc-path-regex@^0.1.2:
   version "0.1.2"
