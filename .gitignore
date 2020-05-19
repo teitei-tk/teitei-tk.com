@@ -56,11 +56,11 @@ typings/
 
 # dotenv environment variables file
 .env
+.env.build
 
 build/
-
 .firebase/
-
 public/
-
 .cache/
+
+.next

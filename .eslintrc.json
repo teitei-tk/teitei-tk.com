@@ -5,10 +5,11 @@
   },
   "extends": [
     "eslint:recommended",
+    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:prettier/recommended",
-    "prettier/@typescript-eslint",
-    "plugin:react/recommended"
+    "prettier/@typescript-eslint"
   ],
   "settings": {
     "react": {
@@ -21,17 +22,14 @@
   "plugins": ["@typescript-eslint"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "project": "./tsconfig.json"
+    "ecmaVersion": 2018,
+    "sourceType": "module"
   },
   "rules": {
     "no-console": "off",
     "no-unused-vars": ["error", { "ignoreModules": true }],
     "react/prop-types": "off",
+    "react/react-in-jsx": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
@@ -42,5 +40,8 @@
     ],
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-member-accessibility": "off"
+  },
+  "globals": {
+    "React": "writable"
   }
 }

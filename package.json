@@ -7,9 +7,9 @@
   "license": "Apache 2.0",
   "private": true,
   "scripts": {
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "develop": "gatsby develop",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint 'src/**/*'",
     "test": "npm run lint"
   },
@@ -33,6 +33,7 @@
     "firebase": "^7.13.2",
     "firebase-tools": "^8.0.1",
     "gatsby": "^2.21.33",
+    "next": "^9.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "uikit": "^3.3.7"
