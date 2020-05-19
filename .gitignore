@@ -64,3 +64,7 @@ public/
 .cache/
 
 .next
+out/
+
+# Local Netlify folder
+.netlify
