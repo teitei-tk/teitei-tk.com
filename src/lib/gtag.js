@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/camelcase */
 
 // source code: https://github.com/zeit/next.js/tree/canary/examples/with-google-analytics
-export const GA_TRACKING_ID = "UA-30698887-7";
+export const GA_TRACKING_ID = "UA-30698887-6";
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url) => {
