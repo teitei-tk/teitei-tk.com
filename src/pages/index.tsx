@@ -1,223 +1,39 @@
-import * as React from "react";
-import { graphql } from "gatsby";
+import { NextPage } from "next";
 
-import KyashQRCode from "./../images/kyash-qr.svg";
+import Avatar from "components/page/index/avatar";
+import SocialMediaAccounts from "components/page/index/social_media_accounts";
+import Donate from "components/page/index/donate";
 
-import "uikit/dist/css/uikit.css";
-
-interface IndexPageProps {
-  data: {
-    site: {
-      siteMetadata: {
-        name: string;
-        repositoryURL: string;
-        user: {
-          name: string;
-          bio: string;
-          email: string;
-          avatarURL: string;
-        };
-        accounts: {
-          twitter: string;
-          github: string;
-          qiita: string;
-          speakerDeck: string;
-          linkedin: string;
-          medium: string;
-          note: string;
-          hatenaBlog: string;
-        };
-        donate: {
-          amazonWishList: string;
-          bitcoin: string;
-          ethereum: string;
-        };
-      };
+type IndexPageProps = {
+  siteMetadata: {
+    name: string;
+    repositoryURL: string;
+    user: {
+      name: string;
+      bio: string;
+      email: string;
+      avatarURL: string;
+    };
+    accounts: {
+      twitter: string;
+      github: string;
+      qiita: string;
+      speakerDeck: string;
+      linkedin: string;
+      medium: string;
+      note: string;
+      hatenaBlog: string;
+    };
+    donate: {
+      amazonWishList: string;
+      bitcoin: string;
+      ethereum: string;
     };
   };
-}
-
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        name
-        repositoryURL
-        user {
-          name
-          bio
-          email
-          avatarURL
-        }
-        accounts {
-          twitter
-          github
-          qiita
-          speakerDeck
-          linkedin
-          medium
-          note
-          hatenaBlog
-        }
-        donate {
-          amazonWishList
-          bitcoin
-          ethereum
-        }
-      }
-    }
-  }
-`;
-
-export const Avatar = (props: {
-  name: string;
-  bio: string;
-  email: string;
-  avatarURL: string;
-  twitter: string;
-}) => {
-  return (
-    <div>
-      <div uk-grid className="uk-padding">
-        <div className="uk-text-center">
-          <h4>Avatar</h4>
-          <img src={props.avatarURL} />
-        </div>
-      </div>
-
-      <div
-        uk-grid
-        className="uk-flex uk-flex-center uk-child-width-1-3@m uk-text-center uk-padding"
-      >
-        <div>
-          <div>
-            <h5>Name</h5>
-            <p>{props.name}</p>
-          </div>
-        </div>
-        <div>
-          <div>
-            <h5>Biography</h5>
-            <p>{props.bio}</p>
-          </div>
-        </div>
-        <div>
-          <div>
-            <h5>Contact</h5>
-            <p>
-              <a href={props.twitter} target="_blank" rel="noreferrer noopener">
-                {props.email}
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
 };
 
-export const SocialMediaAccounts = (props: {
-  twitter: string;
-  github: string;
-  qiita: string;
-  speakerDeck: string;
-  linkedin: string;
-  medium: string;
-  note: string;
-  hatenaBlog: string;
-}) => {
-  return (
-    <div className="uk-padding uk-text-center">
-      <h2>Social Media Accounts</h2>
-      <ul className="uk-list uk-list-bulle">
-        <li>
-          <a href={props.twitter} target="_blank" rel="noreferrer noopener">
-            Twitter
-          </a>
-        </li>
-        <li>
-          <a href={props.github} target="_blank" rel="noreferrer noopener">
-            GitHub
-          </a>
-        </li>
-        <li>
-          <a href={props.qiita} target="_blank" rel="noreferrer noopener">
-            Qiita
-          </a>
-        </li>
-        <li>
-          <a href={props.speakerDeck} target="_blank" rel="noreferrer noopener">
-            SpeakerDeck
-          </a>
-        </li>
-        <li>
-          <a href={props.linkedin} target="_blank" rel="noreferrer noopener">
-            Linkedin
-          </a>
-        </li>
-      </ul>
-
-      <h2>Blogs</h2>
-      <ul className="uk-list uk-list-bulle">
-        <li>
-          <a href={props.note} target="_blank" rel="noreferrer noopener">
-            note
-          </a>
-        </li>
-        <li>
-          <a href={props.medium} target="_blank" rel="noreferrer noopener">
-            Medium
-          </a>
-        </li>
-        <li>
-          <a href={props.hatenaBlog} target="_blank" rel="noreferrer noopener">
-            HatenaBlog
-          </a>
-        </li>
-      </ul>
-    </div>
-  );
-};
-
-export const Donate = (props: {
-  bitcoin: string;
-  ethereum: string;
-  amazonWishList: string;
-}) => {
-  return (
-    <div className="uk-text-center">
-      <h2>Donate</h2>
-      <div>
-        <p>Kyash: </p>
-        <KyashQRCode height="150" />
-      </div>
-      <p>
-        Bitcoin: <code>{props.bitcoin}</code>
-      </p>
-      <p>
-        Ethereum: <code>{props.ethereum}</code>
-      </p>
-      <p>
-        <a
-          href={props.amazonWishList}
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          AmazonWishList
-        </a>
-      </p>
-    </div>
-  );
-};
-
-const Page: React.SFC<IndexPageProps> = (props) => {
-  const {
-    name,
-    repositoryURL,
-    user,
-    accounts,
-    donate,
-  } = props.data.site.siteMetadata;
+const IndexPage: NextPage<IndexPageProps> = (props) => {
+  const { name, user, accounts, donate, repositoryURL } = props.siteMetadata;
 
   const avatar = {
     ...user,
@@ -228,7 +44,7 @@ const Page: React.SFC<IndexPageProps> = (props) => {
     <>
       <div
         className="uk-padding uk-child-width-expand@s uk-text-center"
-        uk-grid
+        uk-grid="true"
       >
         <h1 className="uk-text-lead uk-text-center">{name}</h1>
       </div>
@@ -238,13 +54,47 @@ const Page: React.SFC<IndexPageProps> = (props) => {
       <Donate {...donate} />
 
       <p className="uk-text-center uk-padding-large">
-        Source code:{" "}
+        SourceCode:{" "}
         <a href={repositoryURL} target="_blank" rel="noreferrer noopener">
-          Github
+          GitHub
         </a>
       </p>
     </>
   );
 };
 
-export default Page;
+IndexPage.getInitialProps = async (): Promise<IndexPageProps> => {
+  const staticData = {
+    siteMetadata: {
+      name: "teitei-tk.com",
+      repositoryURL: "https://github.com/teitei-tk/teitei-tk.com",
+      user: {
+        name: "teitei-tk",
+        bio: "Software Enginner",
+        avatarURL: "https://avatars3.githubusercontent.com/u/1324680?v=4",
+        email: "teitei.tk@gmail.com",
+        twitterURL: "https://twitter.com/teitei_tk",
+      },
+      accounts: {
+        twitter: "https://twitter.com/teitei_tk",
+        github: "https://github.com/teitei-tk",
+        qiita: "https://qiita.com/teitei_tk",
+        speakerDeck: "https://speakerdeck.com/teitei",
+        linkedin: "https://www.linkedin.com/in/teitei-tk/",
+        medium: "https://medium.com/@teitei_tk",
+        note: "https://note.com/teitei_tk",
+        hatenaBlog: "http://teitei-tk.hatenablog.com/",
+      },
+      donate: {
+        amazonWishList:
+          "https://www.amazon.co.jp/gp/registry/wishlist/1KY1Q9M8EAIA5/ref=nav_wishlist_lists_1",
+        bitcoin: "35Hcpn2RxXUftVuPppTWGYaNx3EhHfsWab",
+        ethereum: "0x1BE2b1A385DD21025BCD9A4d6264b3d9093C78FE",
+      },
+    },
+  };
+
+  return staticData;
+};
+
+export default IndexPage;

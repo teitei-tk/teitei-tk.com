@@ -1,17 +1,14 @@
 # teitei-tk.com
 
 ![](https://github.com/teitei-tk/teitei-tk.com/workflows/Lint/badge.svg)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/250d690b-ec88-4507-aa62-d8e730c48818/deploy-status)](https://app.netlify.com/sites/teitei-tkcom/deploys)
 
-my portfolio site
+Next.js based My Portfolio Site.
 
 https://teitei-tk.com
 
-## Architecture
-
-- Gatsby-JS on firebase Hosting with TypeScript
-
 ## Dependencies
 
-- Typescript 3.2 or later
-- firebase 5.5 or later
+- Next.js 9.4 or later
+- Typescript 3.8 or later
 - uikit 3.0 or later

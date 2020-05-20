@@ -56,11 +56,15 @@ typings/
 
 # dotenv environment variables file
 .env
+.env.build
 
 build/
-
 .firebase/
-
 public/
-
 .cache/
+
+.next
+out/
+
+# Local Netlify folder
+.netlify
