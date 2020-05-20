@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import { Text, Grid, Row } from "@zeit-ui/react";
 
 import Layout from "components/layout";
-import Avatar from "components/page/index/avatar";
+import Profile from "components/page/index/profile";
 import SocialMediaAccounts from "components/page/index/social_media_accounts";
 import Donate from "components/page/index/donate";
 
@@ -55,7 +55,7 @@ const IndexPage: NextPage<IndexPageProps> = (props) => {
             </Row>
           </Grid>
           <Grid>
-            <Avatar {...avatar} />
+            <Profile {...avatar} />
           </Grid>
           <Grid xs={24}>
             <SocialMediaAccounts {...accounts} />
@@ -86,7 +86,7 @@ IndexPage.getInitialProps = async (): Promise<IndexPageProps> => {
       repositoryURL: "https://github.com/teitei-tk/teitei-tk.com",
       user: {
         name: "teitei-tk",
-        bio: "Software Enginner",
+        bio: "Software Engineer writing Ruby, Python, PHP, JavaScript, Go",
         avatarURL: "https://avatars3.githubusercontent.com/u/1324680?v=4",
         email: "teitei.tk@gmail.com",
         twitterURL: "https://twitter.com/teitei_tk",
