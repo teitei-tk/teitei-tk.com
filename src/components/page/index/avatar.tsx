@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import { Row, Link } from "@zeit-ui/react";
 
 type AvatarProps = {
   name: string;
@@ -8,6 +9,16 @@ type AvatarProps = {
   twitter: string;
 };
 
+const Avatar: NextPage<AvatarProps> = (props: AvatarProps) => {
+  return (
+    <div className="profile">
+      <Row align="bottom" className="user">
+        <Link>{props.name}</Link>
+      </Row>
+    </div>
+  );
+};
+/*
 const Avatar: NextPage<AvatarProps> = (props: AvatarProps) => {
   return (
     <div>
@@ -48,5 +59,6 @@ const Avatar: NextPage<AvatarProps> = (props: AvatarProps) => {
     </div>
   );
 };
+*/
 
 export default Avatar;

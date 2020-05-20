@@ -1,8 +1,28 @@
-import Document, { Head, Main, NextScript } from "next/document";
-
+import Document, {
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+} from "next/document";
+import { CssBaseline } from "@zeit-ui/react";
 import { GA_TRACKING_ID } from "../lib/gtag";
 
 export default class MyDocument extends Document {
+  static async getInitialProps(ctx: DocumentContext) {
+    const initialProps = await Document.getInitialProps(ctx);
+    const styles = CssBaseline.flush();
+
+    return {
+      ...initialProps,
+      styles: (
+        <>
+          {initialProps.styles}
+          {styles}
+        </>
+      ),
+    };
+  }
+
   render() {
     return (
       <html>

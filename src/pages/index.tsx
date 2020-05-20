@@ -1,5 +1,8 @@
 import { NextPage } from "next";
 
+import { Text, Grid, Row } from "@zeit-ui/react";
+
+import Layout from "components/layout";
 import Avatar from "components/page/index/avatar";
 import SocialMediaAccounts from "components/page/index/social_media_accounts";
 import Donate from "components/page/index/donate";
@@ -42,23 +45,36 @@ const IndexPage: NextPage<IndexPageProps> = (props) => {
 
   return (
     <>
-      <div
-        className="uk-padding uk-child-width-expand@s uk-text-center"
-        uk-grid="true"
-      >
-        <h1 className="uk-text-lead uk-text-center">{name}</h1>
-      </div>
-
-      <Avatar {...avatar} />
-      <SocialMediaAccounts {...accounts} />
-      <Donate {...donate} />
-
-      <p className="uk-text-center uk-padding-large">
-        SourceCode:{" "}
-        <a href={repositoryURL} target="_blank" rel="noreferrer noopener">
-          GitHub
-        </a>
-      </p>
+      <Layout>
+        <Grid.Container justify="center">
+          <Grid xs={24}>
+            <Row justify="center">
+              <div className="title">
+                <Text h1>{name}</Text>
+              </div>
+            </Row>
+          </Grid>
+          <Grid>
+            <Avatar {...avatar} />
+          </Grid>
+          <Grid xs={24}>
+            <SocialMediaAccounts {...accounts} />
+          </Grid>
+          <Grid xs={24}>
+            <Donate {...donate} />
+          </Grid>
+          <Grid xs={24}>
+            <p className="uk-text-center uk-padding-large">
+              SourceCode:{" "}
+              <a href={repositoryURL} target="_blank" rel="noreferrer noopener">
+                GitHub
+              </a>
+            </p>
+          </Grid>
+        </Grid.Container>
+        {/*
+         */}
+      </Layout>
     </>
   );
 };
