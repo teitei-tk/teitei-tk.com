@@ -4,7 +4,7 @@ import { Text, Grid, Row } from "@zeit-ui/react";
 
 import Layout from "components/layout";
 import Profile from "components/page/index/profile";
-import SocialMediaAccounts from "components/page/index/social_media_accounts";
+import Accounts from "components/page/index/accounts";
 import Donate from "components/page/index/donate";
 
 type IndexPageProps = {
@@ -58,7 +58,7 @@ const IndexPage: NextPage<IndexPageProps> = (props) => {
             <Profile {...avatar} />
           </Grid>
           <Grid xs={24}>
-            <SocialMediaAccounts {...accounts} />
+            <Accounts {...accounts} />
           </Grid>
           <Grid xs={24}>
             <Donate {...donate} />
