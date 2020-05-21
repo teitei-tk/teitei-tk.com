@@ -11,4 +11,4 @@ https://teitei-tk.com
 
 - Next.js 9.4 or later
 - Typescript 3.8 or later
-- uikit 3.0 or later
+- @zeit-ui/react 1.5.0 or later
