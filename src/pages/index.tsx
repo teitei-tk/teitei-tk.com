@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 
-import { Text, Grid, Row } from "@zeit-ui/react";
+import { Divider, Link, Text, Grid, Row } from "@zeit-ui/react";
 
 import Layout from "components/layout";
 import Profile from "components/page/index/profile";
@@ -64,16 +64,25 @@ const IndexPage: NextPage<IndexPageProps> = (props) => {
             <Donate {...donate} />
           </Grid>
           <Grid xs={24}>
-            <p className="uk-text-center uk-padding-large">
-              SourceCode:{" "}
-              <a href={repositoryURL} target="_blank" rel="noreferrer noopener">
-                GitHub
-              </a>
-            </p>
+            <Row justify="center">
+              <div className="sourceCode">
+                <Text p>
+                  <Divider />
+                  <Text b>SourceCode: </Text>
+                  <Link
+                    icon
+                    underline
+                    href={repositoryURL}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    GitHub
+                  </Link>
+                </Text>
+              </div>
+            </Row>
           </Grid>
         </Grid.Container>
-        {/*
-         */}
       </Layout>
     </>
   );
