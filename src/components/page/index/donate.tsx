@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import { Code, Grid, Link, Row, Text, useTheme } from "@zeit-ui/react";
 
 import KyashQRCode from "assets/images/kyash-qr.svg";
 
@@ -9,29 +10,83 @@ type Props = {
 };
 
 const Donate: NextPage<Props> = (props: Props) => {
+  const theme = useTheme();
+
   return (
-    <div className="uk-text-center">
-      <h2>Donate</h2>
-      <div>
-        <p>Kyash: </p>
-        <KyashQRCode height="150" />
-      </div>
-      <p>
-        Bitcoin: <code>{props.bitcoin}</code>
-      </p>
-      <p>
-        Ethereum: <code>{props.ethereum}</code>
-      </p>
-      <p>
-        <a
-          href={props.amazonWishList}
-          target="_blank"
-          rel="noreferrer noopener"
+    <section>
+      <div className="donate">
+        <Row justify="center">
+          <Text h2>Donate</Text>
+        </Row>
+
+        <Grid.Container
+          gap={2}
+          direction="column"
+          wrap="wrap"
+          alignItems="center"
+          justify="center"
         >
-          AmazonWishList
-        </a>
-      </p>
-    </div>
+          <Grid>
+            <div className="kyash">
+              <Text p>Kyash:</Text>
+            </div>
+            <KyashQRCode height="150" />
+          </Grid>
+          <Grid>
+            <div>
+              <div className="bitcoin">
+                <Text p>BitCoin:</Text>
+              </div>
+              <div className="crypt">
+                <Code>{props.bitcoin}</Code>
+              </div>
+            </div>
+          </Grid>
+          <Grid>
+            <div>
+              <div className="bitcoin">
+                <Text p>Ethereum:</Text>
+              </div>
+              <div className="crypt">
+                <Code>{props.ethereum}</Code>
+              </div>
+            </div>
+          </Grid>
+          <Grid>
+            <div>
+              <Link
+                icon
+                underline
+                href={props.amazonWishList}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                AmazonWishList
+              </Link>
+            </div>
+          </Grid>
+        </Grid.Container>
+        <style jsx>
+          {`
+            .kyash {
+              text-align: center;
+            }
+            .bitcoin {
+              text-align: center;
+            }
+            .ethereum {
+              text-align: center;
+            }
+            .crypt {
+              padding: calc(${theme.layout.gap} / 2)
+                calc(${theme.layout.gap} / 2);
+              border-radius: 5px;
+              border: 1px solid #eaeaea;
+            }
+          `}
+        </style>
+      </div>
+    </section>
   );
 };
 

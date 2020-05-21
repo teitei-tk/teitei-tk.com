@@ -1,7 +1,10 @@
 import { NextPage } from "next";
 
-import Avatar from "components/page/index/avatar";
-import SocialMediaAccounts from "components/page/index/social_media_accounts";
+import { Divider, Link, Text, Grid, Row } from "@zeit-ui/react";
+
+import Layout from "components/layout";
+import Profile from "components/page/index/profile";
+import Accounts from "components/page/index/accounts";
 import Donate from "components/page/index/donate";
 
 type IndexPageProps = {
@@ -42,23 +45,45 @@ const IndexPage: NextPage<IndexPageProps> = (props) => {
 
   return (
     <>
-      <div
-        className="uk-padding uk-child-width-expand@s uk-text-center"
-        uk-grid="true"
-      >
-        <h1 className="uk-text-lead uk-text-center">{name}</h1>
-      </div>
-
-      <Avatar {...avatar} />
-      <SocialMediaAccounts {...accounts} />
-      <Donate {...donate} />
-
-      <p className="uk-text-center uk-padding-large">
-        SourceCode:{" "}
-        <a href={repositoryURL} target="_blank" rel="noreferrer noopener">
-          GitHub
-        </a>
-      </p>
+      <Layout>
+        <Grid.Container justify="center">
+          <Grid xs={24}>
+            <Row justify="center">
+              <div className="title">
+                <Text h1>{name}</Text>
+              </div>
+            </Row>
+          </Grid>
+          <Grid>
+            <Profile {...avatar} />
+          </Grid>
+          <Grid xs={24}>
+            <Accounts {...accounts} />
+          </Grid>
+          <Grid xs={24}>
+            <Donate {...donate} />
+          </Grid>
+          <Grid xs={24}>
+            <Row justify="center">
+              <div className="sourceCode">
+                <Text p>
+                  <Divider />
+                  <Text b>SourceCode: </Text>
+                  <Link
+                    icon
+                    underline
+                    href={repositoryURL}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    GitHub
+                  </Link>
+                </Text>
+              </div>
+            </Row>
+          </Grid>
+        </Grid.Container>
+      </Layout>
     </>
   );
 };
@@ -70,7 +95,7 @@ IndexPage.getInitialProps = async (): Promise<IndexPageProps> => {
       repositoryURL: "https://github.com/teitei-tk/teitei-tk.com",
       user: {
         name: "teitei-tk",
-        bio: "Software Enginner",
+        bio: "Software Engineer writing Ruby, Python, PHP, JavaScript, Go",
         avatarURL: "https://avatars3.githubusercontent.com/u/1324680?v=4",
         email: "teitei.tk@gmail.com",
         twitterURL: "https://twitter.com/teitei_tk",

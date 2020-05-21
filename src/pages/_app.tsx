@@ -3,8 +3,6 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import Router from "next/router";
 
-import "uikit/dist/css/uikit.css";
-
 import * as gtag from "../lib/gtag";
 
 const App = ({ Component, pageProps }: AppProps) => {
