@@ -1364,10 +1364,10 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
-"@zeit-ui/react@^1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@zeit-ui/react/-/react-1.6.1.tgz#47429bdbdd9da4610518386566c4f63661beb26f"
-  integrity sha512-EKT40RZP98sEA0mNawZiNxmHgMBoEx5YMi94+UEtzIa2wmxVe/yzoeHaCCE2SQupSkMEm+nTCicXNfKh8W7LmA==
+"@zeit-ui/react@^1.6.3":
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/@zeit-ui/react/-/react-1.6.3.tgz#5b797d79e120a720a43485066c4080dda64ef8f6"
+  integrity sha512-uREdGLpx9wqNy1YyDnCUEMUMWMz9OAYNtZ0ZcV6B+FHtv0is2/nVERp5UVmsS+DoWwe76Rvnh8lSkFaeTvnMyw==
   dependencies:
     styled-jsx "^3.2.5"
 
