@@ -29,7 +29,7 @@
   "dependencies": {
     "@types/react": "^16.9.32",
     "@types/react-dom": "^16.9.6",
-    "@zeit-ui/react": "^1.6.1",
+    "@zeit-ui/react": "^1.7.3",
     "next": "^9.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
