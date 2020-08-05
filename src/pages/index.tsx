@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import { NextPage, GetStaticProps } from "next";
 
 import { Divider, Link, Text, Grid, Row } from "@zeit-ui/react";
 
@@ -88,7 +88,7 @@ const IndexPage: NextPage<IndexPageProps> = (props) => {
   );
 };
 
-IndexPage.getInitialProps = async (): Promise<IndexPageProps> => {
+export const getStaticProps: GetStaticProps = async (_) => {
   const staticData = {
     siteMetadata: {
       name: "teitei-tk.com",
@@ -119,7 +119,9 @@ IndexPage.getInitialProps = async (): Promise<IndexPageProps> => {
     },
   };
 
-  return staticData;
+  return {
+    props: staticData as IndexPageProps,
+  };
 };
 
 export default IndexPage;

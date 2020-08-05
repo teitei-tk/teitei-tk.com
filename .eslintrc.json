@@ -27,7 +27,10 @@
   },
   "rules": {
     "no-console": "off",
-    "no-unused-vars": ["error", { "ignoreModules": true }],
+    "no-unused-vars": [
+      "error",
+      { "ignoreModules": true, "argsIgnorePattern": "^_" }
+    ],
     "react/prop-types": "off",
     "react/react-in-jsx": "off",
     "@typescript-eslint/no-unused-vars": [
@@ -35,7 +38,8 @@
       {
         "vars": "all",
         "args": "after-used",
-        "ignoreRestSiblings": false
+        "ignoreRestSiblings": false,
+        "argsIgnorePattern": "^_"
       }
     ],
     "@typescript-eslint/explicit-function-return-type": "off",
