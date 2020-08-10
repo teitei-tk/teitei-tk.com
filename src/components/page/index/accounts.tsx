@@ -10,6 +10,7 @@ type Props = {
   medium: string;
   note: string;
   hatenaBlog: string;
+  scrapbox: string;
 };
 
 const Accounts: NextPage<Props> = (props: Props) => {
@@ -51,6 +52,13 @@ const Accounts: NextPage<Props> = (props: Props) => {
     },
   ];
 
+  const miscMap = [
+    {
+      name: "Scrapbox",
+      url: props.scrapbox,
+    },
+  ];
+
   return (
     <section>
       <div className="accounts">
@@ -83,6 +91,28 @@ const Accounts: NextPage<Props> = (props: Props) => {
         </Row>
 
         {blogsMap.map((map: { name: string; url: string }, index: number) => {
+          return (
+            <Row key={index} justify="center">
+              <Link
+                icon
+                underline
+                href={map.url}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                {map.name}
+              </Link>
+            </Row>
+          );
+        })}
+      </div>
+
+      <div className="mis">
+        <Row justify="center">
+          <Text h2>Misc</Text>
+        </Row>
+
+        {miscMap.map((map: { name: string; url: string }, index: number) => {
           return (
             <Row key={index} justify="center">
               <Link
