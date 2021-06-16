@@ -15,7 +15,7 @@
     "export": "yarn build && yarn next export"
   },
   "devDependencies": {
-    "@svgr/webpack": "^5.4.0",
+    "@svgr/webpack": "^5.5.0",
     "@types/node": "^15.0.3",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
