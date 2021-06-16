@@ -5,7 +5,6 @@ import { Divider, Link, Text, Grid, Row } from "@zeit-ui/react";
 import Layout from "components/layout";
 import Profile from "components/page/index/profile";
 import Accounts from "components/page/index/accounts";
-import Donate from "components/page/index/donate";
 
 type IndexPageProps = {
   siteMetadata: {
@@ -28,16 +27,11 @@ type IndexPageProps = {
       hatenaBlog: string;
       scrapbox: string;
     };
-    donate: {
-      amazonWishList: string;
-      bitcoin: string;
-      ethereum: string;
-    };
   };
 };
 
 const IndexPage: NextPage<IndexPageProps> = (props) => {
-  const { name, user, accounts, donate, repositoryURL } = props.siteMetadata;
+  const { name, user, accounts, repositoryURL } = props.siteMetadata;
 
   const avatar = {
     ...user,
@@ -60,9 +54,6 @@ const IndexPage: NextPage<IndexPageProps> = (props) => {
           </Grid>
           <Grid xs={24}>
             <Accounts {...accounts} />
-          </Grid>
-          <Grid xs={24}>
-            <Donate {...donate} />
           </Grid>
           <Grid xs={24}>
             <Row justify="center">
@@ -111,12 +102,6 @@ export const getStaticProps: GetStaticProps = async (_) => {
         note: "https://note.com/teitei_tk",
         hatenaBlog: "http://teitei-tk.hatenablog.com/",
         scrapbox: "https://scrapbox.io/teiteitk/",
-      },
-      donate: {
-        amazonWishList:
-          "https://www.amazon.co.jp/gp/registry/wishlist/1KY1Q9M8EAIA5/ref=nav_wishlist_lists_1",
-        bitcoin: "35Hcpn2RxXUftVuPppTWGYaNx3EhHfsWab",
-        ethereum: "0x1BE2b1A385DD21025BCD9A4d6264b3d9093C78FE",
       },
     },
   };
