@@ -11,6 +11,7 @@ type Props = {
   note: string;
   hatenaBlog: string;
   scrapbox: string;
+  zenn: string;
 };
 
 const Accounts: NextPage<Props> = (props: Props) => {
@@ -22,6 +23,10 @@ const Accounts: NextPage<Props> = (props: Props) => {
     {
       name: "GitHub",
       url: props.github,
+    },
+    {
+      name: "Zenn",
+      url: props.zenn,
     },
     {
       name: "Qiita",
