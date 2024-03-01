@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12]
+        node-version: [16]
     steps:
       - uses: actions/checkout@master
 
@@ -32,5 +32,8 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
-      - name: Exec eslint
+      - name: eslint
         run: yarn lint
+
+      - name: test
+        run: yarn test
