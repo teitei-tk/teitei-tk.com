@@ -1,12 +1,12 @@
-import { NextPage, GetStaticProps } from "next";
+import type { NextPage, GetStaticProps } from "next";
 
 import { Divider, Link, Text, Grid, Row } from "@zeit-ui/react";
 
-import Layout from "components/layout";
-import Profile from "components/page/index/profile";
-import Accounts from "components/page/index/accounts";
+import Layout from "@/components/layout";
+import Profile from "@/components/page/index/profile";
+import Accounts from "@/components/page/index/accounts";
 
-type IndexPageProps = {
+export type IndexPageProps = {
   siteMetadata: {
     name: string;
     repositoryURL: string;
@@ -59,6 +59,7 @@ const IndexPage: NextPage<IndexPageProps> = (props) => {
           <Grid xs={24}>
             <Row justify="center">
               <div className="sourceCode">
+                {/* FIXME: Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>. */}
                 <Text p>
                   <Divider />
                   <Text b>SourceCode: </Text>
