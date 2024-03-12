@@ -18,7 +18,7 @@
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^12.1.5",
     "@types/jest": "^29.5.12",
-    "@types/node": "^16.9.2",
+    "@types/node": "^20.11.26",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
     "babel-jest": "^29.7.0",
