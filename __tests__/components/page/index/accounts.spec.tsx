@@ -72,25 +72,16 @@ describe("Accounts component", () => {
 
     render(<Accounts {...mockProps} />);
 
-    accountsMap.forEach((account) => {
-      expect(screen.getByRole("link", { name: account.name })).toHaveAttribute(
-        "href",
-        account.url
-      );
+    accountsMap.forEach(({ name, url }) => {
+      expect(screen.getByRole("link", { name })).toHaveAttribute("href", url);
     });
 
-    blogsMap.forEach((blog) => {
-      expect(screen.getByRole("link", { name: blog.name })).toHaveAttribute(
-        "href",
-        blog.url
-      );
+    blogsMap.forEach(({ name, url }) => {
+      expect(screen.getByRole("link", { name })).toHaveAttribute("href", url);
     });
 
-    miscMap.forEach((misc) => {
-      expect(screen.getByRole("link", { name: misc.name })).toHaveAttribute(
-        "href",
-        misc.url
-      );
+    miscMap.forEach(({ name, url }) => {
+      expect(screen.getByRole("link", { name })).toHaveAttribute("href", url);
     });
   });
 });

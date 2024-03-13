@@ -33,5 +33,81 @@ describe("IndexPage component", () => {
 
     // Check if the user name is rendered correctly
     expect(screen.getByText(mockProps.siteMetadata.name)).toBeInTheDocument();
+
+    const accountsMap = [
+      {
+        name: "Twitter",
+        url: mockProps.siteMetadata.accounts.twitter,
+      },
+      {
+        name: "GitHub",
+        url: mockProps.siteMetadata.accounts.github,
+      },
+      {
+        name: "Zenn",
+        url: mockProps.siteMetadata.accounts.zenn,
+      },
+      {
+        name: "Qiita",
+        url: mockProps.siteMetadata.accounts.qiita,
+      },
+      {
+        name: "SpeakerDeck",
+        url: mockProps.siteMetadata.accounts.speakerDeck,
+      },
+      {
+        name: "Linkedin",
+        url: mockProps.siteMetadata.accounts.linkedin,
+      },
+    ];
+
+    const blogsMap = [
+      {
+        name: "HatenaBlog",
+        url: mockProps.siteMetadata.accounts.hatenaBlog,
+      },
+      {
+        name: "note",
+        url: mockProps.siteMetadata.accounts.note,
+      },
+      {
+        name: "Medium",
+        url: mockProps.siteMetadata.accounts.medium,
+      },
+    ];
+
+    const miscMap = [
+      {
+        name: "Scrapbox",
+        url: mockProps.siteMetadata.accounts.scrapbox,
+      },
+    ];
+
+    accountsMap.forEach(({ name, url }) => {
+      // TODO: refactoring
+      if (name === "GitHub") {
+        const links = screen.getAllByText(/GitHub/);
+        expect(links.length).toBe(2);
+        expect(links[0]).toHaveAttribute(
+          "href",
+          mockProps.siteMetadata.accounts.github
+        );
+        expect(links[1]).toHaveAttribute(
+          "href",
+          mockProps.siteMetadata.repositoryURL
+        );
+        return;
+      }
+
+      expect(screen.getByRole("link", { name })).toHaveAttribute("href", url);
+    });
+
+    blogsMap.forEach(({ name, url }) => {
+      expect(screen.getByRole("link", { name })).toHaveAttribute("href", url);
+    });
+
+    miscMap.forEach(({ name, url }) => {
+      expect(screen.getByRole("link", { name })).toHaveAttribute("href", url);
+    });
   });
 });
