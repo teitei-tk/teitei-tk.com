@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import {
   Avatar,
   Description,
@@ -14,14 +13,19 @@ type Props = {
   bio: string;
   email: string;
   avatarURL: string;
-  twitter: string;
+  twitter: string; // FIXME: rename to twitterURL
 };
 
-const Profile: NextPage<Props> = (props: Props) => {
+const Profile = (props: Props) => {
   return (
     <section>
       <div className="profile">
-        <Avatar src={props.avatarURL} text={props.name} size={200} />
+        <Avatar
+          alt="avatar"
+          src={props.avatarURL}
+          text={props.name}
+          size={200}
+        />
       </div>
       <Spacer y={1} />
 

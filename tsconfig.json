@@ -13,13 +13,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": "src",
+    "jsxImportSource": "react",
+    "baseUrl": ".",
     "paths": {
-      "components": ["components/*"],
-      "assets": ["assets/*"],
-      "@/*": ["*"]
+      "@/*": ["src/*"]
     }
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "./src/**/*", "./types/**/*"]
+  "include": ["next-env.d.ts", "./src/**/*", "./types/**/*", "__tests__/**/*"]
 }

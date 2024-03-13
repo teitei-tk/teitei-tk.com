@@ -1,21 +1,40 @@
-import { NextPage } from "next";
-import { Link, Row, Text } from "@zeit-ui/react";
+import { Row, Text } from "@zeit-ui/react";
+
+import SNS from "@/components/page/index/sns";
+import Blog from "@/components/page/index/blog";
+import Misc from "@/components/page/index/misc";
 
 type Props = {
+  // FIXME: url suffix
   twitter: string;
   github: string;
   qiita: string;
   speakerDeck: string;
-  linkedin: string;
-  medium: string;
+  linkedin: string; // TODO: remove
+  medium: string; // TODO: remove
   note: string;
   hatenaBlog: string;
   scrapbox: string;
   zenn: string;
 };
 
-const Accounts: NextPage<Props> = (props: Props) => {
-  const accountsMap = [
+export type SNSAccount = {
+  name: "Twitter" | "GitHub" | "Zenn" | "Qiita" | "SpeakerDeck" | "Linkedin";
+  url: string;
+};
+
+export type BlogAccount = {
+  name: "HatenaBlog" | "note" | "Medium";
+  url: string;
+};
+
+export type MiscAccount = {
+  name: "Scrapbox";
+  url: string;
+};
+
+const Accounts = (props: Props) => {
+  const accountsMap: SNSAccount[] = [
     {
       name: "Twitter",
       url: props.twitter,
@@ -42,7 +61,7 @@ const Accounts: NextPage<Props> = (props: Props) => {
     },
   ];
 
-  const blogsMap = [
+  const blogsMap: BlogAccount[] = [
     {
       name: "HatenaBlog",
       url: props.hatenaBlog,
@@ -57,7 +76,7 @@ const Accounts: NextPage<Props> = (props: Props) => {
     },
   ];
 
-  const miscMap = [
+  const miscMap: MiscAccount[] = [
     {
       name: "Scrapbox",
       url: props.scrapbox,
@@ -75,15 +94,7 @@ const Accounts: NextPage<Props> = (props: Props) => {
           (map: { name: string; url: string }, index: number) => {
             return (
               <Row key={index} justify="center">
-                <Link
-                  icon
-                  underline
-                  href={map.url}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  {map.name}
-                </Link>
+                <SNS name={map.name} url={map.url} />
               </Row>
             );
           }
@@ -98,15 +109,7 @@ const Accounts: NextPage<Props> = (props: Props) => {
         {blogsMap.map((map: { name: string; url: string }, index: number) => {
           return (
             <Row key={index} justify="center">
-              <Link
-                icon
-                underline
-                href={map.url}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                {map.name}
-              </Link>
+              <Blog name={map.name} url={map.url} />
             </Row>
           );
         })}
@@ -120,15 +123,7 @@ const Accounts: NextPage<Props> = (props: Props) => {
         {miscMap.map((map: { name: string; url: string }, index: number) => {
           return (
             <Row key={index} justify="center">
-              <Link
-                icon
-                underline
-                href={map.url}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                {map.name}
-              </Link>
+              <Misc name={map.name} url={map.url} />
             </Row>
           );
         })}
