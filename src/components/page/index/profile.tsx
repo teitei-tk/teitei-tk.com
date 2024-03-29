@@ -56,7 +56,7 @@ const Profile = (props: Props) => {
           />
         </Col>
       </Row>
-      <style jsx>{`
+      <style>{`
         .profile {
           text-align: center;
         }
