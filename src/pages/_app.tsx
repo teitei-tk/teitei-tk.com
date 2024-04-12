@@ -1,15 +1,27 @@
+import { useEffect } from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import { GA_TRACKING_ID } from "@/constants";
+import Router from "next/router";
+
+import * as gtag from "../lib/gtag";
 
 const App = ({ Component, pageProps }: AppProps) => {
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      gtag.pageview(url);
+    };
+
+    Router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      Router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, []);
+
   return (
     <>
       <Head>
         <title>teitei-tk.com</title>
       </Head>
-      <GoogleAnalytics gaId={GA_TRACKING_ID} />
       <Component {...pageProps} />
     </>
   );

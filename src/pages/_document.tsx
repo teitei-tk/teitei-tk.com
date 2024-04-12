@@ -5,8 +5,7 @@ import Document, {
   DocumentContext,
 } from "next/document";
 import { CssBaseline } from "@zeit-ui/react";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import { GA_TRACKING_ID } from "@/constants";
+import { GA_TRACKING_ID } from "../lib/gtag";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -28,7 +27,24 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <GoogleAnalytics gaId={GA_TRACKING_ID} />
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
+
           <link
             rel="apple-touch-icon"
             sizes="180x180"
