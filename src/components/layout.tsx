@@ -1,18 +1,18 @@
-import * as React from "react";
-import { NextPage } from "next";
+import type { NextPage } from "next";
+import type * as React from "react";
 
 const Layout: NextPage<{ children: React.ReactNode }> = ({ children }) => {
-  return (
-    <section>
-      <div className="container">{children}</div>
+	return (
+		<section>
+			<div className="container">{children}</div>
 
-      <style jsx>{`
+			<style jsx>{`
         .container {
           width: 100%;
         }
       `}</style>
-    </section>
-  );
+		</section>
+	);
 };
 
 export default Layout;
