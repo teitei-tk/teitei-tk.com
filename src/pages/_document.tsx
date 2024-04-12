@@ -5,8 +5,6 @@ import Document, {
   DocumentContext,
 } from "next/document";
 import { CssBaseline } from "@zeit-ui/react";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import { GA_TRACKING_ID } from "@/constants";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -28,7 +26,6 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <GoogleAnalytics gaId={GA_TRACKING_ID} />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
