@@ -19,7 +19,6 @@
 			"@/*": ["src/*"]
 		},
 		"incremental": true,
-		"typeRoots": ["./types", "node_modules/@types"],
 		"types": ["vitest/globals"]
 	},
 	"exclude": ["node_modules"],
