@@ -1,44 +1,43 @@
 {
-  "name": "teitei-tk.com",
-  "version": "0.1.0",
-  "main": "index.js",
-  "repository": "ssh://git@github.com/teitei-tk/teitei-tk.com.git",
-  "author": "teitei-tk <teitei.tk@gmail.com>",
-  "license": "Apache 2.0",
-  "private": true,
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "test": "jest",
-    "export": "yarn build && yarn next export"
-  },
-  "devDependencies": {
-    "@testing-library/jest-dom": "^6.4.2",
-    "@testing-library/react": "^12.1.5",
-    "@types/jest": "^29.5.12",
-    "@types/node": "^16.9.2",
-    "@typescript-eslint/eslint-plugin": "^2.34.0",
-    "@typescript-eslint/parser": "^2.34.0",
-    "babel-jest": "^29.7.0",
-    "eslint": "^7.32.0",
-    "eslint-config-next": "12.3.4",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
-    "prettier": "^2.4.1",
-    "typescript": "^4.9.4"
-  },
-  "dependencies": {
-    "@next/third-parties": "^14.2.1",
-    "@types/react": "^17.0.21",
-    "@types/react-dom": "^17.0.9",
-    "@zeit-ui/react": "^1.8.1",
-    "next": "12.3.4",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "ts-jest": "^29.1.2"
-  }
+	"name": "teitei-tk.com",
+	"version": "0.1.0",
+	"main": "index.js",
+	"repository": "ssh://git@github.com/teitei-tk/teitei-tk.com.git",
+	"author": "teitei-tk <teitei.tk@gmail.com>",
+	"license": "Apache 2.0",
+	"private": true,
+	"scripts": {
+		"dev": "next",
+		"build": "next build",
+		"start": "next start",
+		"lint": "biome lint --apply .",
+		"format": "biome format --write .",
+		"check": "biome check --apply .",
+		"fix": "biome check --apply .",
+		"test": "jest",
+		"export": "yarn build && yarn next export"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.7.2",
+		"@testing-library/jest-dom": "^6.4.2",
+		"@testing-library/react": "^12.1.5",
+		"@types/jest": "^29.5.12",
+		"@types/node": "^16.9.2",
+		"@types/testing-library__jest-dom": "^6.0.0",
+		"babel-jest": "^29.7.0",
+		"jest": "^29.7.0",
+		"jest-environment-jsdom": "^29.7.0",
+		"prettier": "^2.4.1",
+		"typescript": "^4.9.4"
+	},
+	"dependencies": {
+		"@next/third-parties": "^14.2.1",
+		"@types/react": "^17.0.21",
+		"@types/react-dom": "^17.0.9",
+		"@zeit-ui/react": "^1.8.1",
+		"next": "12.3.4",
+		"react": "17.0.2",
+		"react-dom": "17.0.2",
+		"ts-jest": "^29.1.2"
+	}
 }
