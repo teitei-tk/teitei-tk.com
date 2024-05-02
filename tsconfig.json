@@ -19,7 +19,7 @@
 			"@/*": ["src/*"]
 		},
 		"incremental": true,
-		"types": ["./types/*"]
+		"typeRoots": ["./types"]
 	},
 	"exclude": ["node_modules"],
 	"include": ["next-env.d.ts", "./src/**/*", "./types/**/*", "__tests__/**/*"]
