@@ -90,15 +90,13 @@ const Accounts = (props: Props) => {
 					<Text h2>Accounts</Text>
 				</Row>
 
-				{accountsMap.map(
-					(map: { name: string; url: string }, index: number) => {
-						return (
-							<Row key={index} justify="center">
-								<SNS name={map.name} url={map.url} />
-							</Row>
-						);
-					},
-				)}
+				{accountsMap.map((map: { name: string; url: string }) => {
+					return (
+						<Row key={map.url} justify="center">
+							<SNS name={map.name} url={map.url} />
+						</Row>
+					);
+				})}
 			</div>
 
 			<div className="blogs">
@@ -106,9 +104,9 @@ const Accounts = (props: Props) => {
 					<Text h2>Blogs</Text>
 				</Row>
 
-				{blogsMap.map((map: { name: string; url: string }, index: number) => {
+				{blogsMap.map((map: { name: string; url: string }) => {
 					return (
-						<Row key={index} justify="center">
+						<Row key={map.url} justify="center">
 							<Blog name={map.name} url={map.url} />
 						</Row>
 					);
@@ -120,9 +118,9 @@ const Accounts = (props: Props) => {
 					<Text h2>Misc</Text>
 				</Row>
 
-				{miscMap.map((map: { name: string; url: string }, index: number) => {
+				{miscMap.map((map: { name: string; url: string }) => {
 					return (
-						<Row key={index} justify="center">
+						<Row key={map.url} justify="center">
 							<Misc name={map.name} url={map.url} />
 						</Row>
 					);
