@@ -19,7 +19,8 @@
 			"@/*": ["src/*"]
 		},
 		"incremental": true,
-		"typeRoots": ["./types"]
+		"typeRoots": ["./types", "node_modules/@types"],
+		"types": ["vitest/globals"]
 	},
 	"exclude": ["node_modules"],
 	"include": ["next-env.d.ts", "./src/**/*", "./types/**/*", "__tests__/**/*"]

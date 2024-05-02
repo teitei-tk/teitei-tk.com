@@ -3,7 +3,7 @@ import Accounts, {
 	type BlogAccount,
 	type MiscAccount,
 } from "@/components/page/index/accounts";
-import { describe, expect, it } from "@jest/globals";
+import { describe, expect, it } from "vitest";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 
