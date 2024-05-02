@@ -24,7 +24,7 @@ export default class MyDocument extends Document {
 
 	render() {
 		return (
-			<html>
+			<html lang="ja">
 				<Head>
 					<link
 						rel="apple-touch-icon"
