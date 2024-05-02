@@ -1,5 +1,5 @@
 import Profile from "@/components/page/index/profile";
-import { describe, expect, it } from "@jest/globals";
+import { describe, expect, it } from "vitest";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 
