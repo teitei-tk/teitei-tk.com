@@ -29,7 +29,10 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
-      - name: eslint
+      - name: format
+        run: yarn format
+
+      - name: lint
         run: yarn lint
 
       - name: test
