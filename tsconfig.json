@@ -21,6 +21,6 @@
 		"incremental": true,
 		"types": ["vitest/globals"]
 	},
-	"exclude": ["node_modules"],
+	"exclude": ["node_modules", ".next", ".yarn"],
 	"include": ["next-env.d.ts", "./src/**/*", "./types/**/*", "__tests__/**/*"]
 }
