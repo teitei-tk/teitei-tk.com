@@ -29,11 +29,11 @@
 	},
 	"dependencies": {
 		"@next/third-parties": "^14.2.1",
-		"@types/react": "^17.0.21",
+		"@types/react": "^18.3.1",
 		"@types/react-dom": "^17.0.9",
 		"@zeit-ui/react": "^1.8.1",
 		"next": "12.3.4",
-		"react": "17.0.2",
+		"react": "18.3.1",
 		"react-dom": "17.0.2"
 	},
 	"packageManager": "yarn@4.2.2"
