@@ -1099,12 +1099,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.14.5":
-  version: 20.14.5
-  resolution: "@types/node@npm:20.14.5"
+"@types/node@npm:^22.5.3":
+  version: 22.5.3
+  resolution: "@types/node@npm:22.5.3"
   dependencies:
-    undici-types: "npm:~5.26.4"
-  checksum: 10c0/06a8c304b5f7f190d4497807dc67ad09ee7b14ea2996bfdc823553c624698d8cab1ef9d16f8b764f20cb9eb11caa0e832787741e9ef70e1c89d620797ab28436
+    undici-types: "npm:~6.19.2"
+  checksum: 10c0/a068e31dd424a0eadfba7d9a5c5b415b76cfd729f3caa299674ad257f59df85c5fe77f1d0a343e811864c790baefb9003d7627618ee3cf85400af338481ba29f
   languageName: node
   linkType: hard
 
@@ -3781,7 +3781,7 @@ __metadata:
     "@next/third-parties": "npm:^14.2.4"
     "@testing-library/jest-dom": "npm:^6.4.6"
     "@testing-library/react": "npm:^12.1.5"
-    "@types/node": "npm:^20.14.5"
+    "@types/node": "npm:^22.5.3"
     "@types/react": "npm:^17.0.21"
     "@types/react-dom": "npm:^17.0.9"
     "@vitejs/plugin-react": "npm:^4.3.1"
@@ -3892,10 +3892,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:~5.26.4":
-  version: 5.26.5
-  resolution: "undici-types@npm:5.26.5"
-  checksum: 10c0/bb673d7876c2d411b6eb6c560e0c571eef4a01c1c19925175d16e3a30c4c428181fb8d7ae802a261f283e4166a0ac435e2f505743aa9e45d893f9a3df017b501
+"undici-types@npm:~6.19.2":
+  version: 6.19.8
+  resolution: "undici-types@npm:6.19.8"
+  checksum: 10c0/078afa5990fba110f6824823ace86073b4638f1d5112ee26e790155f481f2a868cc3e0615505b6f4282bdf74a3d8caad715fd809e870c2bb0704e3ea6082f344
   languageName: node
   linkType: hard
 
