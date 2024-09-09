@@ -805,15 +805,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/third-parties@npm:^14.2.4":
-  version: 14.2.4
-  resolution: "@next/third-parties@npm:14.2.4"
+"@next/third-parties@npm:^14.2.9":
+  version: 14.2.9
+  resolution: "@next/third-parties@npm:14.2.9"
   dependencies:
     third-party-capital: "npm:1.0.20"
   peerDependencies:
     next: ^13.0.0 || ^14.0.0
     react: ^18.2.0
-  checksum: 10c0/92dc2f1d507d0f5a8c208d0ede355a5084cbc242e46348da0f042522968811b62bb360d78fbbfc53f603c1f875dd4610bc492cd0024ee4a1402541d94287a73f
+  checksum: 10c0/95d639053aa3a2378975ef9daae98bf3ef6893fd35c5e4facfbf19fed794be9bdbc5fcb8bf00b5c46cac7388124f75e94336ebe611fcd26823ad1319192da423
   languageName: node
   linkType: hard
 
@@ -3778,7 +3778,7 @@ __metadata:
   resolution: "teitei-tk.com@workspace:."
   dependencies:
     "@biomejs/biome": "npm:1.8.1"
-    "@next/third-parties": "npm:^14.2.4"
+    "@next/third-parties": "npm:^14.2.9"
     "@testing-library/jest-dom": "npm:^6.4.6"
     "@testing-library/react": "npm:^12.1.5"
     "@types/node": "npm:^20.14.5"
