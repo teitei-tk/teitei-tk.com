@@ -1,4 +1,4 @@
-import { CssBaseline } from "@zeit-ui/react";
+import { CssBaseline } from "@geist-ui/core";
 import Document, {
 	Head,
 	Main,

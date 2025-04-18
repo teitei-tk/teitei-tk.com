@@ -1,4 +1,4 @@
-import { Row, Text } from "@zeit-ui/react";
+import { Grid, Text } from "@geist-ui/core";
 
 import Blog from "@/components/page/index/blog";
 import Misc from "@/components/page/index/misc";
@@ -85,47 +85,38 @@ const Accounts = (props: Props) => {
 
 	return (
 		<section>
-			<div className="accounts">
-				<Row justify="center">
+			<Grid.Container gap={1} justify="center">
+				<Grid xs={24} justify="center">
 					<Text h2>Accounts</Text>
-				</Row>
-
+				</Grid>
 				{accountsMap.map((map: { name: string; url: string }) => {
 					return (
-						<Row key={map.url} justify="center">
+						<Grid xs={24} key={map.url} justify="center">
 							<SNS name={map.name} url={map.url} />
-						</Row>
+						</Grid>
 					);
 				})}
-			</div>
-
-			<div className="blogs">
-				<Row justify="center">
+				<Grid xs={24} justify="center">
 					<Text h2>Blogs</Text>
-				</Row>
-
+				</Grid>
 				{blogsMap.map((map: { name: string; url: string }) => {
 					return (
-						<Row key={map.url} justify="center">
+						<Grid xs={24} key={map.url} justify="center">
 							<Blog name={map.name} url={map.url} />
-						</Row>
+						</Grid>
 					);
 				})}
-			</div>
-
-			<div className="mis">
-				<Row justify="center">
+				<Grid xs={24} justify="center">
 					<Text h2>Misc</Text>
-				</Row>
-
+				</Grid>
 				{miscMap.map((map: { name: string; url: string }) => {
 					return (
-						<Row key={map.url} justify="center">
+						<Grid xs={24} key={map.url} justify="center">
 							<Misc name={map.name} url={map.url} />
-						</Row>
+						</Grid>
 					);
 				})}
-			</div>
+			</Grid.Container>
 		</section>
 	);
 };
