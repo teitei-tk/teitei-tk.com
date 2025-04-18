@@ -1,6 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 
-import { Divider, Grid, Link, Row, Text } from "@zeit-ui/react";
+import { Divider, Grid, Link, Text } from "@geist-ui/core";
 
 import Layout from "@/components/layout";
 import Accounts from "@/components/page/index/accounts";
@@ -42,39 +42,35 @@ const IndexPage: NextPage<IndexPageProps> = (props) => {
 	return (
 		<>
 			<Layout>
-				<Grid.Container justify="center">
-					<Grid xs={24}>
-						<Row justify="center">
-							<div className="title">
-								<Text h1>{name}</Text>
-							</div>
-						</Row>
+				<Grid.Container justify="center" gap={2}>
+					<Grid xs={24} justify="center">
+						<div className="title">
+							<Text h1>{name}</Text>
+						</div>
 					</Grid>
-					<Grid>
+					<Grid justify="center">
 						<Profile {...avatar} />
 					</Grid>
-					<Grid xs={24}>
+					<Grid xs={24} justify="center">
 						<Accounts {...accounts} />
 					</Grid>
-					<Grid xs={24}>
-						<Row justify="center">
-							<div className="sourceCode">
-								{/* FIXME: Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>. */}
-								<Text p>
-									<Divider />
-									<Text b>SourceCode: </Text>
-									<Link
-										icon
-										underline
-										href={repositoryURL}
-										target="_blank"
-										rel="noreferrer noopener"
-									>
-										GitHub
-									</Link>
-								</Text>
-							</div>
-						</Row>
+					<Grid xs={24} justify="center">
+						<div className="sourceCode">
+							{/* FIXME: Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>. */}
+							<Text p>
+								<Divider />
+								<Text b>SourceCode: </Text>
+								<Link
+									icon
+									underline
+									href={repositoryURL}
+									target="_blank"
+									rel="noreferrer noopener"
+								>
+									GitHub
+								</Link>
+							</Text>
+						</div>
 					</Grid>
 				</Grid.Container>
 			</Layout>

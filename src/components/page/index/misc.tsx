@@ -1,4 +1,4 @@
-import { Link } from "@zeit-ui/react";
+import { Link } from "@geist-ui/core";
 
 type MiscProps = {
 	name: string;

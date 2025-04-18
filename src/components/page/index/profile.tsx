@@ -1,12 +1,4 @@
-import {
-	Avatar,
-	Col,
-	Description,
-	Link,
-	Row,
-	Spacer,
-	Text,
-} from "@zeit-ui/react";
+import { Avatar, Description, Grid, Link, Spacer, Text } from "@geist-ui/core";
 
 type Props = {
 	name: string;
@@ -20,31 +12,26 @@ const Profile = (props: Props) => {
 	return (
 		<section>
 			<div className="profile">
-				<Avatar
-					alt="avatar"
-					src={props.avatarURL}
-					text={props.name}
-					size={200}
-				/>
+				<Avatar alt="avatar" src={props.avatarURL} text={props.name} />
 			</div>
-			<Spacer y={1} />
+			<Spacer />
 
-			<Row gap={0.7}>
-				<Col>
+			<Grid.Container gap={2}>
+				<Grid xs={24} md={8}>
 					<Description
 						className="social"
 						title="name"
 						content={<Text p>@{props.name}</Text>}
 					/>
-				</Col>
-				<Col>
+				</Grid>
+				<Grid xs={24} md={8}>
 					<Description
 						className="social"
 						title="biography"
 						content={<Text p>{props.bio}</Text>}
 					/>
-				</Col>
-				<Col>
+				</Grid>
+				<Grid xs={24} md={8}>
 					<Description
 						className="contact"
 						title="Contact"
@@ -54,8 +41,8 @@ const Profile = (props: Props) => {
 							</Link>
 						}
 					/>
-				</Col>
-			</Row>
+				</Grid>
+			</Grid.Container>
 			<style>{`
         .profile {
           text-align: center;
