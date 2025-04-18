@@ -12,7 +12,7 @@ const Profile = (props: Props) => {
 	return (
 		<section>
 			<div className="profile">
-				<Avatar alt="avatar" src={props.avatarURL} text={props.name} />
+				<Avatar src={props.avatarURL} text={props.name} scale={10} />
 			</div>
 			<Spacer />
 
