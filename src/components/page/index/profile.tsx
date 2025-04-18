@@ -12,7 +12,12 @@ const Profile = (props: Props) => {
 	return (
 		<section>
 			<div className="profile">
-				<Avatar src={props.avatarURL} text={props.name} scale={10} />
+				<Avatar
+					alt="teitei-tkとして活動しているアカウントのアバター画像。タバコをくわえた茶髪の少女の横顔イラスト"
+					src={props.avatarURL}
+					text={props.name}
+					scale={10}
+				/>
 			</div>
 			<Spacer />
 
