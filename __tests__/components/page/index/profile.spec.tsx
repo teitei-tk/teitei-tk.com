@@ -23,9 +23,10 @@ describe("Profile component", () => {
 			"https://twitter.com/test_twitter",
 		);
 
-		expect(screen.getByAltText("avatar")).toHaveAttribute(
-			"src",
-			"http://example.com/avatar.jpg",
-		);
+		expect(
+			screen.getByAltText(
+				"teitei-tkとして活動しているアカウントのアバター画像。タバコをくわえた茶髪の少女の横顔イラスト",
+			),
+		).toHaveAttribute("src", "http://example.com/avatar.jpg");
 	});
 });
