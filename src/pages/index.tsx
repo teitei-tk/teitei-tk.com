@@ -57,7 +57,7 @@ const IndexPage: NextPage<IndexPageProps> = (props) => {
 					<Grid xs={24} justify="center">
 						<div className="sourceCode">
 							{/* FIXME: Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>. */}
-							<Text p>
+							<div>
 								<Divider />
 								<Text b>SourceCode: </Text>
 								<Link
@@ -69,7 +69,7 @@ const IndexPage: NextPage<IndexPageProps> = (props) => {
 								>
 									GitHub
 								</Link>
-							</Text>
+							</div>
 						</div>
 					</Grid>
 				</Grid.Container>
