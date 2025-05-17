@@ -3,6 +3,7 @@ import Document, {
 	Head,
 	Main,
 	NextScript,
+	Html,
 	type DocumentContext,
 } from "next/document";
 
@@ -24,7 +25,7 @@ export default class MyDocument extends Document {
 
 	render() {
 		return (
-			<html lang="ja">
+			<Html lang="ja">
 				<Head>
 					<link
 						rel="apple-touch-icon"
@@ -51,7 +52,7 @@ export default class MyDocument extends Document {
 					<Main />
 					<NextScript />
 				</body>
-			</html>
+			</Html>
 		);
 	}
 }
