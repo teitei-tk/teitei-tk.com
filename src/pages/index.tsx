@@ -1,6 +1,12 @@
+import {
+	Grid,
+	GridItem,
+	Heading,
+	Link,
+	Separator,
+	Text,
+} from "@chakra-ui/react";
 import type { GetStaticProps, NextPage } from "next";
-
-import { Divider, Grid, Link, Text } from "@geist-ui/core";
 
 import Layout from "@/components/layout";
 import Accounts from "@/components/page/index/accounts";
@@ -42,37 +48,33 @@ const IndexPage: NextPage<IndexPageProps> = (props) => {
 	return (
 		<>
 			<Layout>
-				<Grid.Container justify="center" gap={2}>
-					<Grid xs={24} justify="center">
-						<div className="title">
-							<Text h1>{name}</Text>
-						</div>
-					</Grid>
-					<Grid justify="center">
+				<Grid templateColumns="repeat(1, 1fr)" gap={2} justifyItems="center">
+					<GridItem>
+						<Heading size="xl">{name}</Heading>
+					</GridItem>
+					<GridItem>
 						<Profile {...avatar} />
-					</Grid>
-					<Grid xs={24} justify="center">
+					</GridItem>
+					<GridItem>
 						<Accounts {...accounts} />
-					</Grid>
-					<Grid xs={24} justify="center">
+					</GridItem>
+					<GridItem>
 						<div className="sourceCode">
 							{/* FIXME: Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>. */}
 							<div>
-								<Divider />
-								<Text b>SourceCode: </Text>
+								<Separator />
+								<Text fontWeight="bold">SourceCode: </Text>
 								<Link
-									icon
-									underline
 									href={repositoryURL}
 									target="_blank"
-									rel="noreferrer noopener"
+									rel="noopener noreferrer"
 								>
 									GitHub
 								</Link>
 							</div>
 						</div>
-					</Grid>
-				</Grid.Container>
+					</GridItem>
+				</Grid>
 			</Layout>
 		</>
 	);

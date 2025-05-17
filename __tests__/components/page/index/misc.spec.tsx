@@ -1,7 +1,8 @@
 import SNS from "@/components/page/index/sns";
 import { describe, expect, it } from "vitest";
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { renderWithChakra } from "../../../renderer";
 
 describe("SNS component", () => {
 	it("renders correctly", () => {
@@ -10,7 +11,7 @@ describe("SNS component", () => {
 			url: "https://scrapbox.io/teiteitk/",
 		};
 
-		render(<SNS {...mockProps} />);
+		renderWithChakra(<SNS {...mockProps} />);
 
 		expect(screen.getByRole("link", { name: "Scrapbox" })).toHaveAttribute(
 			"href",

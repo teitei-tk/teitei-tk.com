@@ -1,4 +1,4 @@
-import { Link } from "@geist-ui/core";
+import { Link } from "@chakra-ui/react";
 
 type MiscProps = {
 	name: string;
@@ -7,7 +7,7 @@ type MiscProps = {
 
 const Misc = ({ name, url }: MiscProps) => {
 	return (
-		<Link icon underline href={url} target="_blank" rel="noreferrer noopener">
+		<Link href={url} target="_blank" rel="noreferrer noopener">
 			{name}
 		</Link>
 	);

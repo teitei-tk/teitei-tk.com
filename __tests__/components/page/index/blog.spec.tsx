@@ -1,7 +1,8 @@
 import Blog from "@/components/page/index/blog";
 import { describe, expect, it } from "vitest";
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { renderWithChakra } from "../../../renderer";
 
 describe("SNS component", () => {
 	it("renders correctly", () => {
@@ -10,7 +11,7 @@ describe("SNS component", () => {
 			url: "http://teitei-tk.hatenablog.com/",
 		};
 
-		render(<Blog {...mockProps} />);
+		renderWithChakra(<Blog {...mockProps} />);
 
 		expect(screen.getByRole("link", { name: "HatenaBlog" })).toHaveAttribute(
 			"href",

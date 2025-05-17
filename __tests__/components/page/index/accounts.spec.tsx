@@ -5,7 +5,8 @@ import Accounts, {
 } from "@/components/page/index/accounts";
 import { describe, expect, it } from "vitest";
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { renderWithChakra } from "../../../renderer";
 
 describe("Accounts component", () => {
 	it("renders correctly", () => {
@@ -71,7 +72,7 @@ describe("Accounts component", () => {
 			},
 		];
 
-		render(<Accounts {...mockProps} />);
+		renderWithChakra(<Accounts {...mockProps} />);
 
 		for (const { name, url } of accountsMap) {
 			expect(screen.getByRole("link", { name })).toHaveAttribute("href", url);

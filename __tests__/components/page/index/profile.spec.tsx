@@ -1,7 +1,8 @@
 import Profile from "@/components/page/index/profile";
 import { describe, expect, it } from "vitest";
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { renderWithChakra } from "../../../renderer";
 
 describe("Profile component", () => {
 	it("renders correctly", () => {
@@ -13,15 +14,14 @@ describe("Profile component", () => {
 			twitter: "https://twitter.com/test_twitter",
 		};
 
-		render(<Profile {...mockProps} />);
+		renderWithChakra(<Profile {...mockProps} />);
 
-		expect(screen.getByText("@Test Name")).toBeInTheDocument();
-		expect(screen.getByText("Test Bio")).toBeInTheDocument();
-		expect(screen.getByText("test@example.com")).toBeInTheDocument();
-		expect(screen.getByRole("link")).toHaveAttribute(
-			"href",
-			"https://twitter.com/test_twitter",
-		);
+		expect(screen.getByText("name: @Test Name")).toBeInTheDocument();
+		expect(screen.getByText("biography: Test Bio")).toBeInTheDocument();
+		expect(screen.getByText("Contact: test@example.com")).toBeInTheDocument();
+		expect(
+			screen.getByRole("link", { name: "Contact: test@example.com" }),
+		).toHaveAttribute("href", "https://twitter.com/test_twitter");
 
 		expect(
 			screen.getByAltText(

@@ -1,7 +1,8 @@
 import IndexPage, { type IndexPageProps } from "@/pages/index";
 import { describe, expect, it } from "vitest";
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { renderWithChakra } from "../renderer";
 
 describe("IndexPage component", () => {
 	it("renders correctly", () => {
@@ -30,7 +31,7 @@ describe("IndexPage component", () => {
 			},
 		};
 
-		render(<IndexPage {...mockProps} />);
+		renderWithChakra(<IndexPage {...mockProps} />);
 
 		// Check if the user name is rendered correctly
 		expect(screen.getByText(mockProps.siteMetadata.name)).toBeInTheDocument();

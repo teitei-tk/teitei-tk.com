@@ -3,6 +3,8 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 
+import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
+
 const App = ({ Component, pageProps }: AppProps) => {
 	return (
 		<>
@@ -10,7 +12,10 @@ const App = ({ Component, pageProps }: AppProps) => {
 				<title>teitei-tk.com</title>
 			</Head>
 			<GoogleAnalytics gaId={GA_TRACKING_ID} />
-			<Component {...pageProps} />
+
+			<ChakraProvider value={defaultSystem}>
+				<Component {...pageProps} />
+			</ChakraProvider>
 		</>
 	);
 };
