@@ -1,6 +1,14 @@
+import {
+	Box,
+	Grid,
+	GridItem,
+	Heading,
+	Link,
+	Separator,
+	Text,
+} from "@chakra-ui/react";
 import type { GetStaticProps, NextPage } from "next";
-
-import { Divider, Grid, Link, Text } from "@geist-ui/core";
+import { LuExternalLink } from "react-icons/lu";
 
 import Layout from "@/components/layout";
 import Accounts from "@/components/page/index/accounts";
@@ -42,37 +50,36 @@ const IndexPage: NextPage<IndexPageProps> = (props) => {
 	return (
 		<>
 			<Layout>
-				<Grid.Container justify="center" gap={2}>
-					<Grid xs={24} justify="center">
-						<div className="title">
-							<Text h1>{name}</Text>
-						</div>
-					</Grid>
-					<Grid justify="center">
+				<Grid templateColumns="repeat(1, 1fr)" gap={2} justifyItems="center">
+					<GridItem>
+						<Box py={6}>
+							<Heading size="3xl">{name}</Heading>
+						</Box>
+					</GridItem>
+					<GridItem>
 						<Profile {...avatar} />
-					</Grid>
-					<Grid xs={24} justify="center">
+					</GridItem>
+					<GridItem>
 						<Accounts {...accounts} />
-					</Grid>
-					<Grid xs={24} justify="center">
-						<div className="sourceCode">
-							{/* FIXME: Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>. */}
-							<Text p>
-								<Divider />
-								<Text b>SourceCode: </Text>
-								<Link
-									icon
-									underline
-									href={repositoryURL}
-									target="_blank"
-									rel="noreferrer noopener"
-								>
-									GitHub
-								</Link>
+					</GridItem>
+					<GridItem textAlign={"center"} my={8}>
+						<Box className="sourceCode" py={4}>
+							<Separator mb={4} />
+							<Text fontWeight="bold" mb={2}>
+								SourceCode:{" "}
 							</Text>
-						</div>
-					</Grid>
-				</Grid.Container>
+							<Link
+								href={repositoryURL}
+								target="_blank"
+								rel="noopener noreferrer"
+								variant="underline"
+							>
+								GitHub
+								<LuExternalLink />
+							</Link>
+						</Box>
+					</GridItem>
+				</Grid>
 			</Layout>
 		</>
 	);
@@ -85,7 +92,7 @@ export const getStaticProps: GetStaticProps = async (_) => {
 			repositoryURL: "https://github.com/teitei-tk/teitei-tk.com",
 			user: {
 				name: "teitei-tk",
-				bio: "Software Engineer writing Ruby, Python, PHP, JavaScript, Go",
+				bio: "Software Engineer writing Ruby, Python, JavaScript, Go",
 				avatarURL: "https://avatars3.githubusercontent.com/u/1324680?v=4",
 				email: "teitei.tk@gmail.com",
 				twitterURL: "https://twitter.com/teitei_tk",

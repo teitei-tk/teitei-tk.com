@@ -1,16 +1,11 @@
+import styles from "@/styles/components/layout.module.css";
 import type { NextPage } from "next";
 import type * as React from "react";
 
 const Layout: NextPage<{ children: React.ReactNode }> = ({ children }) => {
 	return (
 		<section>
-			<div className="container">{children}</div>
-
-			<style jsx>{`
-        .container {
-          width: 100%;
-        }
-      `}</style>
+			<div className={styles.container}>{children}</div>
 		</section>
 	);
 };

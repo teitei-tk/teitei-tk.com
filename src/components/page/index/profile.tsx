@@ -1,4 +1,16 @@
-import { Avatar, Description, Grid, Link, Spacer, Text } from "@geist-ui/core";
+import {
+	Box,
+	Center,
+	Grid,
+	GridItem,
+	HStack,
+	Heading,
+	Image,
+	Link,
+	Stack,
+	Text,
+} from "@chakra-ui/react";
+import { LuExternalLink } from "react-icons/lu";
 
 type Props = {
 	name: string;
@@ -10,50 +22,51 @@ type Props = {
 
 const Profile = (props: Props) => {
 	return (
-		<section>
-			<div className="profile">
-				<Avatar
-					alt="teitei-tkとして活動しているアカウントのアバター画像。タバコをくわえた茶髪の少女の横顔イラスト"
+		<Box as="section" my={8}>
+			<Center mb={8}>
+				<Image
+					borderRadius="full"
+					boxSize="150px"
 					src={props.avatarURL}
-					text={props.name}
-					scale={10}
+					alt="teitei-tkとして活動しているアカウントのアバター画像。タバコをくわえた茶髪の少女の横顔イラスト"
 				/>
-			</div>
-			<Spacer />
+			</Center>
 
-			<Grid.Container gap={2}>
-				<Grid xs={24} md={8}>
-					<Description
-						className="social"
-						title="name"
-						content={<Text p>@{props.name}</Text>}
-					/>
-				</Grid>
-				<Grid xs={24} md={8}>
-					<Description
-						className="social"
-						title="biography"
-						content={<Text p>{props.bio}</Text>}
-					/>
-				</Grid>
-				<Grid xs={24} md={8}>
-					<Description
-						className="contact"
-						title="Contact"
-						content={
-							<Link icon underline href={props.twitter} target="_blank">
-								<Text p>{props.email}</Text>
-							</Link>
-						}
-					/>
-				</Grid>
-			</Grid.Container>
-			<style>{`
-        .profile {
-          text-align: center;
-        }
-      `}</style>
-		</section>
+			<Grid
+				templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
+				gap={10}
+				textAlign="center"
+			>
+				<GridItem>
+					<Stack gap={2} align={"center"}>
+						<Heading size="sm">name</Heading>
+						<Text mb={2}>@{props.name}</Text>
+					</Stack>
+				</GridItem>
+				<GridItem>
+					<Stack gap={2} align={"center"}>
+						<Heading size="sm">biography</Heading>
+						<Text mb={2}>{props.bio}</Text>
+					</Stack>
+				</GridItem>
+				<GridItem>
+					<Stack gap={2} align={"center"}>
+						<Heading size="sm">Contact</Heading>
+						<Link
+							href={props.twitter}
+							target="_blank"
+							rel="noopener noreferrer"
+							variant="underline"
+						>
+							<HStack align="center">
+								<Text>{props.email}</Text>
+								<LuExternalLink />
+							</HStack>
+						</Link>
+					</Stack>
+				</GridItem>
+			</Grid>
+		</Box>
 	);
 };
 

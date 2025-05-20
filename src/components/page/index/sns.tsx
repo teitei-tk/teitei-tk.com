@@ -1,4 +1,5 @@
-import { Link } from "@geist-ui/core";
+import { Link } from "@chakra-ui/react";
+import { LuExternalLink } from "react-icons/lu";
 
 type SNSProps = {
 	name: string;
@@ -7,8 +8,14 @@ type SNSProps = {
 
 const SNS = ({ name, url }: SNSProps) => {
 	return (
-		<Link icon underline href={url} target="_blank" rel="noreferrer noopener">
+		<Link
+			href={url}
+			target="_blank"
+			rel="noreferrer noopener"
+			variant="underline"
+		>
 			{name}
+			<LuExternalLink />
 		</Link>
 	);
 };
