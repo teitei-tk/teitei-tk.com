@@ -981,15 +981,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/third-parties@npm:^14.2.4":
-  version: 14.2.4
-  resolution: "@next/third-parties@npm:14.2.4"
+"@next/third-parties@npm:^15.3.2":
+  version: 15.3.2
+  resolution: "@next/third-parties@npm:15.3.2"
   dependencies:
     third-party-capital: "npm:1.0.20"
   peerDependencies:
-    next: ^13.0.0 || ^14.0.0
-    react: ^18.2.0
-  checksum: 10c0/92dc2f1d507d0f5a8c208d0ede355a5084cbc242e46348da0f042522968811b62bb360d78fbbfc53f603c1f875dd4610bc492cd0024ee4a1402541d94287a73f
+    next: ^13.0.0 || ^14.0.0 || ^15.0.0
+    react: ^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0
+  checksum: 10c0/7e2c6ac9beb2117a363e25b31a2241b56e02e449f8542ccd84c2c4b9e418c029e8b8f9e3f659f451f9c2a3b29a83e879c08faee4a201fb3c9240bc6915a6bd62
   languageName: node
   linkType: hard
 
@@ -4357,7 +4357,7 @@ __metadata:
     "@chakra-ui/react": "npm:^3.19.1"
     "@emotion/react": "npm:^11.14.0"
     "@emotion/styled": "npm:^11.14.0"
-    "@next/third-parties": "npm:^14.2.4"
+    "@next/third-parties": "npm:^15.3.2"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/jest-dom": "npm:^6.4.6"
     "@testing-library/react": "npm:^16.3.0"
