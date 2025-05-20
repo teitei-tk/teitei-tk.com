@@ -1,7 +1,6 @@
 import { Center, Grid, GridItem, Heading } from "@chakra-ui/react";
 
 import Blog from "@/components/page/index/blog";
-import Misc from "@/components/page/index/misc";
 import SNS from "@/components/page/index/sns";
 
 type Props = {
@@ -14,7 +13,6 @@ type Props = {
 	medium: string; // TODO: remove
 	note: string;
 	hatenaBlog: string;
-	scrapbox: string;
 	zenn: string;
 };
 
@@ -25,11 +23,6 @@ export type SNSAccount = {
 
 export type BlogAccount = {
 	name: "HatenaBlog" | "note" | "Medium";
-	url: string;
-};
-
-export type MiscAccount = {
-	name: "Scrapbox";
 	url: string;
 };
 
@@ -76,13 +69,6 @@ const Accounts = (props: Props) => {
 		},
 	];
 
-	const miscMap: MiscAccount[] = [
-		{
-			name: "Scrapbox",
-			url: props.scrapbox,
-		},
-	];
-
 	return (
 		<section>
 			<Grid templateColumns="repeat(1, 1fr)" gap={1} justifyItems="center">
@@ -107,18 +93,6 @@ const Accounts = (props: Props) => {
 					return (
 						<GridItem key={map.url} textAlign="center">
 							<Blog name={map.name} url={map.url} />
-						</GridItem>
-					);
-				})}
-				<GridItem>
-					<Heading size="2xl" textAlign="center" my={4}>
-						Misc
-					</Heading>
-				</GridItem>
-				{miscMap.map((map: { name: string; url: string }) => {
-					return (
-						<GridItem key={map.url} textAlign="center">
-							<Misc name={map.name} url={map.url} />
 						</GridItem>
 					);
 				})}

@@ -33,7 +33,6 @@ export type IndexPageProps = {
 			medium: string;
 			note: string;
 			hatenaBlog: string;
-			scrapbox: string;
 			zenn: string;
 		};
 	};
@@ -106,7 +105,6 @@ export const getStaticProps: GetStaticProps = async (_) => {
 				medium: "https://medium.com/@teitei_tk",
 				note: "https://note.com/teitei_tk",
 				hatenaBlog: "http://teitei-tk.hatenablog.com/",
-				scrapbox: "https://scrapbox.io/teiteitk/",
 				zenn: "https://zenn.dev/teitei_tk",
 			},
 		},

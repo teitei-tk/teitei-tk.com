@@ -25,7 +25,6 @@ describe("IndexPage component", () => {
 					medium: "https://medium.com/@teitei_tk",
 					note: "https://note.com/teitei_tk",
 					hatenaBlog: "http://teitei-tk.hatenablog.com/",
-					scrapbox: "https://scrapbox.io/teiteitk/",
 					zenn: "https://zenn.dev/teitei_tk",
 				},
 			},
@@ -78,13 +77,6 @@ describe("IndexPage component", () => {
 			},
 		];
 
-		const miscMap = [
-			{
-				name: "Scrapbox",
-				url: mockProps.siteMetadata.accounts.scrapbox,
-			},
-		];
-
 		for (const { name, url } of accountsMap) {
 			if (name === "GitHub") {
 				const links = screen.getAllByText(/GitHub/);
@@ -104,10 +96,6 @@ describe("IndexPage component", () => {
 		}
 
 		for (const { name, url } of blogsMap) {
-			expect(screen.getByRole("link", { name })).toHaveAttribute("href", url);
-		}
-
-		for (const { name, url } of miscMap) {
 			expect(screen.getByRole("link", { name })).toHaveAttribute("href", url);
 		}
 	});
