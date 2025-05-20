@@ -33,7 +33,6 @@ export type IndexPageProps = {
 			medium: string;
 			note: string;
 			hatenaBlog: string;
-			scrapbox: string;
 			zenn: string;
 		};
 	};
@@ -62,7 +61,7 @@ const IndexPage: NextPage<IndexPageProps> = (props) => {
 					<GridItem>
 						<Accounts {...accounts} />
 					</GridItem>
-					<GridItem textAlign={"center"} my={8}>
+					<GridItem textAlign={"center"} my={2}>
 						<Box className="sourceCode" py={4}>
 							<Separator mb={4} />
 							<Text fontWeight="bold" mb={2}>
@@ -106,7 +105,6 @@ export const getStaticProps: GetStaticProps = async (_) => {
 				medium: "https://medium.com/@teitei_tk",
 				note: "https://note.com/teitei_tk",
 				hatenaBlog: "http://teitei-tk.hatenablog.com/",
-				scrapbox: "https://scrapbox.io/teiteitk/",
 				zenn: "https://zenn.dev/teitei_tk",
 			},
 		},

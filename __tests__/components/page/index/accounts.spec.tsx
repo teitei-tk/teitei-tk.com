@@ -1,7 +1,6 @@
 import Accounts, {
 	type SNSAccount,
 	type BlogAccount,
-	type MiscAccount,
 } from "@/components/page/index/accounts";
 import { describe, expect, it } from "vitest";
 import "@testing-library/jest-dom";
@@ -19,7 +18,6 @@ describe("Accounts component", () => {
 			medium: "https://medium.com/test_medium",
 			note: "https://note.com/test_note",
 			hatenaBlog: "https://hatenablog.com/test_hatenaBlog",
-			scrapbox: "https://scrapbox.io/test_scrapbox",
 			zenn: "https://zenn.dev/test_zenn",
 		};
 
@@ -65,13 +63,6 @@ describe("Accounts component", () => {
 			},
 		];
 
-		const miscMap: MiscAccount[] = [
-			{
-				name: "Scrapbox",
-				url: mockProps.scrapbox,
-			},
-		];
-
 		renderWithChakra(<Accounts {...mockProps} />);
 
 		for (const { name, url } of accountsMap) {
@@ -79,10 +70,6 @@ describe("Accounts component", () => {
 		}
 
 		for (const { name, url } of blogsMap) {
-			expect(screen.getByRole("link", { name })).toHaveAttribute("href", url);
-		}
-
-		for (const { name, url } of miscMap) {
 			expect(screen.getByRole("link", { name })).toHaveAttribute("href", url);
 		}
 	});
