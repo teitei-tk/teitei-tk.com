@@ -1,4 +1,4 @@
-import { Grid, GridItem, Heading } from "@chakra-ui/react";
+import { Center, Grid, GridItem, Heading } from "@chakra-ui/react";
 
 import Blog from "@/components/page/index/blog";
 import Misc from "@/components/page/index/misc";
@@ -87,31 +87,37 @@ const Accounts = (props: Props) => {
 		<section>
 			<Grid templateColumns="repeat(1, 1fr)" gap={1} justifyItems="center">
 				<GridItem>
-					<Heading size="md">Accounts</Heading>
+					<Heading size="2xl" textAlign="center" my={4}>
+						Accounts
+					</Heading>
 				</GridItem>
 				{accountsMap.map((map: { name: string; url: string }) => {
 					return (
-						<GridItem key={map.url}>
+						<GridItem key={map.url} textAlign="center">
 							<SNS name={map.name} url={map.url} />
 						</GridItem>
 					);
 				})}
 				<GridItem>
-					<Heading size="md">Blogs</Heading>
+					<Heading size="2xl" textAlign="center" my={4}>
+						Blogs
+					</Heading>
 				</GridItem>
 				{blogsMap.map((map: { name: string; url: string }) => {
 					return (
-						<GridItem key={map.url}>
+						<GridItem key={map.url} textAlign="center">
 							<Blog name={map.name} url={map.url} />
 						</GridItem>
 					);
 				})}
 				<GridItem>
-					<Heading size="md">Misc</Heading>
+					<Heading size="2xl" textAlign="center" my={4}>
+						Misc
+					</Heading>
 				</GridItem>
 				{miscMap.map((map: { name: string; url: string }) => {
 					return (
-						<GridItem key={map.url}>
+						<GridItem key={map.url} textAlign="center">
 							<Misc name={map.name} url={map.url} />
 						</GridItem>
 					);

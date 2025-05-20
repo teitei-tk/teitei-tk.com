@@ -1,4 +1,5 @@
 import {
+	Box,
 	Grid,
 	GridItem,
 	Heading,
@@ -7,6 +8,7 @@ import {
 	Text,
 } from "@chakra-ui/react";
 import type { GetStaticProps, NextPage } from "next";
+import { LuExternalLink } from "react-icons/lu";
 
 import Layout from "@/components/layout";
 import Accounts from "@/components/page/index/accounts";
@@ -50,7 +52,9 @@ const IndexPage: NextPage<IndexPageProps> = (props) => {
 			<Layout>
 				<Grid templateColumns="repeat(1, 1fr)" gap={2} justifyItems="center">
 					<GridItem>
-						<Heading size="xl">{name}</Heading>
+						<Box py={6}>
+							<Heading size="3xl">{name}</Heading>
+						</Box>
 					</GridItem>
 					<GridItem>
 						<Profile {...avatar} />
@@ -58,21 +62,22 @@ const IndexPage: NextPage<IndexPageProps> = (props) => {
 					<GridItem>
 						<Accounts {...accounts} />
 					</GridItem>
-					<GridItem>
-						<div className="sourceCode">
-							{/* FIXME: Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>. */}
-							<div>
-								<Separator />
-								<Text fontWeight="bold">SourceCode: </Text>
-								<Link
-									href={repositoryURL}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									GitHub
-								</Link>
-							</div>
-						</div>
+					<GridItem textAlign={"center"} my={8}>
+						<Box className="sourceCode" py={4}>
+							<Separator mb={4} />
+							<Text fontWeight="bold" mb={2}>
+								SourceCode:{" "}
+							</Text>
+							<Link
+								href={repositoryURL}
+								target="_blank"
+								rel="noopener noreferrer"
+								variant="underline"
+							>
+								GitHub
+								<LuExternalLink />
+							</Link>
+						</Box>
 					</GridItem>
 				</Grid>
 			</Layout>
@@ -87,7 +92,7 @@ export const getStaticProps: GetStaticProps = async (_) => {
 			repositoryURL: "https://github.com/teitei-tk/teitei-tk.com",
 			user: {
 				name: "teitei-tk",
-				bio: "Software Engineer writing Ruby, Python, PHP, JavaScript, Go",
+				bio: "Software Engineer writing Ruby, Python, JavaScript, Go",
 				avatarURL: "https://avatars3.githubusercontent.com/u/1324680?v=4",
 				email: "teitei.tk@gmail.com",
 				twitterURL: "https://twitter.com/teitei_tk",

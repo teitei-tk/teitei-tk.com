@@ -1,4 +1,16 @@
-import { Avatar, Grid, GridItem, Image, Link, Text } from "@chakra-ui/react";
+import {
+	Box,
+	Center,
+	Grid,
+	GridItem,
+	HStack,
+	Heading,
+	Image,
+	Link,
+	Stack,
+	Text,
+} from "@chakra-ui/react";
+import { LuExternalLink } from "react-icons/lu";
 
 type Props = {
 	name: string;
@@ -10,35 +22,51 @@ type Props = {
 
 const Profile = (props: Props) => {
 	return (
-		<section>
-			<div className="profile">
+		<Box as="section" my={8}>
+			<Center mb={8}>
 				<Image
 					borderRadius="full"
 					boxSize="150px"
 					src={props.avatarURL}
 					alt="teitei-tkとして活動しているアカウントのアバター画像。タバコをくわえた茶髪の少女の横顔イラスト"
 				/>
-			</div>
+			</Center>
 
-			<Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={2}>
+			<Grid
+				templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
+				gap={10}
+				textAlign="center"
+			>
 				<GridItem>
-					<Text>name: @{props.name}</Text>
+					<Stack gap={2} align={"center"}>
+						<Heading size="sm">name</Heading>
+						<Text mb={2}>@{props.name}</Text>
+					</Stack>
 				</GridItem>
 				<GridItem>
-					<Text>biography: {props.bio}</Text>
+					<Stack gap={2} align={"center"}>
+						<Heading size="sm">biography</Heading>
+						<Text mb={2}>{props.bio}</Text>
+					</Stack>
 				</GridItem>
 				<GridItem>
-					<Link href={props.twitter} target="_blank" rel="noopener noreferrer">
-						<Text>Contact: {props.email}</Text>
-					</Link>
+					<Stack gap={2} align={"center"}>
+						<Heading size="sm">Contact</Heading>
+						<Link
+							href={props.twitter}
+							target="_blank"
+							rel="noopener noreferrer"
+							variant="underline"
+						>
+							<HStack align="center">
+								<Text>{props.email}</Text>
+								<LuExternalLink />
+							</HStack>
+						</Link>
+					</Stack>
 				</GridItem>
 			</Grid>
-			<style>{`
-        .profile {
-          text-align: center;
-        }
-      `}</style>
-		</section>
+		</Box>
 	);
 };
 
