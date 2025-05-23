@@ -91,7 +91,7 @@ export const getStaticProps: GetStaticProps = async (_) => {
 			repositoryURL: "https://github.com/teitei-tk/teitei-tk.com",
 			user: {
 				name: "teitei-tk",
-				bio: "Software Engineer writing Ruby, Python, JavaScript, Go",
+				bio: "Web Application Developer 得意なことはレガシーコードの改善及び新技術の導入 Ruby/Rails/Go/Python/TypeScript/React/Vue.js",
 				avatarURL: "https://avatars3.githubusercontent.com/u/1324680?v=4",
 				email: "teitei.tk@gmail.com",
 				twitterURL: "https://twitter.com/teitei_tk",
