@@ -22,10 +22,10 @@ describe("Profile component", () => {
 		expect(screen.getByText(mockProps.bio)).toBeInTheDocument();
 		expect(screen.getByText("Contact")).toBeInTheDocument();
 		expect(screen.getByText(mockProps.email)).toBeInTheDocument();
-		expect(screen.getByRole("link", { name: mockProps.email })).toHaveAttribute(
-			"href",
-			"https://twitter.com/test_twitter",
-		);
+                expect(screen.getByRole("link", { name: mockProps.email })).toHaveAttribute(
+                        "href",
+                        `mailto:${mockProps.email}`,
+                );
 
 		expect(
 			screen.getByAltText(
