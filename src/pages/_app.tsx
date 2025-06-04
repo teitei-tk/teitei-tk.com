@@ -13,9 +13,9 @@ const App = ({ Component, pageProps }: AppProps) => {
 			</Head>
 			<GoogleAnalytics gaId={GA_TRACKING_ID} />
 
-			<ChakraProvider value={defaultSystem}>
-				<Component {...pageProps} />
-			</ChakraProvider>
+                        <ChakraProvider theme={defaultSystem}>
+                                <Component {...pageProps} />
+                        </ChakraProvider>
 		</>
 	);
 };

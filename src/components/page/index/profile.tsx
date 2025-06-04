@@ -52,12 +52,12 @@ const Profile = (props: Props) => {
 				<GridItem>
 					<Stack gap={2} align={"center"}>
 						<Heading size="sm">Contact</Heading>
-						<Link
-							href={props.twitter}
-							target="_blank"
-							rel="noopener noreferrer"
-							variant="underline"
-						>
+                                                <Link
+                                                        href={`mailto:${props.email}`}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        variant="underline"
+                                                >
 							<HStack align="center">
 								<Text>{props.email}</Text>
 								<LuExternalLink />
