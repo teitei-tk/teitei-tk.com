@@ -9,20 +9,18 @@ type Props = {
 	github: string;
 	qiita: string;
 	speakerDeck: string;
-	linkedin: string; // TODO: remove
-	medium: string; // TODO: remove
 	note: string;
 	hatenaBlog: string;
 	zenn: string;
 };
 
 export type SNSAccount = {
-	name: "Twitter" | "GitHub" | "Zenn" | "Qiita" | "SpeakerDeck" | "Linkedin";
+	name: "Twitter" | "GitHub" | "Zenn" | "Qiita" | "SpeakerDeck";
 	url: string;
 };
 
 export type BlogAccount = {
-	name: "HatenaBlog" | "note" | "Medium";
+	name: "HatenaBlog" | "note";
 	url: string;
 };
 
@@ -48,10 +46,6 @@ const Accounts = (props: Props) => {
 			name: "SpeakerDeck",
 			url: props.speakerDeck,
 		},
-		{
-			name: "Linkedin",
-			url: props.linkedin,
-		},
 	];
 
 	const blogsMap: BlogAccount[] = [
@@ -62,10 +56,6 @@ const Accounts = (props: Props) => {
 		{
 			name: "note",
 			url: props.note,
-		},
-		{
-			name: "Medium",
-			url: props.medium,
 		},
 	];
 

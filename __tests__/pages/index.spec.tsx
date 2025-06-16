@@ -21,8 +21,6 @@ describe("IndexPage component", () => {
 					github: "https://github.com/teitei-tk",
 					qiita: "https://qiita.com/teitei_tk",
 					speakerDeck: "https://speakerdeck.com/teitei",
-					linkedin: "https://www.linkedin.com/in/teitei-tk/",
-					medium: "https://medium.com/@teitei_tk",
 					note: "https://note.com/teitei_tk",
 					hatenaBlog: "http://teitei-tk.hatenablog.com/",
 					zenn: "https://zenn.dev/teitei_tk",
@@ -56,10 +54,6 @@ describe("IndexPage component", () => {
 				name: "SpeakerDeck",
 				url: mockProps.siteMetadata.accounts.speakerDeck,
 			},
-			{
-				name: "Linkedin",
-				url: mockProps.siteMetadata.accounts.linkedin,
-			},
 		];
 
 		const blogsMap = [
@@ -70,10 +64,6 @@ describe("IndexPage component", () => {
 			{
 				name: "note",
 				url: mockProps.siteMetadata.accounts.note,
-			},
-			{
-				name: "Medium",
-				url: mockProps.siteMetadata.accounts.medium,
 			},
 		];
 

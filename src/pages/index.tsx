@@ -29,8 +29,6 @@ export type IndexPageProps = {
 			github: string;
 			qiita: string;
 			speakerDeck: string;
-			linkedin: string;
-			medium: string;
 			note: string;
 			hatenaBlog: string;
 			zenn: string;
@@ -101,8 +99,6 @@ export const getStaticProps: GetStaticProps = async (_) => {
 				github: "https://github.com/teitei-tk",
 				qiita: "https://qiita.com/teitei_tk",
 				speakerDeck: "https://speakerdeck.com/teitei",
-				linkedin: "https://www.linkedin.com/in/teitei-tk/",
-				medium: "https://medium.com/@teitei_tk",
 				note: "https://note.com/teitei_tk",
 				hatenaBlog: "http://teitei-tk.hatenablog.com/",
 				zenn: "https://zenn.dev/teitei_tk",

@@ -14,8 +14,6 @@ describe("Accounts component", () => {
 			github: "https://github.com/test_github",
 			qiita: "https://qiita.com/test_qiita",
 			speakerDeck: "https://speakerdeck.com/test_speakerdeck",
-			linkedin: "https://linkedin.com/test_linkedin",
-			medium: "https://medium.com/test_medium",
 			note: "https://note.com/test_note",
 			hatenaBlog: "https://hatenablog.com/test_hatenaBlog",
 			zenn: "https://zenn.dev/test_zenn",
@@ -42,10 +40,6 @@ describe("Accounts component", () => {
 				name: "SpeakerDeck",
 				url: mockProps.speakerDeck,
 			},
-			{
-				name: "Linkedin",
-				url: mockProps.linkedin,
-			},
 		];
 
 		const blogsMap: BlogAccount[] = [
@@ -56,10 +50,6 @@ describe("Accounts component", () => {
 			{
 				name: "note",
 				url: mockProps.note,
-			},
-			{
-				name: "Medium",
-				url: mockProps.medium,
 			},
 		];
 
