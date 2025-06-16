@@ -11,10 +11,10 @@
 		"dev": "next",
 		"build": "next build",
 		"start": "next start",
-		"lint": "biome lint --apply .",
+		"lint": "biome lint --write .",
 		"format": "biome format --write .",
-		"check": "biome check --apply .",
-		"fix": "biome check --apply .",
+		"check": "biome check --write .",
+		"fix": "biome check --write .",
 		"test": "vitest",
 		"export": "yarn build"
 	},
