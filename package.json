@@ -16,7 +16,7 @@
 		"check": "biome check --write .",
 		"fix": "biome check --write .",
 		"test": "vitest run",
-		"export": "yarn build"
+		"export": "npm run build"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
@@ -42,6 +42,5 @@
 		"react": "18.3.1",
 		"react-dom": "18.3.1",
 		"react-icons": "^5.5.0"
-	},
-	"packageManager": "yarn@4.2.2"
+	}
 }

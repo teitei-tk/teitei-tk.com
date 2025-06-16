@@ -12,29 +12,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: ".node-version"
-          cache: "yarn"
+          cache: "npm"
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
-
-      - name: Cache node_modules
-        uses: actions/cache@v4
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
 
       - name: Install Dependencies
-        run: yarn install --immutable
+        run: npm ci
 
       - name: format
-        run: yarn format
+        run: npm run format
 
       - name: lint
-        run: yarn lint
+        run: npm run lint
 
       - name: test
-        run: yarn test --run
+        run: npm run test
