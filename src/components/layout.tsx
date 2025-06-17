@@ -6,7 +6,6 @@ const Layout = ({ children, className, id }: LayoutProps) => {
 		<main 
 			id={id || "main-content"}
 			className={`${styles.container} ${className || ""}`.trim()}
-			role="main"
 			aria-label="メインコンテンツ"
 		>
 			{children}
