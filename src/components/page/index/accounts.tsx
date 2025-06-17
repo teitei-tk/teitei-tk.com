@@ -1,7 +1,6 @@
 import { Center, Grid, GridItem, Heading } from "@chakra-ui/react";
 
-import Blog from "@/components/page/index/blog";
-import SNS from "@/components/page/index/sns";
+import ExternalLink from "@/components/common/ExternalLink";
 
 type Props = {
 	// FIXME: url suffix
@@ -70,7 +69,7 @@ const Accounts = (props: Props) => {
 				{accountsMap.map((map: { name: string; url: string }) => {
 					return (
 						<GridItem key={map.url} textAlign="center">
-							<SNS name={map.name} url={map.url} />
+							<ExternalLink name={map.name} url={map.url} />
 						</GridItem>
 					);
 				})}
@@ -82,7 +81,7 @@ const Accounts = (props: Props) => {
 				{blogsMap.map((map: { name: string; url: string }) => {
 					return (
 						<GridItem key={map.url} textAlign="center">
-							<Blog name={map.name} url={map.url} />
+							<ExternalLink name={map.name} url={map.url} />
 						</GridItem>
 					);
 				})}
@@ -99,7 +98,7 @@ if (import.meta.vitest) {
 	const { renderWithChakra } = await import("@/utils/test-utils");
 
 	describe("Accounts component", () => {
-		it("renders correctly", () => {
+		it("renders SNS and blog accounts correctly", () => {
 			const mockProps = {
 				twitter: "https://twitter.com/test_twitter",
 				github: "https://github.com/test_github",
@@ -110,49 +109,35 @@ if (import.meta.vitest) {
 				zenn: "https://zenn.dev/test_zenn",
 			};
 
-			const accountsMap: SNSAccount[] = [
-				{
-					name: "Twitter",
-					url: mockProps.twitter,
-				},
-				{
-					name: "GitHub",
-					url: mockProps.github,
-				},
-				{
-					name: "Zenn",
-					url: mockProps.zenn,
-				},
-				{
-					name: "Qiita",
-					url: mockProps.qiita,
-				},
-				{
-					name: "SpeakerDeck",
-					url: mockProps.speakerDeck,
-				},
-			];
+			renderWithChakra(<Accounts {...mockProps} />);
 
-			const blogsMap: BlogAccount[] = [
-				{
-					name: "HatenaBlog",
-					url: mockProps.hatenaBlog,
-				},
-				{
-					name: "note",
-					url: mockProps.note,
-				},
-			];
+			// SNS accounts
+			expect(screen.getByRole("link", { name: "Twitter" })).toHaveAttribute("href", mockProps.twitter);
+			expect(screen.getByRole("link", { name: "GitHub" })).toHaveAttribute("href", mockProps.github);
+			expect(screen.getByRole("link", { name: "Zenn" })).toHaveAttribute("href", mockProps.zenn);
+			expect(screen.getByRole("link", { name: "Qiita" })).toHaveAttribute("href", mockProps.qiita);
+			expect(screen.getByRole("link", { name: "SpeakerDeck" })).toHaveAttribute("href", mockProps.speakerDeck);
+
+			// Blog accounts
+			expect(screen.getByRole("link", { name: "HatenaBlog" })).toHaveAttribute("href", mockProps.hatenaBlog);
+			expect(screen.getByRole("link", { name: "note" })).toHaveAttribute("href", mockProps.note);
+		});
+
+		it("renders section headings", () => {
+			const mockProps = {
+				twitter: "https://twitter.com/test_twitter",
+				github: "https://github.com/test_github",
+				qiita: "https://qiita.com/test_qiita",
+				speakerDeck: "https://speakerdeck.com/test_speakerdeck",
+				note: "https://note.com/test_note",
+				hatenaBlog: "https://hatenablog.com/test_hatenaBlog",
+				zenn: "https://zenn.dev/test_zenn",
+			};
 
 			renderWithChakra(<Accounts {...mockProps} />);
 
-			for (const { name, url } of accountsMap) {
-				expect(screen.getByRole("link", { name })).toHaveAttribute("href", url);
-			}
-
-			for (const { name, url } of blogsMap) {
-				expect(screen.getByRole("link", { name })).toHaveAttribute("href", url);
-			}
+			expect(screen.getByText("Accounts")).toBeInTheDocument();
+			expect(screen.getByText("Blogs")).toBeInTheDocument();
 		});
 	});
 }

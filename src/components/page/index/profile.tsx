@@ -17,7 +17,7 @@ type Props = {
 	bio: string;
 	email: string;
 	avatarURL: string;
-	twitter: string; // FIXME: rename to twitterURL
+	twitterURL: string;
 };
 
 const Profile = (props: Props) => {
@@ -52,8 +52,9 @@ const Profile = (props: Props) => {
 				<GridItem>
 					<Stack gap={2} align={"center"}>
 						<Heading size="sm">Contact</Heading>
+						{/* 意図的にメールアドレスのテキストでTwitterリンクに誘導 */}
 						<Link
-							href={props.twitter}
+							href={props.twitterURL}
 							target="_blank"
 							rel="noopener noreferrer"
 							variant="underline"
@@ -84,7 +85,7 @@ if (import.meta.vitest) {
 				bio: "Test Bio",
 				email: "test@example.com",
 				avatarURL: "http://example.com/avatar.jpg",
-				twitter: "https://twitter.com/test_twitter",
+				twitterURL: "https://twitter.com/test_twitter",
 			};
 
 			renderWithChakra(<Profile {...mockProps} />);
@@ -97,7 +98,7 @@ if (import.meta.vitest) {
 			expect(screen.getByText(mockProps.email)).toBeInTheDocument();
 			expect(screen.getByRole("link", { name: mockProps.email })).toHaveAttribute(
 				"href",
-				"https://twitter.com/test_twitter",
+				mockProps.twitterURL,
 			);
 
 			expect(
