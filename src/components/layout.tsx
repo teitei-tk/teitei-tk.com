@@ -1,12 +1,16 @@
 import styles from "@/styles/components/layout.module.css";
-import type { NextPage } from "next";
-import type * as React from "react";
+import type { LayoutProps } from "@/types/layout";
 
-const Layout: NextPage<{ children: React.ReactNode }> = ({ children }) => {
+const Layout = ({ children, className, id }: LayoutProps) => {
 	return (
-		<section>
-			<div className={styles.container}>{children}</div>
-		</section>
+		<main 
+			id={id || "main-content"}
+			className={`${styles.container} ${className || ""}`.trim()}
+			role="main"
+			aria-label="メインコンテンツ"
+		>
+			{children}
+		</main>
 	);
 };
 

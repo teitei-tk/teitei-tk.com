@@ -12,15 +12,10 @@ import {
 } from "@chakra-ui/react";
 import { LuExternalLink } from "react-icons/lu";
 
-type Props = {
-	name: string;
-	bio: string;
-	email: string;
-	avatarURL: string;
-	twitterURL: string;
-};
+import type { ProfileProps } from "@/types/common";
 
-const Profile = (props: Props) => {
+
+const Profile = (props: ProfileProps) => {
 	return (
 		<Box as="section" my={8}>
 			<Center mb={8}>
