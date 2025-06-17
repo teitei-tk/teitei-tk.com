@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import "@testing-library/jest-dom";
 import { screen } from "@testing-library/react";
 import { renderWithChakra } from "../renderer";
+import { createAccountsMap, createBlogsMap } from "@/utils/mockData";
 
 describe("IndexPage component", () => {
 	it("renders correctly", () => {
@@ -33,39 +34,12 @@ describe("IndexPage component", () => {
 		// Check if the user name is rendered correctly
 		expect(screen.getByText(mockProps.siteMetadata.name)).toBeInTheDocument();
 
-		const accountsMap = [
-			{
-				name: "Twitter",
-				url: mockProps.siteMetadata.accounts.twitter,
-			},
-			{
-				name: "GitHub",
-				url: mockProps.siteMetadata.accounts.github,
-			},
-			{
-				name: "Zenn",
-				url: mockProps.siteMetadata.accounts.zenn,
-			},
-			{
-				name: "Qiita",
-				url: mockProps.siteMetadata.accounts.qiita,
-			},
-			{
-				name: "SpeakerDeck",
-				url: mockProps.siteMetadata.accounts.speakerDeck,
-			},
-		];
+		const accountsMap = createAccountsMap(mockProps.siteMetadata.accounts);
 
-		const blogsMap = [
-			{
-				name: "HatenaBlog",
-				url: mockProps.siteMetadata.accounts.hatenaBlog,
-			},
-			{
-				name: "note",
-				url: mockProps.siteMetadata.accounts.note,
-			},
-		];
+		const blogsMap = createBlogsMap({
+			hatenaBlog: mockProps.siteMetadata.accounts.hatenaBlog,
+			note: mockProps.siteMetadata.accounts.note,
+		});
 
 		for (const { name, url } of accountsMap) {
 			if (name === "GitHub") {

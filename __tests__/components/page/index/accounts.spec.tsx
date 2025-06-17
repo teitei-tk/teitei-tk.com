@@ -1,11 +1,9 @@
-import Accounts, {
-	type SNSAccount,
-	type BlogAccount,
-} from "@/components/page/index/accounts";
+import Accounts from "@/components/page/index/accounts";
 import { describe, expect, it } from "vitest";
 import "@testing-library/jest-dom";
 import { screen } from "@testing-library/react";
 import { renderWithChakra } from "../../../renderer";
+import { createAccountsMap, createBlogsMap } from "@/utils/mockData";
 
 describe("Accounts component", () => {
 	it("renders correctly", () => {
@@ -19,39 +17,18 @@ describe("Accounts component", () => {
 			zenn: "https://zenn.dev/test_zenn",
 		};
 
-		const accountsMap: SNSAccount[] = [
-			{
-				name: "Twitter",
-				url: mockProps.twitter,
-			},
-			{
-				name: "GitHub",
-				url: mockProps.github,
-			},
-			{
-				name: "Zenn",
-				url: mockProps.zenn,
-			},
-			{
-				name: "Qiita",
-				url: mockProps.qiita,
-			},
-			{
-				name: "SpeakerDeck",
-				url: mockProps.speakerDeck,
-			},
-		];
+		const accountsMap = createAccountsMap({
+			twitter: mockProps.twitter,
+			github: mockProps.github,
+			zenn: mockProps.zenn,
+			qiita: mockProps.qiita,
+			speakerDeck: mockProps.speakerDeck,
+		});
 
-		const blogsMap: BlogAccount[] = [
-			{
-				name: "HatenaBlog",
-				url: mockProps.hatenaBlog,
-			},
-			{
-				name: "note",
-				url: mockProps.note,
-			},
-		];
+		const blogsMap = createBlogsMap({
+			hatenaBlog: mockProps.hatenaBlog,
+			note: mockProps.note,
+		});
 
 		renderWithChakra(<Accounts {...mockProps} />);
 

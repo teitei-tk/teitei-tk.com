@@ -1,5 +1,7 @@
-import { Link } from "@chakra-ui/react";
-import { LuExternalLink } from "react-icons/lu";
+/**
+ * ブログリンクを表示するコンポーネント
+ */
+import ExternalLink from "@/components/common/ExternalLink";
 
 type BlogProps = {
 	name: string;
@@ -7,17 +9,7 @@ type BlogProps = {
 };
 
 const Blog = ({ name, url }: BlogProps) => {
-	return (
-		<Link
-			href={url}
-			target="_blank"
-			rel="noreferrer noopener"
-			variant="underline"
-		>
-			{name}
-			<LuExternalLink />
-		</Link>
-	);
+	return <ExternalLink name={name} url={url} />;
 };
 
 export default Blog;
