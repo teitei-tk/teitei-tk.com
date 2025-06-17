@@ -13,7 +13,7 @@ import { LuExternalLink } from "react-icons/lu";
 import Layout from "@/components/layout";
 import Accounts from "@/components/page/index/accounts";
 import Profile from "@/components/page/index/profile";
-import { SITE_METADATA, type SiteMetadata } from "@/constants/siteData";
+import { SITE_METADATA, type SiteMetadata } from "@/constants";
 
 export type IndexPageProps = {
 	siteMetadata: SiteMetadata;
