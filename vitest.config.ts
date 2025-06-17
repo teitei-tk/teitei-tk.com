@@ -8,6 +8,10 @@ export default defineConfig({
 		globals: true,
 		environment: "jsdom",
 		setupFiles: ["./vitest.setup.ts"],
+		includeSource: ["src/**/*.{js,ts,jsx,tsx}"],
+	},
+	define: {
+		"import.meta.vitest": "undefined",
 	},
 	resolve: {
 		alias: {
