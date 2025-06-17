@@ -13,27 +13,10 @@ import { LuExternalLink } from "react-icons/lu";
 import Layout from "@/components/layout";
 import Accounts from "@/components/page/index/accounts";
 import Profile from "@/components/page/index/profile";
+import { SITE_METADATA, type SiteMetadata } from "@/constants";
 
 export type IndexPageProps = {
-	siteMetadata: {
-		name: string;
-		repositoryURL: string;
-		user: {
-			name: string;
-			bio: string;
-			email: string;
-			avatarURL: string;
-		};
-		accounts: {
-			twitter: string;
-			github: string;
-			qiita: string;
-			speakerDeck: string;
-			note: string;
-			hatenaBlog: string;
-			zenn: string;
-		};
-	};
+	siteMetadata: SiteMetadata;
 };
 
 const IndexPage: NextPage<IndexPageProps> = (props) => {
@@ -41,7 +24,7 @@ const IndexPage: NextPage<IndexPageProps> = (props) => {
 
 	const avatar = {
 		...user,
-		...{ twitter: accounts.twitter },
+		twitterURL: accounts.twitter,
 	};
 
 	return (
@@ -83,31 +66,10 @@ const IndexPage: NextPage<IndexPageProps> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps = async (_) => {
-	const staticData = {
-		siteMetadata: {
-			name: "teitei-tk.com",
-			repositoryURL: "https://github.com/teitei-tk/teitei-tk.com",
-			user: {
-				name: "teitei-tk",
-				bio: "Web Application Developer 得意なことはレガシーコードの改善及び新技術の導入 Ruby/Rails/Go/Python/TypeScript/React/Vue.js",
-				avatarURL: "https://avatars3.githubusercontent.com/u/1324680?v=4",
-				email: "teitei.tk@gmail.com",
-				twitterURL: "https://twitter.com/teitei_tk",
-			},
-			accounts: {
-				twitter: "https://twitter.com/teitei_tk",
-				github: "https://github.com/teitei-tk",
-				qiita: "https://qiita.com/teitei_tk",
-				speakerDeck: "https://speakerdeck.com/teitei",
-				note: "https://note.com/teitei_tk",
-				hatenaBlog: "http://teitei-tk.hatenablog.com/",
-				zenn: "https://zenn.dev/teitei_tk",
-			},
-		},
-	};
-
 	return {
-		props: staticData as IndexPageProps,
+		props: {
+			siteMetadata: SITE_METADATA,
+		} as IndexPageProps,
 	};
 };
 
@@ -126,9 +88,10 @@ if (import.meta.vitest) {
 					repositoryURL: "https://github.com/teitei-tk/teitei-tk.com",
 					user: {
 						name: "teitei-tk",
-						bio: "Software Engineer writing Ruby, Python, PHP, JavaScript, Go",
+						bio: "Web Application Developer 得意なことはレガシーコードの改善及び新技術の導入 Ruby/Rails/Go/Python/TypeScript/React/Vue.js",
 						avatarURL: "https://avatars3.githubusercontent.com/u/1324680?v=4",
 						email: "teitei.tk@gmail.com",
+				twitterURL: "https://twitter.com/teitei_tk",
 					},
 					accounts: {
 						twitter: "https://twitter.com/teitei_tk",
