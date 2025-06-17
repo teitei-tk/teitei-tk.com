@@ -12,13 +12,13 @@ Next.js 14、TypeScript、Chakra UI を用いて構築した個人ポートフ�
 
 ## 開発コマンド
 
-- `yarn dev` … 開発サーバーを起動
-- `yarn build` … 本番ビルド（静的エクスポート）
-- `yarn start` … 本番サーバーを起動
-- `yarn test` … Vitest でテスト実行
-- `yarn lint` … Biome でコードをリント
-- `yarn format` … Biome でコードを整形
-- `yarn check` または `yarn fix` … Biome のリント＆整形を一括実行
+- `npm run dev` … 開発サーバーを起動
+- `npm run build` … 本番ビルド（静的エクスポート）
+- `npm run start` … 本番サーバーを起動
+- `npm run test` … Vitest でテスト実行
+- `npm run lint` … Biome でコードをリント
+- `npm run format` … Biome でコードを整形
+- `npm run check` または `npm run fix` … Biome のリント＆整形を一括実行
 
 ---
 
@@ -26,7 +26,7 @@ Next.js 14、TypeScript、Chakra UI を用いて構築した個人ポートフ�
 
 ### 1. TDD（テスト駆動開発）を徹底する
 
-コードを生成するときは必ず対応するユニットテストも生成し、`yarn test` がパスすることを確認する。
+コードを生成するときは必ず対応するユニットテストも生成し、`npm run test` がパスすることを確認する。
 
 ```
     // 例 – 足し算関数とテスト
@@ -85,7 +85,7 @@ Next.js 14、TypeScript、Chakra UI を用いて構築した個人ポートフ�
 - **テスト**: Vitest + Testing Library + jsdom
 - **リント/フォーマット**: Biome（ESLint / Prettier の代替）
 - **ビルドツール**: Next.js 内蔵 webpack
-- **パッケージマネージャー**: Yarn v4
+- **パッケージマネージャー**: npm
 
 ---
 
