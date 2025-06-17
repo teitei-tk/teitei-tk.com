@@ -11,7 +11,7 @@ export default defineConfig({
 		includeSource: ["src/**/*.{js,ts,jsx,tsx}"],
 	},
 	define: {
-		"import.meta.vitest": "undefined",
+		"import.meta.vitest": process.env.NODE_ENV === "test" ? true : "undefined",
 	},
 	resolve: {
 		alias: {
