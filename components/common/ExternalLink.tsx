@@ -30,7 +30,7 @@ export default ExternalLink;
 if (import.meta.vitest) {
 	const { describe, expect, it } = import.meta.vitest;
 	const { screen } = await import("@testing-library/react");
-	const { renderWithChakra } = await import("@/utils/test-utils");
+	const { renderWithChakra } = await import("@/lib/test-utils");
 
 	describe("ExternalLink component", () => {
 		it("renders correctly with name and url", () => {

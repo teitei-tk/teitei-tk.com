@@ -1,30 +1,56 @@
 {
-	"compilerOptions": {
-		"target": "es2022",
-		"lib": ["dom", "dom.iterable", "esnext"],
-		"allowJs": true,
-		"skipLibCheck": true,
-		"strict": true,
-		"forceConsistentCasingInFileNames": true,
-		"noEmit": true,
-		"esModuleInterop": true,
-		"module": "esnext",
-		"moduleResolution": "node",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"jsx": "preserve",
-		"jsxImportSource": "react",
-		"baseUrl": ".",
-		"paths": {
-			"@/*": ["src/*"]
-		},
-		"incremental": true,
-		"types": [
-			"vitest/globals",
-			"vitest/importMeta",
-			"@testing-library/jest-dom"
-		]
-	},
-	"exclude": ["node_modules", ".next", ".yarn"],
-	"include": ["next-env.d.ts", "./src/**/*", "./types/**/*", "__tests__/**/*"]
+  "compilerOptions": {
+    "target": "es2022",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "jsxImportSource": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["./components/*"],
+      "@/lib/*": ["./lib/*"],
+      "@/types/*": ["./types/*"],
+      "@/styles/*": ["./styles/*"],
+      "@/app/*": ["./app/*"]
+    },
+    "incremental": true,
+    "types": [
+      "vitest/globals",
+      "vitest/importMeta",
+      "@testing-library/jest-dom"
+    ],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    ".next",
+    ".yarn"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "./app/**/*",
+    "./components/**/*",
+    "./lib/**/*",
+    "./types/**/*",
+    "./styles/**/*",
+    "__tests__/**/*",
+    ".next/types/**/*.ts"
+  ]
 }

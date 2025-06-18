@@ -32,7 +32,7 @@ export default Accounts;
 if (import.meta.vitest) {
 	const { describe, expect, it } = import.meta.vitest;
 	const { screen } = await import("@testing-library/react");
-	const { renderWithChakra } = await import("@/utils/test-utils");
+	const { renderWithChakra } = await import("@/lib/test-utils");
 
 	describe("Accounts component", () => {
 		it("renders SNS and blog accounts correctly", () => {

@@ -54,7 +54,7 @@ export default SNSAccounts;
 if (import.meta.vitest) {
 	const { describe, expect, it } = import.meta.vitest;
 	const { screen } = await import("@testing-library/react");
-	const { renderWithChakra } = await import("@/utils/test-utils");
+	const { renderWithChakra } = await import("@/lib/test-utils");
 
 	describe("SNSAccounts component", () => {
 		it("renders SNS accounts correctly", () => {

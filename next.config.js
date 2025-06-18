@@ -1,5 +1,9 @@
 const nextConfig = {
 	output: "export",
+	trailingSlash: true,
+	images: {
+		unoptimized: true,
+	},
 	webpack: (config, { webpack }) => {
 		config.plugins.push(
 			new webpack.DefinePlugin({
