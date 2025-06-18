@@ -9,7 +9,16 @@
 		"enabled": true
 	},
 	"files": {
-		"ignore": ["node_modules/**/*", ".next/**/*", ".yarn/**/*"]
+		"ignore": [
+			"node_modules/**/*", 
+			".next/**/*", 
+			".yarn/**/*",
+			".claude/**/*",
+			"package.json",
+			"package-lock.json",
+			"tsconfig.json",
+			"tsconfig.test.json"
+		]
 	},
 	"linter": {
 		"enabled": true,
