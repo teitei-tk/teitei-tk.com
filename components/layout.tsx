@@ -1,5 +1,5 @@
-import styles from "@/styles/components/layout.module.css";
-import type { LayoutProps } from "@/types/layout";
+import styles from "../styles/components/layout.module.css";
+import type { LayoutProps } from "../types/layout";
 
 const Layout = ({ children, className, id }: LayoutProps) => {
 	return (

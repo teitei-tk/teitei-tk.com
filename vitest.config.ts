@@ -8,14 +8,18 @@ export default defineConfig({
 		globals: true,
 		environment: "jsdom",
 		setupFiles: ["./vitest.setup.ts"],
-		includeSource: ["src/**/*.{js,ts,jsx,tsx}"],
+		includeSource: ["app/**/*.{js,ts,jsx,tsx}", "components/**/*.{js,ts,jsx,tsx}", "lib/**/*.{js,ts,jsx,tsx}"],
 	},
 	define: {
 		"import.meta.vitest": process.env.NODE_ENV === "test" ? true : "undefined",
 	},
 	resolve: {
 		alias: {
-			"@": path.resolve(__dirname, "src"),
+			"@/components": path.resolve(__dirname, "components"),
+			"@/lib": path.resolve(__dirname, "lib"),
+			"@/types": path.resolve(__dirname, "types"),
+			"@/styles": path.resolve(__dirname, "styles"),
+			"@/app": path.resolve(__dirname, "app"),
 		},
 	},
 });
