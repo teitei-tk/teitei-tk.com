@@ -3,7 +3,7 @@
  */
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Providers } from "./providers";
+import { Providers } from "@/app/providers";
 
 export const metadata: Metadata = {
 	title: "teitei-tk Portfolio",
