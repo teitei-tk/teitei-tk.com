@@ -1,90 +1,27 @@
-import { Center, Grid, GridItem, Heading } from "@chakra-ui/react";
+/**
+ * アカウント情報を表示するコンポーネント（SNSとブログの統合）
+ */
+import { Grid } from "@chakra-ui/react";
 
-import ExternalLink from "@/components/common/ExternalLink";
+import BlogAccounts from "@/components/page/index/BlogAccounts";
+import SNSAccounts from "@/components/page/index/SNSAccounts";
+import type { AccountsProps } from "@/types/common";
 
-type Props = {
-	// FIXME: url suffix
-	twitter: string;
-	github: string;
-	qiita: string;
-	speakerDeck: string;
-	note: string;
-	hatenaBlog: string;
-	zenn: string;
-};
-
-export type SNSAccount = {
-	name: "Twitter" | "GitHub" | "Zenn" | "Qiita" | "SpeakerDeck";
-	url: string;
-};
-
-export type BlogAccount = {
-	name: "HatenaBlog" | "note";
-	url: string;
-};
-
-const Accounts = (props: Props) => {
-	const accountsMap: SNSAccount[] = [
-		{
-			name: "Twitter",
-			url: props.twitter,
-		},
-		{
-			name: "GitHub",
-			url: props.github,
-		},
-		{
-			name: "Zenn",
-			url: props.zenn,
-		},
-		{
-			name: "Qiita",
-			url: props.qiita,
-		},
-		{
-			name: "SpeakerDeck",
-			url: props.speakerDeck,
-		},
-	];
-
-	const blogsMap: BlogAccount[] = [
-		{
-			name: "HatenaBlog",
-			url: props.hatenaBlog,
-		},
-		{
-			name: "note",
-			url: props.note,
-		},
-	];
-
+const Accounts = (props: AccountsProps) => {
 	return (
 		<section>
 			<Grid templateColumns="repeat(1, 1fr)" gap={1} justifyItems="center">
-				<GridItem>
-					<Heading size="2xl" textAlign="center" my={4}>
-						Accounts
-					</Heading>
-				</GridItem>
-				{accountsMap.map((map: { name: string; url: string }) => {
-					return (
-						<GridItem key={map.url} textAlign="center">
-							<ExternalLink name={map.name} url={map.url} />
-						</GridItem>
-					);
-				})}
-				<GridItem>
-					<Heading size="2xl" textAlign="center" my={4}>
-						Blogs
-					</Heading>
-				</GridItem>
-				{blogsMap.map((map: { name: string; url: string }) => {
-					return (
-						<GridItem key={map.url} textAlign="center">
-							<ExternalLink name={map.name} url={map.url} />
-						</GridItem>
-					);
-				})}
+				<SNSAccounts
+					twitter={props.twitter}
+					github={props.github}
+					qiita={props.qiita}
+					speakerDeck={props.speakerDeck}
+					zenn={props.zenn}
+				/>
+				<BlogAccounts
+					note={props.note}
+					hatenaBlog={props.hatenaBlog}
+				/>
 			</Grid>
 		</section>
 	);
@@ -99,7 +36,7 @@ if (import.meta.vitest) {
 
 	describe("Accounts component", () => {
 		it("renders SNS and blog accounts correctly", () => {
-			const mockProps = {
+			const mockProps: AccountsProps = {
 				twitter: "https://twitter.com/test_twitter",
 				github: "https://github.com/test_github",
 				qiita: "https://qiita.com/test_qiita",
@@ -124,7 +61,7 @@ if (import.meta.vitest) {
 		});
 
 		it("renders section headings", () => {
-			const mockProps = {
+			const mockProps: AccountsProps = {
 				twitter: "https://twitter.com/test_twitter",
 				github: "https://github.com/test_github",
 				qiita: "https://qiita.com/test_qiita",
