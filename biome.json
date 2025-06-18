@@ -13,6 +13,7 @@
 			"node_modules/**/*", 
 			".next/**/*", 
 			".yarn/**/*",
+			".claude/**/*",
 			"package.json",
 			"package-lock.json",
 			"tsconfig.json",
