@@ -17,7 +17,10 @@
 		"check": "biome check --write .",
 		"fix": "biome check --write .",
 		"test": "vitest run",
-		"export": "npm run build"
+		"export": "npm run build",
+		"pages:dev": "wrangler pages dev out --compatibility-date=2024-06-20",
+		"pages:deploy": "wrangler pages deploy out",
+		"cf:login": "wrangler login"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
@@ -29,7 +32,8 @@
 		"jsdom": "^24.1.0",
 		"typescript": "^5.8.3",
 		"vite": "^6.3.5",
-		"vitest": "^3.2.4"
+		"vitest": "^3.2.4",
+		"wrangler": "^4.20.5"
 	},
 	"dependencies": {
 		"@chakra-ui/react": "^3.19.1",
