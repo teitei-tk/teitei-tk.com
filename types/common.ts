@@ -10,7 +10,12 @@ export type URL = string;
 /**
  * SNSプラットフォーム名
  */
-export type SNSPlatform = "Twitter" | "GitHub" | "Zenn" | "Qiita" | "SpeakerDeck";
+export type SNSPlatform =
+	| "Twitter"
+	| "GitHub"
+	| "Zenn"
+	| "Qiita"
+	| "SpeakerDeck";
 
 /**
  * ブログプラットフォーム名

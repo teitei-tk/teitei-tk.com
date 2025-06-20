@@ -3,7 +3,7 @@ import type { LayoutProps } from "@/types/layout";
 
 const Layout = ({ children, className, id }: LayoutProps) => {
 	return (
-		<main 
+		<main
 			id={id || "main-content"}
 			className={`${styles.container} ${className || ""}`.trim()}
 			aria-label="メインコンテンツ"

@@ -10,16 +10,19 @@ import type { AccountsProps, BlogAccount } from "@/types/common";
 type BlogAccountsProps = Pick<AccountsProps, "note" | "hatenaBlog">;
 
 const BlogAccounts = (props: BlogAccountsProps) => {
-	const blogsMap: BlogAccount[] = useMemo(() => [
-		{
-			name: "HatenaBlog",
-			url: props.hatenaBlog,
-		},
-		{
-			name: "note",
-			url: props.note,
-		},
-	], [props.hatenaBlog, props.note]);
+	const blogsMap: BlogAccount[] = useMemo(
+		() => [
+			{
+				name: "HatenaBlog",
+				url: props.hatenaBlog,
+			},
+			{
+				name: "note",
+				url: props.note,
+			},
+		],
+		[props.hatenaBlog, props.note],
+	);
 
 	return (
 		<>
@@ -54,8 +57,14 @@ if (import.meta.vitest) {
 			renderWithChakra(<BlogAccounts {...mockProps} />);
 
 			expect(screen.getByText("Blogs")).toBeInTheDocument();
-			expect(screen.getByRole("link", { name: "HatenaBlog" })).toHaveAttribute("href", mockProps.hatenaBlog);
-			expect(screen.getByRole("link", { name: "note" })).toHaveAttribute("href", mockProps.note);
+			expect(screen.getByRole("link", { name: "HatenaBlog" })).toHaveAttribute(
+				"href",
+				mockProps.hatenaBlog,
+			);
+			expect(screen.getByRole("link", { name: "note" })).toHaveAttribute(
+				"href",
+				mockProps.note,
+			);
 		});
 	});
 }

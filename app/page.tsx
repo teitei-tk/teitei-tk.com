@@ -115,10 +115,7 @@ if (import.meta.vitest) {
 						"href",
 						SITE_METADATA.accounts.github,
 					);
-					expect(links[1]).toHaveAttribute(
-						"href",
-						SITE_METADATA.repositoryURL,
-					);
+					expect(links[1]).toHaveAttribute("href", SITE_METADATA.repositoryURL);
 					return;
 				}
 

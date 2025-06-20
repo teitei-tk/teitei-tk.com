@@ -7,31 +7,37 @@ import { useMemo } from "react";
 import ExternalLink from "@/components/common/ExternalLink";
 import type { AccountsProps, SNSAccount } from "@/types/common";
 
-type SNSAccountsProps = Pick<AccountsProps, "twitter" | "github" | "qiita" | "speakerDeck" | "zenn">;
+type SNSAccountsProps = Pick<
+	AccountsProps,
+	"twitter" | "github" | "qiita" | "speakerDeck" | "zenn"
+>;
 
 const SNSAccounts = (props: SNSAccountsProps) => {
-	const accountsMap: SNSAccount[] = useMemo(() => [
-		{
-			name: "Twitter",
-			url: props.twitter,
-		},
-		{
-			name: "GitHub",
-			url: props.github,
-		},
-		{
-			name: "Zenn",
-			url: props.zenn,
-		},
-		{
-			name: "Qiita",
-			url: props.qiita,
-		},
-		{
-			name: "SpeakerDeck",
-			url: props.speakerDeck,
-		},
-	], [props.twitter, props.github, props.zenn, props.qiita, props.speakerDeck]);
+	const accountsMap: SNSAccount[] = useMemo(
+		() => [
+			{
+				name: "Twitter",
+				url: props.twitter,
+			},
+			{
+				name: "GitHub",
+				url: props.github,
+			},
+			{
+				name: "Zenn",
+				url: props.zenn,
+			},
+			{
+				name: "Qiita",
+				url: props.qiita,
+			},
+			{
+				name: "SpeakerDeck",
+				url: props.speakerDeck,
+			},
+		],
+		[props.twitter, props.github, props.zenn, props.qiita, props.speakerDeck],
+	);
 
 	return (
 		<>
@@ -69,11 +75,26 @@ if (import.meta.vitest) {
 			renderWithChakra(<SNSAccounts {...mockProps} />);
 
 			expect(screen.getByText("Accounts")).toBeInTheDocument();
-			expect(screen.getByRole("link", { name: "Twitter" })).toHaveAttribute("href", mockProps.twitter);
-			expect(screen.getByRole("link", { name: "GitHub" })).toHaveAttribute("href", mockProps.github);
-			expect(screen.getByRole("link", { name: "Zenn" })).toHaveAttribute("href", mockProps.zenn);
-			expect(screen.getByRole("link", { name: "Qiita" })).toHaveAttribute("href", mockProps.qiita);
-			expect(screen.getByRole("link", { name: "SpeakerDeck" })).toHaveAttribute("href", mockProps.speakerDeck);
+			expect(screen.getByRole("link", { name: "Twitter" })).toHaveAttribute(
+				"href",
+				mockProps.twitter,
+			);
+			expect(screen.getByRole("link", { name: "GitHub" })).toHaveAttribute(
+				"href",
+				mockProps.github,
+			);
+			expect(screen.getByRole("link", { name: "Zenn" })).toHaveAttribute(
+				"href",
+				mockProps.zenn,
+			);
+			expect(screen.getByRole("link", { name: "Qiita" })).toHaveAttribute(
+				"href",
+				mockProps.qiita,
+			);
+			expect(screen.getByRole("link", { name: "SpeakerDeck" })).toHaveAttribute(
+				"href",
+				mockProps.speakerDeck,
+			);
 		});
 	});
 }
