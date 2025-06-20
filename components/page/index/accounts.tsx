@@ -18,10 +18,7 @@ const Accounts = (props: AccountsProps) => {
 					speakerDeck={props.speakerDeck}
 					zenn={props.zenn}
 				/>
-				<BlogAccounts
-					note={props.note}
-					hatenaBlog={props.hatenaBlog}
-				/>
+				<BlogAccounts note={props.note} hatenaBlog={props.hatenaBlog} />
 			</Grid>
 		</section>
 	);
@@ -49,15 +46,36 @@ if (import.meta.vitest) {
 			renderWithChakra(<Accounts {...mockProps} />);
 
 			// SNS accounts
-			expect(screen.getByRole("link", { name: "Twitter" })).toHaveAttribute("href", mockProps.twitter);
-			expect(screen.getByRole("link", { name: "GitHub" })).toHaveAttribute("href", mockProps.github);
-			expect(screen.getByRole("link", { name: "Zenn" })).toHaveAttribute("href", mockProps.zenn);
-			expect(screen.getByRole("link", { name: "Qiita" })).toHaveAttribute("href", mockProps.qiita);
-			expect(screen.getByRole("link", { name: "SpeakerDeck" })).toHaveAttribute("href", mockProps.speakerDeck);
+			expect(screen.getByRole("link", { name: "Twitter" })).toHaveAttribute(
+				"href",
+				mockProps.twitter,
+			);
+			expect(screen.getByRole("link", { name: "GitHub" })).toHaveAttribute(
+				"href",
+				mockProps.github,
+			);
+			expect(screen.getByRole("link", { name: "Zenn" })).toHaveAttribute(
+				"href",
+				mockProps.zenn,
+			);
+			expect(screen.getByRole("link", { name: "Qiita" })).toHaveAttribute(
+				"href",
+				mockProps.qiita,
+			);
+			expect(screen.getByRole("link", { name: "SpeakerDeck" })).toHaveAttribute(
+				"href",
+				mockProps.speakerDeck,
+			);
 
 			// Blog accounts
-			expect(screen.getByRole("link", { name: "HatenaBlog" })).toHaveAttribute("href", mockProps.hatenaBlog);
-			expect(screen.getByRole("link", { name: "note" })).toHaveAttribute("href", mockProps.note);
+			expect(screen.getByRole("link", { name: "HatenaBlog" })).toHaveAttribute(
+				"href",
+				mockProps.hatenaBlog,
+			);
+			expect(screen.getByRole("link", { name: "note" })).toHaveAttribute(
+				"href",
+				mockProps.note,
+			);
 		});
 
 		it("renders section headings", () => {

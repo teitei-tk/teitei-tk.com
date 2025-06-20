@@ -14,7 +14,6 @@ import { LuExternalLink } from "react-icons/lu";
 
 import type { ProfileProps } from "@/types/common";
 
-
 const Profile = (props: ProfileProps) => {
 	return (
 		<Box as="section" my={8}>
@@ -91,10 +90,9 @@ if (import.meta.vitest) {
 			expect(screen.getByText(mockProps.bio)).toBeInTheDocument();
 			expect(screen.getByText("Contact")).toBeInTheDocument();
 			expect(screen.getByText(mockProps.email)).toBeInTheDocument();
-			expect(screen.getByRole("link", { name: mockProps.email })).toHaveAttribute(
-				"href",
-				mockProps.twitterURL,
-			);
+			expect(
+				screen.getByRole("link", { name: mockProps.email }),
+			).toHaveAttribute("href", mockProps.twitterURL);
 
 			expect(
 				screen.getByAltText(
