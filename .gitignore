@@ -66,6 +66,11 @@ out/
 # Local Netlify folder
 .netlify
 
+# Cloudflare
+.dev.vars
+.wrangler/
+wrangler.toml.bak
+
 .yarn/*
 !.yarn/cache
 !.yarn/patches

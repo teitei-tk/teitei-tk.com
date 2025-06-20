@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
 	experimental: {
 		optimizePackageImports: ["@chakra-ui/react"],
 	},
+	// Cloudflare Pages用設定
+	distDir: "out",
+	assetPrefix: process.env.NODE_ENV === "production" ? undefined : undefined,
 	webpack: (config, { webpack }) => {
 		config.plugins.push(
 			new webpack.DefinePlugin({

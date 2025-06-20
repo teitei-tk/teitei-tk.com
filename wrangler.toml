@@ -1,0 +1,14 @@
+# Cloudflare Pages設定ファイル
+name = "teitei-tk-com"
+compatibility_date = "2024-06-20"
+pages_build_output_dir = "out"
+
+# Pages設定
+[env.production]
+
+[env.preview]
+
+# 環境変数（開発用のサンプル - 実際の値は.dev.varsまたはCloudflare Dashboardで設定）
+# [vars]
+# NEXT_PUBLIC_SITE_URL = "https://teitei-tk.com"
+# NEXT_PUBLIC_ANALYTICS_ID = ""
