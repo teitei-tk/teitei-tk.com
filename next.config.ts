@@ -7,12 +7,22 @@ const nextConfig: NextConfig = {
 	images: {
 		unoptimized: true,
 	},
+	experimental: {
+		optimizePackageImports: ["@chakra-ui/react"],
+	},
 	webpack: (config, { webpack }) => {
 		config.plugins.push(
 			new webpack.DefinePlugin({
 				"import.meta.vitest": "undefined",
 			})
 		);
+		
+		// Reduce large string serialization warnings
+		config.cache = {
+			...config.cache,
+			compression: 'gzip',
+		};
+		
 		return config;
 	},
 };
