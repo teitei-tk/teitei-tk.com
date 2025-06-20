@@ -13,6 +13,7 @@
 		"start": "next start",
 		"lint": "biome lint --write .",
 		"format": "biome format --write .",
+		"format:check": "biome format .",
 		"check": "biome check --write .",
 		"fix": "biome check --write .",
 		"test": "vitest run",
