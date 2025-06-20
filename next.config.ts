@@ -17,11 +17,6 @@ const nextConfig: NextConfig = {
 			})
 		);
 		
-		// Reduce large string serialization warnings
-		config.cache = {
-			...config.cache,
-			compression: 'gzip',
-		};
 		
 		return config;
 	},
