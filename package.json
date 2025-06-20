@@ -34,13 +34,13 @@
 		"@chakra-ui/react": "^3.19.1",
 		"@emotion/react": "^11.14.0",
 		"@emotion/styled": "^11.14.0",
-		"@next/third-parties": "^14.2.4",
-		"@types/react": "^18.3.1",
-		"@types/react-dom": "^18.3.1",
+		"@next/third-parties": "^15.3.4",
+		"@types/react": "^19.1.8",
+		"@types/react-dom": "^19.1.6",
 		"framer-motion": "^12.12.1",
-		"next": "14.2.4",
-		"react": "18.3.1",
-		"react-dom": "18.3.1",
+		"next": "^15.3.4",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
 		"react-icons": "^5.5.0"
 	}
 }
