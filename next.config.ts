@@ -14,10 +14,8 @@ const nextConfig: NextConfig = {
 		config.plugins.push(
 			new webpack.DefinePlugin({
 				"import.meta.vitest": "undefined",
-			})
+			}),
 		);
-		
-		
 		return config;
 	},
 };
