@@ -45,16 +45,16 @@ jobs:
             const buildTime = new Date().toISOString();
             const previewUrl = `https://pr-${prNumber}.${{ secrets.CF_PROJECT_NAME }}.pages.dev`;
 
-            const commentBody = \`## 🚀 Preview Environment
+            const commentBody = `## 🚀 Preview Environment
 
             | Item | Value |
             |------|-------|
             | **Preview URL** | [${previewUrl}](${previewUrl}) |
-            | **Latest Commit** | [\\\\\`${commitSha}\\\\\`](${commitUrl}) |
+            | **Latest Commit** | [\`${commitSha}\`](${commitUrl}) |
             | **Build Time** | ${buildTime} |
 
             ---
-            *This comment is automatically updated on each push.*\`;
+            *This comment is automatically updated on each push.*`;
 
             // Find existing comment
             const comments = await github.rest.issues.listComments({
