@@ -49,7 +49,7 @@ jobs:
 | Item | Value |
 |------|-------|
 | **Preview URL** | [${previewUrl}](${previewUrl}) |
-| **Latest Commit** | [\`${commitSha}\`](${commitUrl}) |
+| **Latest Commit** | [\\\`${commitSha}\\\`](${commitUrl}) |
 | **Build Time** | ${buildTime} |
 
 ---
