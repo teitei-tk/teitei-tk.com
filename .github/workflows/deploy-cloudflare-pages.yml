@@ -1,0 +1,85 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: pages deploy out --project-name ${{ secrets.CF_PROJECT_NAME }} --branch pr-${{ github.event.number }}
+
+      - name: Update PR comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const commitSha = context.payload.pull_request.head.sha.substring(0, 7);
+            const commitUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/commit/${context.payload.pull_request.head.sha}`;
+            const buildTime = new Date().toISOString();
+            const previewUrl = `https://pr-${prNumber}.${{ secrets.CF_PROJECT_NAME }}.pages.dev`;
+            
+            const commentBody = `## 🚀 Preview Environment
+
+| Item | Value |
+|------|-------|
+| **Preview URL** | [${previewUrl}](${previewUrl}) |
+| **Latest Commit** | [\`${commitSha}\`](${commitUrl}) |
+| **Build Time** | ${buildTime} |
+
+---
+*This comment is automatically updated on each push.*`;
+
+            // Find existing comment
+            const comments = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+            });
+
+            const existingComment = comments.data.find(comment => 
+              comment.body && comment.body.includes('🚀 Preview Environment')
+            );
+
+            if (existingComment) {
+              // Update existing comment
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existingComment.id,
+                body: commentBody,
+              });
+            } else {
+              // Create new comment
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: commentBody,
+              });
+            }
