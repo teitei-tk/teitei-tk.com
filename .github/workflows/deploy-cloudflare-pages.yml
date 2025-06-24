@@ -42,7 +42,7 @@ jobs:
             const prNumber = context.payload.pull_request.number;
             const commitSha = context.payload.pull_request.head.sha.substring(0, 7);
             const commitUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/commit/${context.payload.pull_request.head.sha}`;
-            const buildTime = new Date().toISOString();
+            const buildTime = new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
             const previewUrl = `https://pr-${prNumber}.${{ secrets.CF_PROJECT_NAME }}.pages.dev`;
 
             const commentBody = `## 🚀 Preview Environment
