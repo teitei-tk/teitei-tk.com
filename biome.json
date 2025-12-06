@@ -1,23 +1,28 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",
 		"useIgnoreFile": true
 	},
-	"organizeImports": {
-		"enabled": true
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
 	},
 	"files": {
-		"ignore": [
-			"node_modules/**/*",
-			".next/**/*",
-			".yarn/**/*",
-			".claude/**/*",
-			"package.json",
-			"package-lock.json",
-			"tsconfig.json",
-			"tsconfig.test.json"
+		"includes": [
+			"**/*",
+			"!node_modules",
+			"!.next",
+			"!.yarn",
+			"!.claude",
+			"!package.json",
+			"!package-lock.json",
+			"!tsconfig.json",
+			"!tsconfig.test.json"
 		]
 	},
 	"linter": {
