@@ -1,7 +1,7 @@
 /**
  * SNSアカウント一覧を表示するコンポーネント
  */
-import { Grid, GridItem, Heading } from "@chakra-ui/react";
+import { GridItem, Heading } from "@chakra-ui/react";
 import { useMemo } from "react";
 
 import ExternalLink from "@/components/common/ExternalLink";

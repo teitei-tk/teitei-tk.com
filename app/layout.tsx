@@ -10,11 +10,7 @@ export const metadata: Metadata = {
 	description: "teitei-tkの個人ポートフォリオサイト",
 };
 
-export default function RootLayout({
-	children,
-}: {
-	children: ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
 		<html lang="ja">
 			<body>
