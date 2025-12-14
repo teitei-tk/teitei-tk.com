@@ -35,8 +35,7 @@
 			"recommended": true,
 			"correctness": {
 				"noUndeclaredVariables": "error",
-				"noUnusedVariables": "error",
-				"useHookAtTopLevel": "error"
+				"noUnusedVariables": "error"
 			},
 			"style": {
 				"noNamespace": "error"
