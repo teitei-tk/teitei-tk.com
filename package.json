@@ -28,7 +28,7 @@
 		"@vitejs/plugin-react": "^5.1.2",
 		"jsdom": "^27.3.0",
 		"typescript": "^5.8.3",
-		"vite": "^7.2.6",
+		"vite": "^7.2.7",
 		"vitest": "^4.0.15"
 	},
 	"dependencies": {
