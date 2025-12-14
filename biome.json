@@ -27,12 +27,16 @@
 	},
 	"linter": {
 		"enabled": true,
+		"domains": {
+			"react": "recommended",
+			"next": "recommended",
+			"test": "recommended"
+		},
 		"rules": {
 			"recommended": true,
 			"correctness": {
 				"noUndeclaredVariables": "error",
-				"noUnusedVariables": "error",
-				"useHookAtTopLevel": "error"
+				"noUnusedVariables": "error"
 			},
 			"style": {
 				"noNamespace": "error"
