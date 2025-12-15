@@ -20,7 +20,7 @@
 		"export": "npm run build"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.3.8",
+		"@biomejs/biome": "^2.3.9",
 		"@testing-library/dom": "^10.4.0",
 		"@testing-library/jest-dom": "^6.4.6",
 		"@testing-library/react": "^16.3.0",
