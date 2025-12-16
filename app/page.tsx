@@ -107,20 +107,20 @@ if (import.meta.vitest) {
 				},
 			];
 
-			for (const { name, url } of accountsMap) {
-				if (name === "GitHub") {
-					const links = screen.getAllByText(/GitHub/);
-					expect(links.length).toBe(2);
-					expect(links[0]).toHaveAttribute(
-						"href",
-						SITE_METADATA.accounts.github,
-					);
-					expect(links[1]).toHaveAttribute("href", SITE_METADATA.repositoryURL);
-					return;
-				}
+				for (const { name, url } of accountsMap) {
+					if (name === "GitHub") {
+						const links = screen.getAllByText(/GitHub/);
+						expect(links.length).toBe(2);
+						expect(links[0]).toHaveAttribute(
+							"href",
+							SITE_METADATA.accounts.github,
+						);
+						expect(links[1]).toHaveAttribute("href", SITE_METADATA.repositoryURL);
+						continue;
+					}
 
-				expect(screen.getByRole("link", { name })).toHaveAttribute("href", url);
-			}
+					expect(screen.getByRole("link", { name })).toHaveAttribute("href", url);
+				}
 
 			for (const { name, url } of blogsMap) {
 				expect(screen.getByRole("link", { name })).toHaveAttribute("href", url);
