@@ -11,6 +11,7 @@
 		"dev": "next",
 		"build": "next build",
 		"start": "next start",
+		"prepare": "lefthook install",
 		"lint": "biome lint --write .",
 		"format": "biome format --write .",
 		"format:check": "biome format .",
@@ -27,6 +28,7 @@
 		"@types/node": "^24.0.7",
 		"@vitejs/plugin-react": "^5.1.2",
 		"jsdom": "^27.3.0",
+		"lefthook": "^2.0.12",
 		"typescript": "^5.8.3",
 		"vite": "^7.2.6",
 		"vitest": "^4.0.15"
