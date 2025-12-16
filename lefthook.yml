@@ -1,0 +1,16 @@
+pre-commit:
+  parallel: true
+  commands:
+    git-secrets:
+      run: git secrets --pre_commit_hook -- {staged_files}
+    biome:
+      glob: "*.{js,ts,jsx,tsx}"
+      run: npm run check
+      stage_fixed: true
+    lint:
+      run: npm run lint
+
+pre-push:
+  commands:
+    test:
+      run: npm run test
