@@ -116,7 +116,7 @@ if (import.meta.vitest) {
 						SITE_METADATA.accounts.github,
 					);
 					expect(links[1]).toHaveAttribute("href", SITE_METADATA.repositoryURL);
-					return;
+					continue;
 				}
 
 				expect(screen.getByRole("link", { name })).toHaveAttribute("href", url);
