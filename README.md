@@ -7,8 +7,33 @@ Next.js based My Portfolio Site.
 
 https://teitei-tk.com
 
-## Dependencies
+## Requirements
 
-- Next.js 9.4 or later
-- Typescript 3.8 or later
-- @zeit-ui/react 1.5.0 or later
+- Node.js 24.1.0 (see `.node-version`)
+- npm
+
+## Tech Stack
+
+- Next.js 15
+- React 19
+- Chakra UI 3
+- TypeScript 5
+
+## Development
+
+```bash
+npm install
+```
+
+```bash
+npm run dev
+```
+
+## Scripts
+
+- `npm run dev`: start local dev server
+- `npm run build`: build production bundle (`output: "export"` -> `out/`)
+- `npm run start`: serve production build
+- `npm run lint`: Biome lint (auto-fix)
+- `npm run format`: Biome format (auto-fix)
+- `npm run test`: run Vitest once
