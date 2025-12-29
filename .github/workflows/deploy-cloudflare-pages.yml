@@ -3,18 +3,29 @@ name: Deploy to Cloudflare Pages
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+  pull_request_target:
+    types: [opened, synchronize, reopened]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: github.actor != 'dependabot[bot]'
+    if: |
+      (github.event_name == 'pull_request' && github.actor != 'dependabot[bot]') ||
+      (github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]')
     permissions:
       contents: read
       pull-requests: write
 
     steps:
-      - name: Checkout
+      - name: Checkout (pull_request)
+        if: github.event_name == 'pull_request'
         uses: actions/checkout@v4
+
+      - name: Checkout (pull_request_target)
+        if: github.event_name == 'pull_request_target'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
