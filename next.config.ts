@@ -9,14 +9,6 @@ const nextConfig: NextConfig = {
 	experimental: {
 		optimizePackageImports: ["@chakra-ui/react"],
 	},
-	webpack: (config, { webpack }) => {
-		config.plugins.push(
-			new webpack.DefinePlugin({
-				"import.meta.vitest": "undefined",
-			}),
-		);
-		return config;
-	},
 };
 
 export default nextConfig;

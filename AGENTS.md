@@ -4,7 +4,7 @@
 - Next.js App Router lives in `app/` (`layout.tsx`, `page.tsx`, `providers.tsx`) for global frame and providers.
 - UI blocks sit in `components/` (`common/ExternalLink.tsx`, `components/page/*` for homepage sections); styling helpers such as `styles/components/layout.module.css` back shared layout rules.
 - Shared logic/constants are in `lib/` (`constants.ts`, `validation.ts`, `test-utils.tsx`), shared types in `types/`, static assets in `public/`.
-- Tooling configs live at the repo root (`biome.json`, `vitest.config.ts`, `tsconfig*.json`); build artifacts output to `.next/` or `out/` (ignored).
+- Tooling configs live at the repo root (`biome.json`, `vitest.config.mts`, `tsconfig*.json`); build artifacts output to `.next/` or `out/` (ignored).
 
 ## Build, Test, and Development Commands
 - Use Node `24.1.0` (see `.node-version`); install with `npm install`.
