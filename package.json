@@ -28,7 +28,7 @@
 		"@types/node": "^24.0.7",
 		"@vitejs/plugin-react": "^5.1.2",
 		"jsdom": "^27.3.0",
-		"lefthook": "^2.0.12",
+		"lefthook": "^2.0.13",
 		"typescript": "^5.8.3",
 		"vite": "^7.2.6",
 		"vite-tsconfig-paths": "^6.0.3",
