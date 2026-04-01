@@ -8,8 +8,8 @@ https://teitei-tk.com
 
 ## Requirements
 
-- Node.js 24.1.0 (see `.node-version`)
-- npm
+- Node.js 24.13.0 (see `.node-version`)
+- pnpm 10.28.0
 
 ## Tech Stack
 
@@ -21,18 +21,22 @@ https://teitei-tk.com
 ## Development
 
 ```bash
-npm install
+npm install -g pnpm@10.28.0
 ```
 
 ```bash
-npm run dev
+pnpm install
+```
+
+```bash
+pnpm dev
 ```
 
 ## Scripts
 
-- `npm run dev`: start local dev server
-- `npm run build`: build production bundle (`output: "export"` -> `out/`)
-- `npm run start`: serve production build
-- `npm run lint`: Biome lint (auto-fix)
-- `npm run format`: Biome format (auto-fix)
-- `npm run test`: run Vitest once
+- `pnpm dev`: start local dev server
+- `pnpm build`: build production bundle (`output: "export"` -> `out/`)
+- `pnpm start`: serve production build
+- `pnpm lint`: Biome lint (auto-fix)
+- `pnpm format`: Biome format (auto-fix)
+- `pnpm test`: run Vitest once

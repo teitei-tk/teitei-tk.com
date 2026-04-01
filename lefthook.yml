@@ -5,12 +5,12 @@ pre-commit:
       run: git secrets --pre_commit_hook -- {staged_files}
     biome:
       glob: "*.{js,ts,jsx,tsx}"
-      run: npm run check
+      run: pnpm run check
       stage_fixed: true
     lint:
-      run: npm run lint
+      run: pnpm run lint
 
 pre-push:
   commands:
     test:
-      run: npm run test
+      run: pnpm run test
