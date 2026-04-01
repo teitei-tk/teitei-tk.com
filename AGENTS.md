@@ -7,12 +7,12 @@
 - Tooling configs live at the repo root (`biome.json`, `vitest.config.mts`, `tsconfig*.json`); build artifacts output to `.next/` or `out/` (ignored).
 
 ## Build, Test, and Development Commands
-- Use Node `24.1.0` (see `.node-version`); install with `npm install`.
-- `npm run dev` boots the local Next.js server.
-- `npm run build` creates the production bundle; `npm run start` serves it.
-- `npm run lint` / `npm run format` auto-fix with Biome; `npm run format:check` for CI-safe validation.
-- `npm run check` or `npm run fix` runs Biome check + fix; prefer before commits.
-- `npm run test` runs Vitest once with jsdom; during development, `npx vitest` gives watch mode.
+- Use Node `24.13.0` (see `.node-version`); install pnpm with `npm install -g pnpm@10.28.0`, then run `pnpm install`.
+- `pnpm dev` boots the local Next.js server.
+- `pnpm build` creates the production bundle; `pnpm start` serves it.
+- `pnpm lint` / `pnpm format` auto-fix with Biome; `pnpm format:check` for CI-safe validation.
+- `pnpm check` or `pnpm fix` runs Biome check + fix; prefer before commits.
+- `pnpm test` runs Vitest once with jsdom; during development, `pnpm exec vitest` gives watch mode.
 
 ## Coding Style & Naming Conventions
 - TypeScript throughout; prefer function components with hooks. Add `"use client"` where a component needs the client runtime.
@@ -24,7 +24,7 @@
 - Vitest + @testing-library/* with jsdom. Add `*.test.tsx|ts` next to the code under test.
 - Use `lib/test-utils.tsx` for Chakra-aware renders; prefer `screen` queries and user-facing selectors.
 - Cover layout or validation changes with targeted assertions; favor meaningful expectations over snapshots.
-- Run `npm run test` and at least `npm run lint` before pushing.
+- Run `pnpm test` and at least `pnpm lint` before pushing.
 
 ## Commit & Pull Request Guidelines
 - Follow Conventional Commits seen in history (`feat:`, `fix:`, `chore(deps-...):`, `refactor:`). Keep scopes short and lowercase.
