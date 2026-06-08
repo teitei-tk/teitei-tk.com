@@ -4,8 +4,9 @@
 import { GridItem, Heading } from "@chakra-ui/react";
 import { useMemo } from "react";
 
-import ExternalLink from "@/components/common/ExternalLink";
 import type { AccountsProps, BlogAccount } from "@/types/common";
+
+import ExternalLink from "@/components/common/ExternalLink";
 
 type BlogAccountsProps = Pick<AccountsProps, "note" | "hatenaBlog">;
 

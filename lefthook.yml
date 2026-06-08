@@ -3,12 +3,10 @@ pre-commit:
   commands:
     git-secrets:
       run: git secrets --pre_commit_hook -- {staged_files}
-    biome:
+    fix:
       glob: "*.{js,ts,jsx,tsx}"
-      run: pnpm run check
+      run: pnpm run fix
       stage_fixed: true
-    lint:
-      run: pnpm run lint
 
 pre-push:
   commands:

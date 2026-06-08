@@ -1,0 +1,29 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": ["typescript", "react", "nextjs", "vitest"],
+	"env": {
+		"browser": true,
+		"node": true,
+		"es2022": true
+	},
+	"ignorePatterns": [
+		"node_modules/**",
+		".next/**",
+		".yarn/**",
+		".claude/**",
+		"package.json",
+		"pnpm-lock.yaml",
+		"tsconfig.json",
+		"tsconfig.test.json"
+	],
+	"settings": {
+		"react": {
+			"version": "19.2.3"
+		}
+	},
+	"rules": {
+		"no-undef": "error",
+		"no-unused-vars": "error",
+		"typescript/no-namespace": "error"
+	}
+}

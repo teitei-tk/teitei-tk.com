@@ -16,9 +16,11 @@ Next.js 14、TypeScript、Chakra UI を用いて構築した個人ポートフ�
 - `pnpm build` … 本番ビルド（静的エクスポート）
 - `pnpm start` … 本番サーバーを起動
 - `pnpm test` … Vitest でテスト実行
-- `pnpm lint` … Biome でコードをリント
-- `pnpm format` … Biome でコードを整形
-- `pnpm check` または `pnpm fix` … Biome のリント＆整形を一括実行
+- `pnpm lint` … Oxlint でコードをリント
+- `pnpm format` … Oxfmt でコードを整形
+- `pnpm format:check` … Oxfmt の整形チェックを実行
+- `pnpm check` … Oxlint と Oxfmt のチェックを一括実行
+- `pnpm fix` … Oxfmt で整形後、Oxlint の自動修正を実行
 
 ---
 
@@ -37,9 +39,10 @@ Next.js 14、TypeScript、Chakra UI を用いて構築した個人ポートフ�
     test('1+2=3', () => {
       expect(add(1, 2)).toBe(3);
     });
-  ```
+```
 
 ### 2. 各ファイル冒頭に仕様コメントを記述する
+
 ```
     /**
      * 2 点間のユークリッド距離を計算する
@@ -83,7 +86,7 @@ Next.js 14、TypeScript、Chakra UI を用いて構築した個人ポートフ�
 - **フレームワーク**: Next.js 14（静的エクスポート設定 `output: "export"`）
 - **UI ライブラリ**: Chakra UI v3（Emotion 使用）
 - **テスト**: Vitest + Testing Library + jsdom
-- **リント/フォーマット**: Biome（ESLint / Prettier の代替）
+- **リント/フォーマット**: Oxlint / Oxfmt（ESLint / Prettier の代替）
 - **ビルドツール**: Next.js 内蔵 webpack
 - **パッケージマネージャー**: pnpm
 
