@@ -3,9 +3,10 @@
  */
 import { Grid } from "@chakra-ui/react";
 
+import type { AccountsProps } from "@/types/common";
+
 import BlogAccounts from "@/components/page/index/BlogAccounts";
 import SNSAccounts from "@/components/page/index/SNSAccounts";
-import type { AccountsProps } from "@/types/common";
 
 const Accounts = (props: AccountsProps) => {
 	return (

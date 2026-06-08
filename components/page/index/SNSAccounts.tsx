@@ -4,8 +4,9 @@
 import { GridItem, Heading } from "@chakra-ui/react";
 import { useMemo } from "react";
 
-import ExternalLink from "@/components/common/ExternalLink";
 import type { AccountsProps, SNSAccount } from "@/types/common";
+
+import ExternalLink from "@/components/common/ExternalLink";
 
 type SNSAccountsProps = Pick<
 	AccountsProps,

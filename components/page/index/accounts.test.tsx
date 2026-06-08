@@ -1,9 +1,10 @@
 import { screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
+import type { AccountsProps } from "@/types/common";
+
 import Accounts from "@/components/page/index/accounts";
 import { renderWithChakra } from "@/lib/test-utils";
-import type { AccountsProps } from "@/types/common";
 
 describe("Accounts component", () => {
 	it("renders SNS and blog accounts correctly", () => {

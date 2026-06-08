@@ -19,12 +19,13 @@ TypeScriptでのコーディングにおける一般的なベストプラクテ�
 2. 型エイリアスの命名
    - 意味のある名前をつける
    - 型の意図を明確にする
+
    ```ts
    // Good
    type UserId = string;
    type UserData = {
-     id: UserId;
-     createdAt: Date;
+   	id: UserId;
+   	createdAt: Date;
    };
 
    // Bad
@@ -34,37 +35,38 @@ TypeScriptでのコーディングにおける一般的なベストプラクテ�
 ### エラー処理
 
 1. Result型の使用
+
    ```ts
    import { err, ok, Result } from "npm:neverthrow";
 
    type ApiError =
-     | { type: "network"; message: string }
-     | { type: "notFound"; message: string }
-     | { type: "unauthorized"; message: string };
+   	| { type: "network"; message: string }
+   	| { type: "notFound"; message: string }
+   	| { type: "unauthorized"; message: string };
 
    async function fetchUser(id: string): Promise<Result<User, ApiError>> {
-     try {
-       const response = await fetch(`/api/users/${id}`);
-       if (!response.ok) {
-         switch (response.status) {
-           case 404:
-             return err({ type: "notFound", message: "User not found" });
-           case 401:
-             return err({ type: "unauthorized", message: "Unauthorized" });
-           default:
-             return err({
-               type: "network",
-               message: `HTTP error: ${response.status}`,
-             });
-         }
-       }
-       return ok(await response.json());
-     } catch (error) {
-       return err({
-         type: "network",
-         message: error instanceof Error ? error.message : "Unknown error",
-       });
-     }
+   	try {
+   		const response = await fetch(`/api/users/${id}`);
+   		if (!response.ok) {
+   			switch (response.status) {
+   				case 404:
+   					return err({ type: "notFound", message: "User not found" });
+   				case 401:
+   					return err({ type: "unauthorized", message: "Unauthorized" });
+   				default:
+   					return err({
+   						type: "network",
+   						message: `HTTP error: ${response.status}`,
+   					});
+   			}
+   		}
+   		return ok(await response.json());
+   	} catch (error) {
+   		return err({
+   			type: "network",
+   			message: error instanceof Error ? error.message : "Unknown error",
+   		});
+   	}
    }
    ```
 
@@ -76,87 +78,90 @@ TypeScriptでのコーディングにおける一般的なベストプラクテ�
 ### 実装パターン
 
 1. 関数ベース（状態を持たない場合）
+
    ```ts
    // インターフェース
    interface Logger {
-     log(message: string): void;
+   	log(message: string): void;
    }
 
    // 実装
    function createLogger(): Logger {
-     return {
-       log(message: string): void {
-         console.log(`[${new Date().toISOString()}] ${message}`);
-       },
-     };
+   	return {
+   		log(message: string): void {
+   			console.log(`[${new Date().toISOString()}] ${message}`);
+   		},
+   	};
    }
    ```
 
 2. classベース（状態を持つ場合）
+
    ```ts
    interface Cache<T> {
-     get(key: string): T | undefined;
-     set(key: string, value: T): void;
+   	get(key: string): T | undefined;
+   	set(key: string, value: T): void;
    }
 
    class TimeBasedCache<T> implements Cache<T> {
-     private items = new Map<string, { value: T; expireAt: number }>();
+   	private items = new Map<string, { value: T; expireAt: number }>();
 
-     constructor(private ttlMs: number) {}
+   	constructor(private ttlMs: number) {}
 
-     get(key: string): T | undefined {
-       const item = this.items.get(key);
-       if (!item || Date.now() > item.expireAt) {
-         return undefined;
-       }
-       return item.value;
-     }
+   	get(key: string): T | undefined {
+   		const item = this.items.get(key);
+   		if (!item || Date.now() > item.expireAt) {
+   			return undefined;
+   		}
+   		return item.value;
+   	}
 
-     set(key: string, value: T): void {
-       this.items.set(key, {
-         value,
-         expireAt: Date.now() + this.ttlMs,
-       });
-     }
+   	set(key: string, value: T): void {
+   		this.items.set(key, {
+   			value,
+   			expireAt: Date.now() + this.ttlMs,
+   		});
+   	}
    }
    ```
 
 3. Adapterパターン（外部依存の抽象化）
+
    ```ts
    // 抽象化
    type Fetcher = <T>(path: string) => Promise<Result<T, ApiError>>;
 
    // 実装
    function createFetcher(headers: Record<string, string>): Fetcher {
-     return async <T>(path: string) => {
-       try {
-         const response = await fetch(path, { headers });
-         if (!response.ok) {
-           return err({
-             type: "network",
-             message: `HTTP error: ${response.status}`,
-           });
-         }
-         return ok(await response.json());
-       } catch (error) {
-         return err({
-           type: "network",
-           message: error instanceof Error ? error.message : "Unknown error",
-         });
-       }
-     };
+   	return async <T>(path: string) => {
+   		try {
+   			const response = await fetch(path, { headers });
+   			if (!response.ok) {
+   				return err({
+   					type: "network",
+   					message: `HTTP error: ${response.status}`,
+   				});
+   			}
+   			return ok(await response.json());
+   		} catch (error) {
+   			return err({
+   				type: "network",
+   				message: error instanceof Error ? error.message : "Unknown error",
+   			});
+   		}
+   	};
    }
 
    // 利用
    class ApiClient {
-     constructor(
-       private readonly getData: Fetcher,
-       private readonly baseUrl: string,
-     ) {}
+   	constructor(
+   		private readonly getData: Fetcher,
+   		private readonly baseUrl: string,
+   	) {}
 
-     async getUser(id: string): Promise<Result<User, ApiError>> {
-       return await this.getData(`${this.baseUrl}/users/${id}`);
-     }
+   	async getUser(id: string): Promise<Result<User, ApiError>> {
+   		return await this.getData(`${this.baseUrl}/users/${id}`);
+   	}
    }
    ```
 

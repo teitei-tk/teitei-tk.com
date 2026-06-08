@@ -37,6 +37,9 @@ pnpm dev
 - `pnpm dev`: start local dev server
 - `pnpm build`: build production bundle (`output: "export"` -> `out/`)
 - `pnpm start`: serve production build
-- `pnpm lint`: Biome lint (auto-fix)
-- `pnpm format`: Biome format (auto-fix)
+- `pnpm lint`: Oxlint でリント
+- `pnpm format`: Oxfmt で整形
+- `pnpm format:check`: Oxfmt の整形チェック
+- `pnpm check`: Oxlint と Oxfmt のチェック
+- `pnpm fix`: Oxfmt で整形後、Oxlint の自動修正を実行
 - `pnpm test`: run Vitest once

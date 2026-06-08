@@ -44,8 +44,8 @@ type Email = Branded<string, "Email">;
 ```typescript
 // 作成関数はバリデーション付き
 function createMoney(amount: number): Result<Money, Error> {
-  if (amount < 0) return err(new Error("負の金額不可"));
-  return ok(amount as Money);
+	if (amount < 0) return err(new Error("負の金額不可"));
+	return ok(amount as Money);
 }
 ```
 
