@@ -61,6 +61,7 @@ typings/
 build/
 
 .next
+next-env.d.ts
 out/
 
 # Local Netlify folder
