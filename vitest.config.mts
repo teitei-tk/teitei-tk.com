@@ -1,9 +1,16 @@
 import react from "@vitejs/plugin-react";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "vitest/config";
 
+const projectRoot = fileURLToPath(new URL(".", import.meta.url));
+
 export default defineConfig({
-	plugins: [tsconfigPaths(), react()],
+	plugins: [react()],
+	resolve: {
+		alias: {
+			"@": projectRoot,
+		},
+	},
 	test: {
 		globals: true,
 		environment: "jsdom",

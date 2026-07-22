@@ -18,7 +18,6 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "baseUrl": ".",
     "paths": {
       "@/components/*": [
         "./components/*"
@@ -37,6 +36,7 @@
       ]
     },
     "incremental": true,
+    "tsBuildInfoFile": ".next/cache/tsconfig.tsbuildinfo",
     "types": [
       "vitest/globals",
       "vitest/importMeta",
