@@ -9,8 +9,8 @@
 	"type": "module",
 	"packageManager": "pnpm@10.28.0",
 	"scripts": {
-		"dev": "next dev --webpack",
-		"build": "pnpm run lint && next build --webpack",
+		"dev": "next dev",
+		"build": "pnpm run lint && next build",
 		"start": "next start",
 		"prepare": "lefthook install",
 		"lint": "oxlint .",
