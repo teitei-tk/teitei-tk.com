@@ -23,7 +23,7 @@
 	},
 	"devDependencies": {
 		"@testing-library/dom": "^10.4.0",
-		"@testing-library/jest-dom": "^6.4.6",
+		"@testing-library/jest-dom": "^7.0.0",
 		"@testing-library/react": "^16.3.0",
 		"@types/node": "^24.0.7",
 		"@typescript/native-preview": "7.0.0-dev.20260707.2",
