@@ -38,7 +38,7 @@
 		"vitest": "^4.1.10"
 	},
 	"dependencies": {
-		"@chakra-ui/react": "^3.21.1",
+		"@chakra-ui/react": "^3.36.1",
 		"@emotion/react": "^11.14.0",
 		"@emotion/styled": "^11.14.1",
 		"@next/third-parties": "^16.3.0",
