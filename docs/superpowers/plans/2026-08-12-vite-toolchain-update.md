@@ -21,11 +21,13 @@
 ### Task 1: Vite ツールチェーンの更新と回帰検証
 
 **Files:**
+
 - Modify: `package.json`
 - Modify: `pnpm-lock.yaml`
 - Conditionally modify: `vitest.config.mts`
 
 **Interfaces:**
+
 - Consumes: npm registry 上の `vite@8.2.1`、`vitest@4.1.10`、`@vitejs/plugin-react@6.0.5`
 - Produces: Node.js 24.13.0 と pnpm 10.28.0 で再現可能な依存グラフ
 
