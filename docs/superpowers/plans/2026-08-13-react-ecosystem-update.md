@@ -247,4 +247,3 @@ Expected: コンテンツが画面幅内に収まり、テキスト・アイコ�
 Run: `git diff --check && git status --short --branch`
 
 Expected: whitespace errorがなく、未コミットの実装差分がなく、設計・計画・依存更新・テスト設定整理のコミットだけが現在のブランチに追加されている。
-
