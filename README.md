@@ -8,7 +8,7 @@ https://teitei-tk.com
 
 ## Requirements
 
-- Node.js 24.13.0 (see `.node-version`)
+- Node.js 26.7.0 (see `.node-version`)
 - pnpm 10.28.0
 
 ## Tech Stack

@@ -9,7 +9,7 @@
 
 ## Build, Test, and Development Commands
 
-- Use Node `24.13.0` (see `.node-version`); install pnpm with `npm install -g pnpm@10.28.0`, then run `pnpm install`.
+- Use Node `26.7.0` (see `.node-version`); install pnpm with `npm install -g pnpm@10.28.0`, then run `pnpm install`.
 - `pnpm dev` boots the local Next.js server.
 - `pnpm build` creates the production bundle; `pnpm start` serves it.
 - `pnpm lint` runs Oxlint; `pnpm format` writes Oxfmt formatting; `pnpm format:check` is CI-safe validation.
