@@ -30,7 +30,7 @@
 		"@vitejs/plugin-react": "^6.0.5",
 		"jsdom": "^30.0.1",
 		"lefthook": "^2.1.9",
-		"oxfmt": "0.53.0",
+		"oxfmt": "0.63.0",
 		"oxlint": "1.77.0",
 		"oxlint-tsgolint": "7.0.2001",
 		"typescript": "^7.0.2",
