@@ -9,7 +9,7 @@ https://teitei-tk.com
 ## Requirements
 
 - Node.js 26.12.1 (see `.node-version`)
-- pnpm 10.28.0
+- pnpm 12.17.0
 
 ## Tech Stack
 
@@ -21,7 +21,7 @@ https://teitei-tk.com
 ## Development
 
 ```bash
-npm install -g pnpm@10.28.0
+npm install -g pnpm@12.17.0
 ```
 
 ```bash
