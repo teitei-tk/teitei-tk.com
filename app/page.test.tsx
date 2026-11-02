@@ -17,10 +17,6 @@ describe("HomePage component", () => {
 				url: SITE_METADATA.accounts.twitter,
 			},
 			{
-				name: "GitHub",
-				url: SITE_METADATA.accounts.github,
-			},
-			{
 				name: "Zenn",
 				url: SITE_METADATA.accounts.zenn,
 			},
@@ -45,15 +41,15 @@ describe("HomePage component", () => {
 			},
 		];
 
-		for (const { name, url } of accountsMap) {
-			if (name === "GitHub") {
-				const links = screen.getAllByText(/GitHub/);
-				expect(links.length).toBe(2);
-				expect(links[0]).toHaveAttribute("href", SITE_METADATA.accounts.github);
-				expect(links[1]).toHaveAttribute("href", SITE_METADATA.repositoryURL);
-				continue;
-			}
+		const githubLinks = screen.getAllByText(/GitHub/);
+		expect(githubLinks).toHaveLength(2);
+		expect(githubLinks[0]).toHaveAttribute(
+			"href",
+			SITE_METADATA.accounts.github,
+		);
+		expect(githubLinks[1]).toHaveAttribute("href", SITE_METADATA.repositoryURL);
 
+		for (const { name, url } of accountsMap) {
 			expect(screen.getByRole("link", { name })).toHaveAttribute("href", url);
 		}
 
