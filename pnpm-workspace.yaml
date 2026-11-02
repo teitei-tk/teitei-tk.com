@@ -1,3 +1,6 @@
+allowBuilds:
+  esbuild: true
+  lefthook: true
 minimumReleaseAge: 1440
 # Allow this Next.js release when Wrangler re-resolves dependencies during deployment.
 minimumReleaseAgeExclude:
