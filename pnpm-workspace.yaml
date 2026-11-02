@@ -1,6 +1,8 @@
 allowBuilds:
   esbuild: true
   lefthook: true
+  # Wrangler installs workerd during Cloudflare deployments.
+  workerd: true
 minimumReleaseAge: 1440
 # Allow this Next.js release when Wrangler re-resolves dependencies during deployment.
 minimumReleaseAgeExclude:
